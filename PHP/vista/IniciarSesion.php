@@ -24,14 +24,15 @@
 		<br>	
 		<p>Usuario</p>
 		<p>* <input TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="usuario"> <br></p>
-		<p>Contraseña</p>	
+		<p>Contraseña</p>
+		<i>Minimo 5 caracteres</i>	
 		<p>* <input TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
-			
+		<input type="button" id="ojo" value="Mostrar/ocultar contraseña"></input>
 			<div id="BTNregistro">
 				<div class="row">
 					<div class="col-sm-6">
 					<p>¿No tienes cuenta?</p>
-					<p><a href="./vista/Registro.php">Registrarse</a></p>
+					<p><a href="index.php?ctl=registro">Registrarse</a></p>
 					</div>
 					<input  id="BTN-BTNregistro" TYPE="submit" NAME="bIniciarSesion" VALUE="Iniciar Sesión"><br>
 				

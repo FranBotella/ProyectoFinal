@@ -58,7 +58,7 @@ public function consultarUsuario($user) {
     // return $resultadoUsuario;
     $resultadoUsuario=$result;
     foreach ($resultadoUsuario as $row) {
-        $nivel= $row['nombre'] ;
+        $nivel= $row['nivel'] ;
     }
     return $nivel;
     // return $result->fetch(PDO::FETCH_ASSOC);

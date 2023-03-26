@@ -197,8 +197,8 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
              
                 cTexto($user, "user", $errores);
             
-                cUser($pass, "pass", $errores);
-               
+                cPass($pass, "pass", $errores);
+                
                 
                 if (empty($errores)){
                     // Si no ha habido problema creo modelo y hago inserció     
@@ -284,7 +284,7 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
                     if ($m->consultarUsuario($nombreUsuario)) {
                         // Compruebo si el password es correcto
                         $level=$m->consultarUsuario($nombreUsuario);
-                        $_SESSION['nivel_usuario'] = 0;
+                        $_SESSION['nivel_usuario'] = $level;
                     
                         // foreach ($m as $row) {
                         //     $_SESSION['idUser'] = $row['id'];

@@ -158,6 +158,12 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
 }
 
 
+
+
+
+
+
+
 /**
  * Funcion cUser
  *
@@ -173,6 +179,16 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
 
 
  function cUser(string $text, string $campo, array &$errores, int $max = 30, int $min = 1): bool
+ {
+     
+     if ((preg_match("/^[a-zA-Z0-9_]{" . $min . "," . $max . "}$/u", sinTildes($text)))) {
+         return true;
+     }
+     $errores[$campo] = "Error en el campo $campo";
+     return false;
+ }
+
+ function cPass(string $text, string $campo, array &$errores, int $max = 30, int $min = 5): bool
  {
      
      if ((preg_match("/^[a-zA-Z0-9_]{" . $min . "," . $max . "}$/u", sinTildes($text)))) {

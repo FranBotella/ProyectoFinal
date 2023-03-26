@@ -23,16 +23,19 @@
 		<form id="formuRegistro" ACTION="index.php?ctl=registro" METHOD="post" NAME="formRegistro">
 			<br>
 			<p>Usuario</p>
-			<p>* <input TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="Usuario"> <br></p>
+			<p>* <input  TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="Usuario"> <br></p>
 			<p>Contraseña</p>
-			<p>* <input TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
+			<i>Minimo 5 caracteres</i>
+			<p>* <input id="password" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
+		<input type="button" id="ojo" value="Mostrar/ocultar contraseña"></input>
 			<p>Email</p>
 			<p>* <input TYPE="text" NAME="email" VALUE="<?php echo $params['email'] ?>" PLACEHOLDER="email"><br></p>
 			<div id="BTNregistro">
 				<div class="row">
 					<div class="col-sm-6">
 					<p>¿Ya tienes cuenta?</p>
-					<p><a href="./vista/.IniciarSesion.php">IniciarSesion</a></p>
+					
+					<p><a href="index.php?ctl=iniciarSesion">IniciarSesion</a></p>
 					</div>
 				
 				<input id="BTN-BTNregistro" class="col-sm-6" TYPE="submit" NAME="bRegistro" VALUE="Registrarse"><br>

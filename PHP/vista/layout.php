@@ -53,9 +53,10 @@
 			</div>
 		</div>
 	</div>
-<!-- 	
-	<footer>
-		<p>meme</p>
+	
+	<!-- <footer>
+		
 </footer> -->
+<script src="../JS/functiones.js"></script>
 </body>
 </html>

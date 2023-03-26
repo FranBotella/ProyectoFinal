@@ -8,13 +8,16 @@
 }
 
 .menu a {
-	color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: black;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     text-decoration: none;
+    font-family: 'Anton';
+    font-size:xx-large;
 }
 #imgTXT{
     background-color: #c1c1c1;
     text-align: center;
+  width: 100%;
 }
 #imgInfo{
     height: 250px;
@@ -26,13 +29,18 @@
 #txtInfo{
     background-color: white;
     margin: 2%;
+    font-family: 'Noto Serif' , serif;
+  font-size:larger;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 #formuRegistro{
     background-color: #c1c1c1;
     border: #232323;
     width: 500px;
-    height: 500px;
+    height: 550px;
+    font-size:x-large;
 }
+
 #BTNregistro´{
     display: flex;
 }
@@ -94,15 +102,15 @@ height: 80%;
 	background-color: #232323;
 	color: white;
 	box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.767); /*Sombreado*/	
-  height: 20%;
+  height: 40%;
    
 
 }
-footer{
+/* footer{
     background-color: #232323;
     color: #232323;
     height: 20%;
-}
+} */
 body{
   position: relative;
   min-height: 100vh;
