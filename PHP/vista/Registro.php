@@ -1,10 +1,10 @@
 <?php ob_start() ?>
 	
-	<div class="container text-center p-4">
+	<!-- <div class="container text-center p-4">
 		<div class="col-md-12" id="cabecera">
 			<h1 class="h1Inicio">REGISTRARSE</h1>
 		</div>
-	</div>
+	</div> -->
 	
 	<div class="container text-center py-2">
 		<div class="col-md-12">
@@ -20,13 +20,24 @@
 	</div>
 	
 	<div class="container text-center p-1">
-		<form ACTION="index.php?ctl=registro" METHOD="post" NAME="formRegistro">
-			<p>* <input TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="Nombre"> <br></p>
+		<form id="formuRegistro" ACTION="index.php?ctl=registro" METHOD="post" NAME="formRegistro">
+			<br>
+			<p>Usuario</p>
+			<p>* <input TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="Usuario"> <br></p>
+			<p>Contraseña</p>
 			<p>* <input TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
-			<p>* <input TYPE="text" NAME="nivel" VALUE="<?php echo $params['nivel'] ?>" PLACEHOLDER="Nivel"><br></p>
+			<p>Email</p>
 			<p>* <input TYPE="text" NAME="email" VALUE="<?php echo $params['email'] ?>" PLACEHOLDER="email"><br></p>
-			<p>* <input TYPE="text" NAME="ciudad" VALUE="<?php echo $params['ciudad'] ?>" PLACEHOLDER="Ciudad"><br></p>
-			<input TYPE="submit" NAME="bRegistro" VALUE="Aceptar"><br>
+			<div id="BTNregistro">
+				<div class="row">
+					<div class="col-sm-6">
+					<p>¿Ya tienes cuenta?</p>
+					<p><a href="./vista/.IniciarSesion.php">IniciarSesion</a></p>
+					</div>
+				
+				<input id="BTN-BTNregistro" class="col-sm-6" TYPE="submit" NAME="bRegistro" VALUE="Registrarse"><br>
+				</div>
+			</div>
 		</form>
 	</div>
 		

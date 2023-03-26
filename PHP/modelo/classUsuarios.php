@@ -1,6 +1,6 @@
 <?php
 
-class Alimentos extends Modelo {
+class Usuarios extends Modelo {
     
     public function consultarNombreAlimento($nombreAlimento) {
         $consulta = "SELECT * FROM alimentos WHERE nombre=:nombreAlimento ";
@@ -38,21 +38,19 @@ class Alimentos extends Modelo {
     }
 
 
-public function registrarse($user,$pass,$nivel,$email,$ciudad){
-    $consulta = "INSERT INTO users (user, pass, nivel, email,ciudad) VALUES (:user, :pass, :nivel, :email,:ciudad)";
+public function registrarse($user,$pass,$email){
+    $consulta = "INSERT INTO usuarios (nombre, contraseñaEncriptada, correo) VALUES (:user, :pass, :email)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':user', $user);
         $result->bindParam(':pass', $pass);
-        $result->bindParam(':nivel', $nivel);
         $result->bindParam(':email', $email);
-        $result->bindParam(':ciudad', $ciudad);
         $result->execute();
         return $result; 
 }
     
       
 public function consultarUsuario($user) {
-    $consulta = "SELECT * FROM users where user=:user";
+    $consulta = "SELECT * FROM usuarios where nombre=:user";
     $result = $this->conexion->prepare($consulta);
     $result->bindParam(':user', $user);
     $result->execute();
@@ -60,7 +58,7 @@ public function consultarUsuario($user) {
     // return $resultadoUsuario;
     $resultadoUsuario=$result;
     foreach ($resultadoUsuario as $row) {
-        $nivel= $row['nivel'] ;
+        $nivel= $row['nombre'] ;
     }
     return $nivel;
     // return $result->fetch(PDO::FETCH_ASSOC);
@@ -70,13 +68,14 @@ public function consultarUsuario($user) {
 
 public function checkPassword($user, $password)
         {
-            $consulta = "SELECT * FROM users WHERE user=?";
+            $consulta = "SELECT * FROM usuarios WHERE nombre=?";
             $resultado = $this->conexion->prepare($consulta);
             $resultado->bindParam(1, $user);
             $resultado->execute();
+           
             foreach($resultado as $result){
                
-                if($password === $result['pass']){
+                if($password === $result['contraseñaEncriptada']){
                     return true;
                 } else{
                     return false;

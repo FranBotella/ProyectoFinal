@@ -12,7 +12,34 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
 }
+#imgTXT{
+    background-color: #c1c1c1;
+    text-align: center;
+}
+#imgInfo{
+    height: 250px;
+    width: 250px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 
+}
+#txtInfo{
+    background-color: white;
+    margin: 2%;
+}
+#formuRegistro{
+    background-color: #c1c1c1;
+    border: #232323;
+    width: 500px;
+    height: 500px;
+}
+#BTNregistro´{
+    display: flex;
+}
+#BTN-BTNregistro{
+    width: 200px;
+    height: 100px;
+}
 .menu a:hover { /*Al pasar el raton por encima del menu cambia de color*/
     color:lightsalmon;
     transition: all .3s;
@@ -36,7 +63,8 @@ height: 80%;
     width: 50px;
     height: 50px;
 }
-#imgInicio{
+
+#imgCarruselInicio{
     width:350px;
     height: 350px;
 }

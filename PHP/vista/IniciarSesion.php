@@ -1,10 +1,10 @@
 <?php ob_start() ?>
 	
-	<div class="container text-center p-4">
+	<!-- <div class="container text-center p-4">
 		<div class="col-md-12" id="cabecera">
 			<h1 class="h1Inicio">Iniciar</h1>
 		</div>
-	</div>
+	</div> -->
 	
 	<div class="container text-center py-2">
 		<div class="col-md-12">
@@ -20,10 +20,24 @@
 	</div>
 	
 	<div class="container text-center p-1">
-		<form ACTION="index.php?ctl=iniciarSesion" METHOD="post" NAME="formIniciar">
-			<p>* <input TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="Nombre"> <br></p>
-			<p>* <input TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
-			<input TYPE="submit" NAME="bIniciarSesion" VALUE="Aceptar"><br>
+		<form id="formuRegistro" ACTION="index.php?ctl=iniciarSesion" METHOD="post" NAME="formIniciar">
+		<br>	
+		<p>Usuario</p>
+		<p>* <input TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="usuario"> <br></p>
+		<p>Contraseña</p>	
+		<p>* <input TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
+			
+			<div id="BTNregistro">
+				<div class="row">
+					<div class="col-sm-6">
+					<p>¿No tienes cuenta?</p>
+					<p><a href="./vista/Registro.php">Registrarse</a></p>
+					</div>
+					<input  id="BTN-BTNregistro" TYPE="submit" NAME="bIniciarSesion" VALUE="Iniciar Sesión"><br>
+				
+				</div>
+			
+			
 		</form>
 	</div>
 		

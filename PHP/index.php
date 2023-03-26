@@ -22,6 +22,7 @@ if (! isset($_SESSION['nivel_usuario'])) {
 $map = array(
     'home' => array('controller' =>'Controller', 'action' =>'home', 'nivel_usuario'=>0),
     'inicio' => array('controller' =>'Controller', 'action' =>'inicio', 'nivel_usuario'=>0),
+    'informacion' => array('controller'=>'Controller', 'action' =>'informacion','nivel_usuario'=>0),
     'verAlimento'=> array('controller'=>'Controller','action'=>'verAlimento','nivel_usuario'=>1),
     'iniciarSesion' => array('controller' =>'Controller', 'action' =>'iniciarSesion', 'nivel_usuario'=>0),
     'registro' => array('controller' =>'Controller', 'action' =>'registro', 'nivel_usuario'=>0),

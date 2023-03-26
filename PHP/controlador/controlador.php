@@ -52,6 +52,23 @@ class Controller {
 
 
 
+    public function informacion() {
+        
+        
+        $params = array(
+            'descripcion'=> 'Pequeña descripcion',
+            'mensaje' => 'Bienvenido a Inicio',
+            'mensaje2' => 'Aquí encontrarás Tu inicio',
+            'fecha' => date('d-m-Y')
+        );        
+      
+        $menu=$this->cargaMenu();
+        require __DIR__ . '/../vista/informacion.php';
+    }
+
+
+
+
     public function verAlimentosEstadisticas() {
         try {
             $m = new Alimentos();
@@ -169,18 +186,14 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
             $params = array(
                 'user' => '',
                 'pass' => '',
-                'nivel' => '',
                 'email' => '',
-                'ciudad'=>'',
                 
                 );
             $errores=array();
             if (isset($_POST['bRegistro'])) {
                 $user = recoge('user');
                 $pass = recoge('pass');
-                $nivel = recoge('nivel');
                 $email = recoge('email');
-                $ciudad= recoge('ciudad');
              
                 cTexto($user, "user", $errores);
             
@@ -191,8 +204,8 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
                     // Si no ha habido problema creo modelo y hago inserció     
                     try {
 
-                    $m = new Alimentos();
-                    if ($m->registrarse($user, $pass, $nivel, $email,$ciudad)) {
+                    $m = new Usuarios();
+                    if ($m->registrarse($user, $pass, $email)) {
                         
                         header('Location: index.php?ctl=inicio');
                     } else {
@@ -200,9 +213,7 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
                         $params = array(
                             'user' => $user,
                             'pass' => $pass,
-                            'nivel' => $nivel,
                             'email' => $email,
-                            'ciudad'=>$ciudad
                             
                             );
                         
@@ -220,9 +231,9 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
                     $params = array(
                         'user' => $user,
                         'pass' => $pass,
-                        'nivel' => $nivel,
+                        
                         'email' => $email,
-                        'ciudad'=>$ciudad
+                       
                         
                         );
                     $params['mensaje'] = 'Hay datos que no son correctos. Revisa el formulario.';
@@ -266,20 +277,21 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
             if (isset($_POST['bIniciarSesion'])) { // Nombre del boton del formulario
                 $nombreUsuario = recoge('user');
                 $contrasenya = recoge('pass');
-
+               
                         try{      
-                    $m = new Alimentos();
+                    $m = new Usuarios();
+                
                     if ($m->consultarUsuario($nombreUsuario)) {
                         // Compruebo si el password es correcto
                         $level=$m->consultarUsuario($nombreUsuario);
-                        $_SESSION['nivel_usuario'] = $level;
-                       
+                        $_SESSION['nivel_usuario'] = 0;
+                    
                         // foreach ($m as $row) {
                         //     $_SESSION['idUser'] = $row['id'];
                         //     $_SESSION['nombreUsuario'] = $row['user'] ;
                         //     $_SESSION['nivel_usuario'] = $row['nivel'];
                         //         }
-                     
+                       
                    
                         if ($m->checkPassword($nombreUsuario,$contrasenya )) {
                             // Obtenemos el resto de datos
@@ -287,20 +299,16 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
                         // $_SESSION['nombreUsuario'] = $nombreUsuario ;
                                           
                         header('Location: index.php?ctl=inicio');
-                    }
-                    else{
-                        echo "meme";
-                        echo $nombreUsuario;
-                        echo $contrasenya;
-                       
-                    }
+                   }
+                 
                 
                 }else {
                         $params = array(
                             'user' => $nombreUsuario,
                             'pass' => $contrasenya
                         );
-                        $params['mensaje'] = 'No se ha podido iniciar sesión. Revisa el formulario.';
+                        // $params['mensaje'] = 'No se ha podido iniciar sesión. Revisa el formulario.';
+                        $params['mensaje'] = $contrasenya;
                     }
                
             } catch (Exception $e) {

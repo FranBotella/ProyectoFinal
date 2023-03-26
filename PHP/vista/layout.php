@@ -28,9 +28,9 @@
 
 <div id="body">
     
-	<div class="container-fluid">
+	<div class="container-fluid ">
 		<div class="container">
-			<div id="contenido">
+			<div class=" pt-5" id="contenido">
 			<?php echo $contenido ?>
 			</div>
 		</div>
