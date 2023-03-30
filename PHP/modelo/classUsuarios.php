@@ -82,6 +82,52 @@ public function checkPassword($user, $password)
                 }
             }
         }
+
+
+
+        public function getUserByMail($mail){
+            $consulta = "SELECT * FROM usuarios WHERE correo=:mail";
+            $result =$this->conexion->prepare($consulta);
+            $result->bindParam(':mail', $mail);
+            $result->execute();
+            $resultadoUsuario = $result;
+            foreach ($resultadoUsuario as $row) {
+                $nameUser= $row['nombre'];
+            }
+            return $nameUser;
+        }
+
+       
+
+
+        public function getPassword($email)
+        {
+            $consulta = "SELECT * FROM usuarios WHERE correo=?";
+            $resultado = $this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $email);
+            $resultado->execute();
+
+            foreach($resultado as $result){
+                $contraseñaGet=$result['contraseñaEncriptada'];
+            }
+            return $contraseñaGet;
+        }
+
+
+
+        public function getEmail($usuario)
+        {
+            $consulta = "SELECT * FROM usuarios WHERE nombre=?";
+            $resultado = $this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $usuario);
+            $resultado->execute();
+
+            foreach($resultado as $result){
+                $emailBuscado=$result['correo'];
+                
+            }
+            return $emailBuscado;
+        }
     
 }
 

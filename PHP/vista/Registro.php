@@ -18,6 +18,32 @@
 			<?php } ?>
 		</div>
 	</div>
+	<!-- <div> -->
+	<!-- <form  ACTION="index.php?ctl=enviarCodigo" METHOD="post" NAME="formcodigo"> -->
+
+	<!-- <p>EmailCodigo</p>
+			<p>* <input TYPE="text" NAME="emailCodigo" VALUE="
+			<?php 
+			// echo $params['email']
+			 ?>
+			" PLACEHOLDER="email"><br></p> -->
+
+	<!-- <input  class="col-sm-6" TYPE="submit" NAME="benviarCodigo" VALUE="ENVIAR"><br>
+			</form>
+	</div>
+
+
+	<form   METHOD="post" NAME="formcodigo"> -->
+		
+		<!-- <p>Codigo</p>
+				<p>* <input TYPE="text" NAME="Codigo" VALUE="<?php
+				//  echo $params['email']
+				  ?>" PLACEHOLDER="codigo"><br></p>
+	
+		<input  class="col-sm-6" TYPE="submit" NAME="bverificar" VALUE="VERIFICAR"><br>
+				</form>
+		</div> -->
+		
 	
 	<div class="container text-center p-1">
 		<form id="formuRegistro" ACTION="index.php?ctl=registro" METHOD="post" NAME="formRegistro">

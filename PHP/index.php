@@ -26,6 +26,8 @@ $map = array(
     'verAlimento'=> array('controller'=>'Controller','action'=>'verAlimento','nivel_usuario'=>1),
     'iniciarSesion' => array('controller' =>'Controller', 'action' =>'iniciarSesion', 'nivel_usuario'=>0),
     'registro' => array('controller' =>'Controller', 'action' =>'registro', 'nivel_usuario'=>0),
+    'enviarCodigo'=>array('controller'=>'Controller','action'=>'enviarCodigo','nivel_usuario'=>0),
+    'recibirCodigo'=>array('controller'=>'Controller','action'=>'recibirCodigo','nivel_usuario'=>0),
     'error' => array('controller' =>'Controller', 'action' =>'error', 'nivel_usuario'=>0),
     'salir' => array('controller' =>'Controller', 'action' =>'salir', 'nivel_usuario'=>1),
     'insertarA' => array('controller' =>'Controller', 'action' =>'insertarA', 'nivel_usuario'=>2),

@@ -178,15 +178,15 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
  */
 
 
- function cUser(string $text, string $campo, array &$errores, int $max = 30, int $min = 1): bool
- {
+//  function cUser(string $text, string $campo, array &$errores, int $max = 30, int $min = 1): bool
+//  {
      
-     if ((preg_match("/^[a-zA-Z0-9_]{" . $min . "," . $max . "}$/u", sinTildes($text)))) {
-         return true;
-     }
-     $errores[$campo] = "Error en el campo $campo";
-     return false;
- }
+//      if ((preg_match("/^[a-zA-Z0-9_]{" . $min . "," . $max . "}$/u", sinTildes($text)))) {
+//          return true;
+//      }
+//      $errores[$campo] = "Error en el campo $campo";
+//      return false;
+//  }
 
  function cPass(string $text, string $campo, array &$errores, int $max = 30, int $min = 5): bool
  {
@@ -196,6 +196,15 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
      }
      $errores[$campo] = "Error en el campo $campo";
      return false;
+ }
+
+ function tokenG($leng=10){
+    $cadena="ABCDEFGHIJKLMNOPQRSTUWXYZabcdefghijklmnopqrstuwxyz0123456789";
+    $token="";
+    for($i=0;$i<$leng;$i++){
+        $token .= $cadena[rand(0,35)];
+    }
+    return $token;
  }
  
 

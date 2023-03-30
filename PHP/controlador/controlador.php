@@ -173,6 +173,21 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
 
 }
 
+public function enviarCodigo(){
+   
+    
+    
+    $code = tokenG();
+   $emailCodigo=$_SESSION['email'];
+   
+
+    require __DIR__ . '/../correos/enviar.php';
+}
+public function recibirCodigo(){
+   
+
+require __DIR__ . '/../correos/recibe.php';
+}
 
 
     
@@ -194,20 +209,22 @@ require __DIR__ . '/../vista/InsertarAlimento.php';
                 $user = recoge('user');
                 $pass = recoge('pass');
                 $email = recoge('email');
-             
+                $emailCodigo = recoge('email'); 
                 cTexto($user, "user", $errores);
             
                 cPass($pass, "pass", $errores);
-                
+                $_SESSION['email']=$email;
                 
                 if (empty($errores)){
                     // Si no ha habido problema creo modelo y hago inserció     
                     try {
-
+                        
                     $m = new Usuarios();
                     if ($m->registrarse($user, $pass, $email)) {
-                        
-                        header('Location: index.php?ctl=inicio');
+                   
+
+                        header("location:index.php?ctl=enviarCodigo");
+                        // header('Location: index.php?ctl=inicio');
                     } else {
                         
                         $params = array(
