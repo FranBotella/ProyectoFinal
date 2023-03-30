@@ -1,18 +1,28 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* BARRA MENU */
 .menu{
 	background-color:   #FAF41A;
     box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.767); /*Sombreado*/
     
-    height: 10%;
+    height: 20%;
+
 }
 
+.navbar-toggler{
+    margin-right: 25%;
+}
 .menu a {
 	color: black;
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     text-decoration: none;
     font-family: 'Anton';
     font-size:xx-large;
+ 
+    
 }
 #imgTXT{
     background-color: #c1c1c1;
@@ -64,8 +74,8 @@ height: 80%;
 
 }
 #logo{
-    width: 50px;
-    height: 50px;
+    width: 300px;
+    height: 300px;
 }
 #carrito{
     width: 50px;
@@ -120,3 +130,21 @@ body{
 .borde {
     border: 2px solid rgba(58, 56, 56, 0.918);
 }
+
+
+@media only screen and (min-width:920px) and (max-width: 1920px){
+    #logo{
+        width: 100px;
+        height: 100px;
+    }
+    .menu a{
+        font-size: medium;
+    }
+
+  }
+  @media only screen and (min-width:501px) and (max-width: 920px)  {
+   
+  }
+  @media only screen and (min-width: 401px) and (max-width: 500px) {
+    
+  }
