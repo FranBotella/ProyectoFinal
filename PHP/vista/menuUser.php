@@ -31,6 +31,9 @@
 				<li class="nav-item" >
 					<a href="index.php?ctl=carrito" class="nav-link" ><img  id="carrito" src="./img/carrito.png"></img></a>
 				</li>	
+				<li class="nav-item" >
+					<a href="index.php?ctl=perfil" class="nav-link" >PERFIL</a>
+				</li>
 			</ul>
 			
 		</div>

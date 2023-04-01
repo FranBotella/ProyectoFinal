@@ -23,15 +23,16 @@ $map = array(
     'home' => array('controller' =>'Controller', 'action' =>'home', 'nivel_usuario'=>0),
     'inicio' => array('controller' =>'Controller', 'action' =>'inicio', 'nivel_usuario'=>0),
     'informacion' => array('controller'=>'Controller', 'action' =>'informacion','nivel_usuario'=>0),
-    'verAlimento'=> array('controller'=>'Controller','action'=>'verAlimento','nivel_usuario'=>1),
+  
     'iniciarSesion' => array('controller' =>'Controller', 'action' =>'iniciarSesion', 'nivel_usuario'=>0),
     'registro' => array('controller' =>'Controller', 'action' =>'registro', 'nivel_usuario'=>0),
     'enviarCodigo'=>array('controller'=>'Controller','action'=>'enviarCodigo','nivel_usuario'=>0),
     'recibirCodigo'=>array('controller'=>'Controller','action'=>'recibirCodigo','nivel_usuario'=>0),
     'error' => array('controller' =>'Controller', 'action' =>'error', 'nivel_usuario'=>0),
+    'perfil'=>array('controller'=>'Controller','action'=>'perfil','nivel_usuario'=>1),
     'salir' => array('controller' =>'Controller', 'action' =>'salir', 'nivel_usuario'=>1),
-    'insertarA' => array('controller' =>'Controller', 'action' =>'insertarA', 'nivel_usuario'=>2),
-    'verAlimentosEstadisticas' => array('controller' =>'Controller', 'action' =>'verAlimentosEstadisticas', 'nivel_usuario'=>2)            
+    'insertarA' => array('controller' =>'Controller', 'action' =>'insertarA', 'nivel_usuario'=>2)
+              
     
     
 );

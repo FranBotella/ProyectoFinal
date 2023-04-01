@@ -2,40 +2,7 @@
 
 class Usuarios extends Modelo {
     
-    public function consultarNombreAlimento($nombreAlimento) {
-        $consulta = "SELECT * FROM alimentos WHERE nombre=:nombreAlimento ";
-        $result = $this->conexion->prepare($consulta);
-        $result->bindParam(':nombreAlimento', $nombreAlimento);
-        $result->execute();
-        return $result->fetch(PDO::FETCH_ASSOC);
-    }
-    
-    public function insertarAlimento($nombre, $energia, $proteina, $hidratocarbono,$fibra,$grasatotal) {
-        $consulta = "INSERT INTO alimentos (nombre, energia, proteina, hidratocarbono,fibra,grasatotal) VALUES (:nombre, :energia, :proteina, :hidratocarbono,:fibra,:grasatotal)";
-        $result = $this->conexion->prepare($consulta);
-        $result->bindParam(':nombre', $nombre);
-        $result->bindParam(':energia', $energia);
-        $result->bindParam(':proteina', $proteina);
-        $result->bindParam(':hidratocarbono', $hidratocarbono);
-        $result->bindParam(':fibra', $fibra);
-        $result->bindParam(':grasatotal', $grasatotal);
-        $result->execute();
-        return $result;
-    }
-    
-    public function listarAlimentos() {
-        $consulta = "SELECT * FROM alimentos ORDER BY id ASC";
-        $result = $this->conexion->query($consulta);
-        return $result->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-
-
-    public function listarAlimentosEsttadisticas() {
-        $consulta = "SELECT * FROM alimentos ORDER BY id ASC";
-        $result = $this->conexion->query($consulta);
-        return $result->fetchAll(PDO::FETCH_ASSOC);
-    }
+   
 
 
 public function registrarse($user,$pass,$email){
@@ -51,16 +18,7 @@ public function registrarse($user,$pass,$email){
         // $result2 = $this->conexion->commit();
         return $result; 
 }
-public function confirmar(){
-    $result = $this->conexion->commit();
-    
-    
-}
-public function deshacer(){
-    $result = $this->conexion->rollback();
-   
-  
-}
+
     
       
 public function consultarUsuario($user) {
@@ -78,7 +36,59 @@ public function consultarUsuario($user) {
     // return $result->fetch(PDO::FETCH_ASSOC);
 }
 
+public function actualizainfo($email, $usuario)
+        {
+           
+          $consulta="UPDATE `usuarios` SET `nombre` = ?, `correo` = ? WHERE nombre = ?";
+          $resultado = $this->conexion->prepare($consulta);
+        
+            $resultado->bindParam(1, $email);
+        
+            $resultado->bindParam(2, $usuario);
+            $resultado->execute();
+        }
 
+        public function checkEmail($email)
+        {
+            $consulta = "SELECT * FROM usuarios WHERE correo=?";
+            $resultado = $this->prepare($consulta);
+            $resultado->bindParam(1, $email);
+            $resultado->execute();
+
+            foreach($resultado as $result){
+                if($email === $result['correo']){
+                    return true;
+                } else{
+                    return false;
+                }
+            }
+        }
+
+public function getLevel($nameUser){
+    $consulta="SELECT * FROM `usuarios`where nombre=?;";
+    $stmt=$this->conexion->prepare($consulta);
+    $stmt->bindParam(1,$nameUser);
+    $stmt->execute();
+    $resultado=$stmt;
+    foreach($resultado as $result){
+       $numero=$result['nivel'];
+    
+   }
+   return $numero;
+}
+public function getUser($user)
+        {
+            $consulta = "SELECT * FROM usuarios WHERE nombre=:user";
+            $result = $this->conexion->prepare($consulta);
+            $result->bindParam(':user', $user);
+            $result->execute();
+            $resultadoUsuario = $result;
+
+            foreach ($resultadoUsuario as $row) {
+                $nameUser= $row['nombre'] ;
+            }
+            return $nameUser;
+        }
 
 public function checkPassword($user, $password)
         {

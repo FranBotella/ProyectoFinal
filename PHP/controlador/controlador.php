@@ -180,7 +180,7 @@ public function enviarCodigo(){
     $code = tokenG();
    $emailCodigo=$_SESSION['email'];
   $_SESSION['codigo']= $code;
-
+  
     require __DIR__ . '/../correos/enviar.php';
 }
 public function recibirCodigo(){
@@ -191,7 +191,8 @@ public function recibirCodigo(){
                         
                     $l = new Usuarios();
                     $l->registrarse($_SESSION['user'], $_SESSION['pass'], $_SESSION['email']);
-                   
+                    mkdir(__DIR__ ."/../img/".$_SESSION['user'], 0777);
+                copy(__DIR__ ."/../img/image.png", __DIR__ ."/../img/".$_SESSION['user']."/image.png");
                     header("location:index.php?ctl=inicio");
                 } catch (Exception $e) {
                     // $l->deshacer();
@@ -204,6 +205,32 @@ public function recibirCodigo(){
 require __DIR__ . '/../correos/recibe.php';
 }
 
+public function perfil(){
+ 
+        try {
+            $user = new Usuarios();
+
+            $userGet = $user->getUser($_SESSION["user"]);
+            $emailGet = $user->getEmail($_SESSION["user"]);
+           
+        } catch (PDOException $e) {
+            error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+            // save errors
+            $errorsGuide['NoGuide'] = "Ha habido un error <br>";
+        }
+
+        $nameFile = "";
+        $dir = "../../img";
+        $max_file_size = "51200000";
+        $extensions = array(
+            "jpg",
+            "png",
+            "gif"
+        );
+
+        $menu=$this->cargaMenu();
+        require __DIR__ . '/../vista/perfil.php';
+}
 
     
     public function registro() {
@@ -275,7 +302,7 @@ require __DIR__ . '/../correos/recibe.php';
                 }
             }
         
-       
+            $menu=$this->cargaMenu();
         require __DIR__ . '/../vista/Registro.php';
     }
 
