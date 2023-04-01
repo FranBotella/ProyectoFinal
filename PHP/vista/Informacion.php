@@ -27,5 +27,16 @@ Las actividades que desarrolla la asociación tienen como objetivo mejorar la si
 
 
 </div>
+
+<footer>
+<div  class=" pie ">
+		<div  >
+			<div class="prueba">
+			<img id="socialMedia"  src="./img/facebook.png" ></img>
+			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			</div>
+		</div>
+	</div>
+	</footer>
 <?php $contenido = ob_get_clean() ?>
 <?php include 'layout.php' ?>

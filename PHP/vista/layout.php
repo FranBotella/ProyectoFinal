@@ -29,35 +29,29 @@
 
 <div id="body">
     
-	<div class="container-fluid ">
-		<div class="container">
-			<div class=" pt-5" id="contenido">
+ <!-- <div class="container-fluid  "> -->
+		<div > 
+			<div class=" pt-2" id="contenido">
 			<?php echo $contenido ?>
 			</div>
-		</div>
-	</div>
-	
-	<!-- <div class="container-fluid pie p-2 my-5">
-		<div class="container" >
-			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
-			</div>
-		</div> -->
-	</div>
-</div>
-<div  class="container-fluid pie ">
-		<div class="container" >
-			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
-			</div>
-		</div>
-	</div>
-	
-	<!-- <footer>
+		 </div>
+	<!-- </div> -->
+
 		
-</footer> -->
+	</div>
+
+<!-- <footer>
+<div  class=" pie ">
+		<div  >
+			<div class="prueba">
+			<img id="socialMedia"  src="./img/facebook.png" ></img>
+			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			</div>
+		</div>
+	</div>
+	</footer> -->
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../JS/functiones.js"></script>
 </body>

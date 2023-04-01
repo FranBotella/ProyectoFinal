@@ -1,19 +1,8 @@
 <?php ob_start() ?>
-<!-- <div class="row">
-<img id="imgInicio"  class="col-sm-6" src="./img/prueba.jpg"></img>
-<p class=" col-sm-6"  >
-  <?php 
-  // echo $params['descripcion']
-   ?>
-</p>
-   
-  </div> -->
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
+
+
+
+
 
   <div id="demo" class="carousel slide " data-bs-ride="carousel">
 
@@ -49,13 +38,18 @@
   </button>
 </div>
 
-<!-- <h3 class="text-center"><b><?php// echo $params['fecha'] ?></b></h3><br>  
 
-<h3 class="text-center"><b><?php// echo $params['mensaje'] ?></b></h3><br>
+<footer>
+<div  class=" pie ">
+		<div  >
+			<div class="prueba">
+			<img id="socialMedia"  src="./img/facebook.png" ></img>
+			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			</div>
+		</div>
+	</div>
+	</footer>
 
-<h4 class="text-center"><?php // echo $params['mensaje2'] ?></h4><br> -->
-
-<div>Asocicacion cup ayudando a los mas necesitados con sede en Valencia</div>
 <?php $contenido = ob_get_clean() ?>
 
 <?php include 'layout.php' ?>

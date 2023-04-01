@@ -57,19 +57,28 @@
 			<p>Email</p>
 			<p>* <input TYPE="text" NAME="email" VALUE="<?php echo $params['email'] ?>" PLACEHOLDER="email"><br></p>
 			<div id="BTNregistro">
-				<div class="row">
-					<div class="col-sm-6">
+				<div class="botones">
+					<div >
 					<p>¿Ya tienes cuenta?</p>
 					
 					<p><a href="index.php?ctl=iniciarSesion">IniciarSesion</a></p>
 					</div>
 				
-				<input id="BTN-BTNregistro" class="col-sm-6" TYPE="submit" NAME="bRegistro" VALUE="Registrarse"><br>
+				<input id="BTN-BTNregistro"  TYPE="submit" NAME="bRegistro" VALUE="Registrarse"><br>
 				</div>
 			</div>
 		</form>
 	</div>
-		
+	<footer>
+<div  class=" pie ">
+		<div  >
+			<div class="prueba">
+			<img id="socialMedia"  src="./img/facebook.png" ></img>
+			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			</div>
+		</div>
+	</div>
+	</footer>
 	<?php $contenido = ob_get_clean() ?>
 
 <?php include 'layout.php' ?>

@@ -55,9 +55,7 @@
 				<li class="nav-item" >
 					<a href="index.php?ctl=informacion" class="nav-link" >INFORMACION</a>
 				</li>
-				<li class="nav-item"  >
-					<a href="index.php?ctl=donaciones" class="nav-link" >DONACIONES</a>
-				</li>
+				
 				<li class="nav-item" >
 					<a href="index.php?ctl=eventos" class="nav-link" >EVENTOS</a>
 				</li>
@@ -67,12 +65,7 @@
 				<li class="nav-item" >
 					<a href="index.php?ctl=iniciarSesion" class="nav-link" >INICIARSESION</a>
 				</li>
-				<li class="nav-item" >
-					<a href="index.php?ctl=tienda"class="nav-link" >TIENDA</a>
-				</li>
-				<li class="nav-item" >
-					<a href="index.php?ctl=carrito" class="nav-link" ><img  id="carrito" src="./img/carrito.png"></img></a>
-				</li>	
+				
 			</ul>
 			
 		</div>

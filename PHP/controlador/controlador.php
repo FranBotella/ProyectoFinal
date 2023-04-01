@@ -179,12 +179,27 @@ public function enviarCodigo(){
     
     $code = tokenG();
    $emailCodigo=$_SESSION['email'];
-   
+  $_SESSION['codigo']= $code;
 
     require __DIR__ . '/../correos/enviar.php';
 }
 public function recibirCodigo(){
-   
+    $codeIn = $_POST["codigoIn"];
+     
+            if($_SESSION['codigo']==$codeIn){
+                try {
+                        
+                    $l = new Usuarios();
+                    $l->registrarse($_SESSION['user'], $_SESSION['pass'], $_SESSION['email']);
+                   
+                    header("location:index.php?ctl=inicio");
+                } catch (Exception $e) {
+                    // $l->deshacer();
+                    error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+                    header("location:index.php?ctl=registro");
+                } 
+             
+            }
 
 require __DIR__ . '/../correos/recibe.php';
 }
@@ -214,28 +229,30 @@ require __DIR__ . '/../correos/recibe.php';
             
                 cPass($pass, "pass", $errores);
                 $_SESSION['email']=$email;
+                $_SESSION['user']=$user;
+                $_SESSION['pass']=$pass;
                 
                 if (empty($errores)){
                     // Si no ha habido problema creo modelo y hago inserció     
                     try {
                         
-                    $m = new Usuarios();
-                    if ($m->registrarse($user, $pass, $email)) {
+                    // $m = new Usuarios();
+                    // if ($m->registrarse($user, $pass, $email)) {
                    
 
                         header("location:index.php?ctl=enviarCodigo");
-                        // header('Location: index.php?ctl=inicio');
-                    } else {
+                     
+                    // } else {
                         
-                        $params = array(
-                            'user' => $user,
-                            'pass' => $pass,
-                            'email' => $email,
+                    //     $params = array(
+                    //         'user' => $user,
+                    //         'pass' => $pass,
+                    //         'email' => $email,
                             
-                            );
+                    //         );
                         
-                        $params['mensaje'] = 'No se ha podido insertar el usuario. Revisa el formulario.';
-                    }
+                    //     $params['mensaje'] = 'No se ha podido insertar el usuario. Revisa el formulario.';
+                    // }
                 } catch (Exception $e) {
                     error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
                     header('Location: index.php?ctl=error');

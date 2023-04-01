@@ -8,7 +8,7 @@
 	background-color:   #FAF41A;
     box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.767); /*Sombreado*/
     
-    height: 20%;
+
 
 }
 
@@ -20,43 +20,48 @@
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     text-decoration: none;
     font-family: 'Anton';
-    font-size:xx-large;
+    font-size:medium;
  
     
 }
-#imgTXT{
+ #imgTXT{
     background-color: #c1c1c1;
     text-align: center;
   width: 100%;
+ /* height: 100%; */
 }
+
 #imgInfo{
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     margin-top: 5%;
     margin-bottom: 5%;
 
 }
+
 #txtInfo{
     background-color: white;
     margin: 2%;
     font-family: 'Noto Serif' , serif;
-  font-size:larger;
-    /* font-family: 'Courier New', Courier, monospace; */
+  font-size:11px;
+overflow: hidden;
+
 }
 #formuRegistro{
     background-color: #c1c1c1;
     border: #232323;
-    width: 500px;
-    height: 550px;
-    font-size:x-large;
+    /* width: 500px;
+    height: 550px; */
+    font-size:large;
 }
 
-#BTNregistro´{
+#BTNregistro{
     display: flex;
+    justify-content: center;
 }
 #BTN-BTNregistro{
     width: 200px;
-    height: 100px;
+    height: 70px;
 }
 .menu a:hover { /*Al pasar el raton por encima del menu cambia de color*/
     color:lightsalmon;
@@ -70,12 +75,12 @@
 }
 #body{
     background-color:#c21ce2 ;
-height: 80%;
+
 
 }
 #logo{
-    width: 300px;
-    height: 300px;
+    width: 50px;
+    height: 50px;
 }
 #carrito{
     width: 50px;
@@ -83,14 +88,14 @@ height: 80%;
 }
 
 #imgCarruselInicio{
-    width:350px;
-    height: 350px;
+    width:500px;
+    height: 400px;
 }
 #socialMedia{
-    width: 100px;
-    height: 100px;
-   margin-top: 10%;
-  
+    width: 50px;
+    height: 50px;
+   margin-top: 5%;
+ 
 }
 .prueba{
     display: flex;
@@ -111,40 +116,65 @@ height: 80%;
 .pie {
 	background-color: #232323;
 	color: white;
-	box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.767); /*Sombreado*/	
-  height: 40%;
-   
+	box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.767); 	
+
+ 
 
 }
-/* footer{
-    background-color: #232323;
-    color: #232323;
-    height: 20%;
-} */
+#demo{
+    height: 100%;
+}
+footer{
+    /* background-position: center bottom; */
+
+/* height: max-content; */
+
+}
 body{
-  position: relative;
-  min-height: 100vh;
-}
+  /* position: relative; */
+  /* min-height: 100vh; */
 
+}
+span{
+    /* display:none ; */
+}
 
 .borde {
     border: 2px solid rgba(58, 56, 56, 0.918);
 }
 
 
+
 @media only screen and (min-width:920px) and (max-width: 1920px){
-    #logo{
+    #txtInfo{
+        background-color: white;
+        margin: 2%;
+        font-family: 'Noto Serif' , serif;
+      font-size:18px;
+    
+    
+    }
+    #imgInfo{
+        height: 270px;
+        width: 450px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    
+    }
+    #socialMedia{
         width: 100px;
         height: 100px;
+       margin-top: 1%;
+      
     }
-    .menu a{
-        font-size: medium;
+    #imgCarruselInicio{
+        width:500px;
+        height: 540px;
     }
-
   }
-  @media only screen and (min-width:501px) and (max-width: 920px)  {
-   
+  @media only screen and (min-width:100px) and (max-width: 919px)  {
+  
   }
   @media only screen and (min-width: 401px) and (max-width: 500px) {
-    
+
   }

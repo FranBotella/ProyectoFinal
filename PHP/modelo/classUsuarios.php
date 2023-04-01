@@ -39,13 +39,27 @@ class Usuarios extends Modelo {
 
 
 public function registrarse($user,$pass,$email){
-    $consulta = "INSERT INTO usuarios (nombre, contraseñaEncriptada, correo) VALUES (:user, :pass, :email)";
+    // $result2 = $this->conexion->beginTransaction();
+    
+    
+    $consulta = " INSERT INTO usuarios (nombre, contraseñaEncriptada, correo) VALUES (:user, :pass, :email)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':user', $user);
         $result->bindParam(':pass', $pass);
         $result->bindParam(':email', $email);
         $result->execute();
+        // $result2 = $this->conexion->commit();
         return $result; 
+}
+public function confirmar(){
+    $result = $this->conexion->commit();
+    
+    
+}
+public function deshacer(){
+    $result = $this->conexion->rollback();
+   
+  
 }
     
       

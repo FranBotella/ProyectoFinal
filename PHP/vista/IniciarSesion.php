@@ -29,19 +29,29 @@
 		<p>* <input TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
 		<input type="button" id="ojo" value="Mostrar/ocultar contraseña"></input>
 			<div id="BTNregistro">
-				<div class="row">
-					<div class="col-sm-6">
+				<div class="botones">
+					<div >
 					<p>¿No tienes cuenta?</p>
 					<p><a href="index.php?ctl=registro">Registrarse</a></p>
 					</div>
 					<input  id="BTN-BTNregistro" TYPE="submit" NAME="bIniciarSesion" VALUE="Iniciar Sesión"><br>
 				
 				</div>
-			
+			</div>
 			
 		</form>
-	</div>
 		
+	</div>
+	<footer>
+<div  class=" pie ">
+		<div  >
+			<div class="prueba">
+			<img id="socialMedia"  src="./img/facebook.png" ></img>
+			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			</div>
+		</div>
+	</div>
+	</footer>
 	<?php $contenido = ob_get_clean() ?>
 
 <?php include 'layout.php' ?>
