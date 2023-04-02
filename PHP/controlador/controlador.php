@@ -358,7 +358,8 @@ public function perfil(){
                             // Obtenemos el resto de datos
                         //     session_start();
                         // $_SESSION['nombreUsuario'] = $nombreUsuario ;
-                                          
+                        $_SESSION['email']=$m->getEmail($nombreUsuario);
+                        $_SESSION['user']= $nombreUsuario;             
                         header('Location: index.php?ctl=inicio');
                    }
                  

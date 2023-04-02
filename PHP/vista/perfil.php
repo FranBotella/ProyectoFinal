@@ -1,7 +1,7 @@
 <?php ob_start() ?>
 
 
-    <div class="div-perfil">
+    <div class="div-perfil container text-center p-1">
         <form id="perfilForm" action="index.php?ctl=perfil" method="post" enctype="multipart/form-data">
             <div class="div-atr">
                 <div class="box"><img class="foto-perfil" src=
@@ -143,7 +143,7 @@
                 }
 
                 move_uploaded_file($directorioTemp, './img/' . $_SESSION['user'] . '/' . $nameFile);
-                header("Refresh:3");
+                header("Refresh:0");
             }
         }
         try {
