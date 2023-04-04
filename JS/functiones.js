@@ -23,6 +23,38 @@ if(changeColor!=null){
       }
 }
 
+const btnContinuar=document.getElementById("BTN-BTNContinuar");
+const btnCerrar=document.getElementById("btn-cerrar-modal");
+const modal=document.getElementById("modal");
+btnContinuar.addEventListener("click",()=>{
+    modal.showModal();
+ 
+})
+
+const precioD=document.querySelectorAll("#donar");
+const precioE=0;
+precioD.forEach(e => {
+    e.addEventListener('click', () => {
+        document.getElementById("CDonada").innerHTML="25";
+        console.log(e.innerText);
+      console.log(document.getElementById("CDonada"));
+        precioE=e.innerText;
+       
+    })
+})
+
+const Causa=document.getElementById("titleD");
+
+Causa.addEventListener('click',()=>{
+    console.log(Causa.value);
+    console.log(Causa);
+})
+
+
+btnCerrar.addEventListener("click",()=>{
+    modal.closest();
+})
+
 
 
     

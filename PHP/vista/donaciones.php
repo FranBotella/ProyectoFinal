@@ -4,10 +4,10 @@
 
 <p>Cuanto quiero aportar:</p>
 <div id="donaciones" >
-    <div id="donar"><p>25 euros</p></div>
-    <div id="donar"><p>30 euros</p></div>
-    <div id="donar"><p>50 euros</p></div>
-    <div id="donar"><p>Otra cantidad</p>
+    <div id="donar">25 euros</div>
+    <div id="donar">30 euros</div>
+    <div id="donar">50 euros</p></div>
+    <div id="donar">Otra cantidad
             <input type="text"></input>
         </div>
 </div>
@@ -19,12 +19,19 @@
 </select>
 <br>
 <br>
-<input  id="BTN-BTNregistro" TYPE="submit" NAME="Continuar" VALUE="Continuar"><br>
+<input  id="BTN-BTNContinuar" TYPE="submit" NAME="Continuar" VALUE="Continuar">
+
+<br>
 <dialog id="modal">
 <form method="dialog" >
     <label><?php echo $_SESSION["user"] ?></label>
     <label>Tu correo<input type="text" value="<?php echo $_SESSION["email"] ?>"></label>
-    <button type="submit">Enviar<
+    <label>Cantidad</label>
+    <p id="CDonada"></p>
+    <label>Destinado a :</label>
+    <p id="Causa"></p>
+    <button type="submit">Enviar</button>
+    <button id="btn-cerrar-modal" type="submit">Cerrar</button>
 </form>
 </dialog>
 
