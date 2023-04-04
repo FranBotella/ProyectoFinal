@@ -161,6 +161,19 @@ label, input {
        object-fit: cover;
   }
 
+ #donaciones {
+    display: flex;
+    
+    background-color: #FAF41A;
+    border: #232323 2px solid;
+ } 
+ #donaciones >div{
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+ }
+
 @media only screen and (min-width:920px) and (max-width: 1920px){
     #txtInfo{
         background-color: white;

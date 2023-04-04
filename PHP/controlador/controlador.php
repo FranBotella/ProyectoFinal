@@ -67,111 +67,15 @@ class Controller {
     }
 
 
-
-
-    public function verAlimentosEstadisticas() {
-        try {
-            $m = new Alimentos();
-            $params = array(
-                'Alimentos' => $m->listarAlimentos(), 
-                
-            );
-            if (! $params['Alimentos'])
-            $params['mensaje'] = "No hay Alimentos que mostrar.";  
-            // $menu = 'menuHome.php';       
-            
-        } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
-            header('Location: index.php?ctl=error');
-        } catch (Error $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logError.txt");
-            header('Location: index.php?ctl=error');
-        }
-
-        $menu=$this->cargaMenu();
-    
-        require __DIR__ . '/../vista/verStatsAlimentos.php';
-    }
-
-
-
-
-
-
-
-
-    public function verAlimento() {
-        try {
-            $m = new Alimentos();
-            $params = array(
-                'nombreAlimento' => $m->listarAlimentos(), 
-                
-            );
-            if (! $params['nombreAlimento'])
-            $params['mensaje'] = "No hay Alimentos que mostrar.";  
-            // $menu = 'menuHome.php';       
-            
-        } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
-            header('Location: index.php?ctl=error');
-        } catch (Error $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logError.txt");
-            header('Location: index.php?ctl=error');
-        }
-
-        $menu=$this->cargaMenu();
-    
-        require __DIR__ . '/../vista/verAlimento.php';
-    }
-    
-
-public function insertarA(){
-    if ($_SESSION['nivel_usuario'] <2) {
-        header("location:index.php?ctl=inicio");
-    }  
-
-   
-    $errores=array();
-//nombre, energia, proteina, hidratocarbono,fibra,grasatotal
-    if (isset($_POST['bInsertarA'])) {
-        $nombre = recoge('nombre');
-        $energia = recoge('energia');
-        $proteina = recoge('proteina');
-        $hidratocarbono = recoge('hidratocarbono');
-        $fibra= recoge('fibra');
-        $grasatotal= recoge('grasatotal');
-     
+    public function donaciones() {
         
-       
         
-        if (empty($errores)){
-            // Si no ha habido problema creo modelo y hago inserció     
-            try {
-
-            $m = new Alimentos();
-            if ($m->insertarAlimento($nombre,$energia,$proteina,$hidratocarbono,$fibra,$grasatotal)) {
-                
-                header('Location: index.php?ctl=inicio');
-            } else {
-               
-                
-                $params['mensaje'] = 'No se ha podido insertar el alimento.';
-            }
-        } catch (Exception $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
-            header('Location: index.php?ctl=error');
-        } catch (Error $e) {
-            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logError.txt");
-            header('Location: index.php?ctl=error');
-        }
-
-        } 
+           
+      
+        $menu=$this->cargaMenu();
+        require __DIR__ . '/../vista/donaciones.php';
     }
 
-    $menu=$this->cargaMenu();
-require __DIR__ . '/../vista/InsertarAlimento.php';
-
-}
 
 public function enviarCodigo(){
    
