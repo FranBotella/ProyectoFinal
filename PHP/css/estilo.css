@@ -163,7 +163,7 @@ label, input {
 
  #donaciones {
     display: flex;
-    
+    flex-direction: column;
     background-color: #FAF41A;
     border: #232323 2px solid;
  } 
@@ -172,8 +172,11 @@ label, input {
     margin: 10px;
     padding: 20px;
     font-size: 30px;
+ 
  }
-
+#precioDI{
+    width: 100%;
+}
  #modal::backdrop{
     background-color: rgba(0,0,0,.55);
  }
@@ -207,6 +210,16 @@ label, input {
         width:500px;
         height: 540px;
     }
+    #donaciones {
+        display: flex;
+        flex-direction:row;
+        background-color: #FAF41A;
+        border: #232323 2px solid;
+     } 
+     #modal{
+     margin-left: 35%;
+     margin-top: 10%;
+     }
   }
   @media only screen and (min-width:100px) and (max-width: 919px)  {
   

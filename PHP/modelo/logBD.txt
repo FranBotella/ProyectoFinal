@@ -1,0 +1,1 @@
+SQLSTATE[HY000]: General error: 1813 Tablespace for table '`bdtfgusuarios_php`.`usuarios`' exists. Please DISCARD the tablespace before IMPORT## Fichero: C:\xampp\htdocs\PHP\ProyectoFinal2023\ProyectoFinal\PHP\modelo\crearBD.php## Línea: 8##Código: HY000##Instante: 0.37449400 1680711636

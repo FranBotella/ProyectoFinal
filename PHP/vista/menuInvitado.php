@@ -57,9 +57,6 @@
 				</li>
 				
 				<li class="nav-item" >
-					<a href="index.php?ctl=eventos" class="nav-link" >EVENTOS</a>
-				</li>
-				<li class="nav-item" >
 					<a href="index.php?ctl=registro" class="nav-link" >REGISTRARSE</a>
 				</li>
 				<li class="nav-item" >

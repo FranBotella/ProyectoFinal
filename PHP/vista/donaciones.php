@@ -7,12 +7,12 @@
     <div id="donar">25 euros</div>
     <div id="donar">30 euros</div>
     <div id="donar">50 euros</p></div>
-    <div id="donar">Otra cantidad
-            <input type="text"></input>
+    <div >Otra cantidad
+            <input type="text" id="precioDI"></input>
         </div>
 </div>
 <p>SELECIONA LA CAUSA</p>
-<select name="titleD">
+<select name="titleD" id="titleD">
   <option value="Senegal">Senegal</option>
   <option value="Venezuela" >venezuela</option>
   <option value="Rusia">Rusia</option>
@@ -25,11 +25,13 @@
 <dialog id="modal">
 <form method="dialog" >
     <label><?php echo $_SESSION["user"] ?></label>
+    <br>
     <label>Tu correo<input type="text" value="<?php echo $_SESSION["email"] ?>"></label>
+    <br>
     <label>Cantidad</label>
     <p id="CDonada"></p>
     <label>Destinado a :</label>
-    <p id="Causa"></p>
+    <p id="CCausa"></p>
     <button type="submit">Enviar</button>
     <button id="btn-cerrar-modal" type="submit">Cerrar</button>
 </form>
