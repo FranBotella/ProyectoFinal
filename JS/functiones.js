@@ -11,6 +11,19 @@ if(hide!=null){
        });
 }
 
+const hide2 = document.getElementById("ojo2");
+if(hide2!=null){
+    hide2.addEventListener('click', function(){
+        mostrar=document.getElementById("password2");
+               if(mostrar.type == "password"){
+                   mostrar.type = "text";
+               }else{
+                   mostrar.type = "password";
+               }
+           
+       });
+}
+
 const changeColor=document.getElementById("donaciones");
 if(changeColor!=null){
     

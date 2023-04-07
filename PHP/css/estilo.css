@@ -52,8 +52,10 @@ overflow: hidden;
     border: #232323;
     /* width: 500px;
     height: 550px; */
-    font-size:large;
+    font-size:xx-large;
+   height:800px;
 }
+
 
 #BTNregistro{
     display: flex;
@@ -212,6 +214,7 @@ margin-left: 35%;
     background-color: red;
     color: white;
     margin-left: 35%;
+    font-size: xx-large;
 }
 #titulo_causa{
     margin-left: 35%;
@@ -222,6 +225,7 @@ margin-left: 35%;
 }
 #titleD{
     margin-left: 35%;  
+    font-size: xx-large;
 }
 @media only screen and (min-width:920px) and (max-width: 1920px){
     #txtInfo{

@@ -53,7 +53,7 @@
 			<p>Contraseña</p>
 			<i>Minimo 5 caracteres</i>
 			<p>* <input id="password" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
-		<input type="button" id="ojo" value="Mostrar/ocultar contraseña"></input>
+		<input type="button" id="ojo2" value="Mostrar/ocultar contraseña"></input>
 			<p>Email</p>
 			<p>* <input TYPE="text" NAME="email" VALUE="<?php echo $params['email'] ?>" PLACEHOLDER="email"><br></p>
 			<div id="BTNregistro">
