@@ -32,8 +32,8 @@
 }
 
 #imgInfo{
-    height: 150px;
-    width: 150px;
+    height: 350px;
+    width: 350px;
     margin-top: 5%;
     margin-bottom: 5%;
 
@@ -89,7 +89,11 @@ overflow: hidden;
 
 #imgCarruselInicio{
     width:500px;
-    height: 400px;
+    height: 800px;
+}
+#imgCarruselDonaciones{
+    width:300px;
+    height: 500px;
 }
 #socialMedia{
     width: 50px;
@@ -124,6 +128,9 @@ overflow: hidden;
 #demo{
     height: 100%;
 }
+#demo2{
+    height: 50%;
+}
 footer{
     /* background-position: center bottom; */
 
@@ -147,6 +154,8 @@ span{
 
     background-color: #c1c1c1;
     border: black 2px solid;
+    font-size:x-large;
+    height: 800px;
 }
 label, input {
     margin-top: 10px;
@@ -194,6 +203,7 @@ label, input {
 }
 #formModal{
     background-color: #c1c1c1;
+  
 }
 #btn-cerrar-modal{
 margin-left: 35%;
@@ -205,6 +215,10 @@ margin-left: 35%;
 }
 #titulo_causa{
     margin-left: 35%;
+    font-size: x-large;
+}
+#divCausa{
+    /* height: 210px; */
 }
 #titleD{
     margin-left: 35%;  
@@ -219,7 +233,7 @@ margin-left: 35%;
     
     }
     #imgInfo{
-        height: 200px;
+        height: 300px;
         width: 450px;
         margin-top: 5%;
         margin-bottom: 5%;
@@ -233,7 +247,14 @@ margin-left: 35%;
     }
     #imgCarruselInicio{
         width:500px;
-        height: 450px;
+        height: 800px;
+    }
+    #imgCarruselDonaciones{
+        width:300px;
+        height: 600px;
+    }
+    #demo2{
+        height: 60%;
     }
     #donaciones {
         display: flex;
@@ -245,6 +266,31 @@ margin-left: 35%;
      margin-left: 35%;
      margin-top: 1%;
      }
+     #perfilForm{
+
+        background-color: #c1c1c1;
+        border: black 2px solid;
+        font-size:xx-large;
+        height: 800px;
+    }
+    .box img {
+        width: 300px;
+        height: 250px;
+        margin-top: 5px;
+        border-radius: 150px;
+        -o-object-fit: cover;
+           object-fit: cover;
+      }
+    
+      .menu a {
+        color: black;
+        /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+        text-decoration: none;
+        font-family: 'Anton';
+        font-size:xx-large;
+     
+        
+    }
   
   }
   @media only screen and (min-width:100px) and (max-width: 919px)  {
