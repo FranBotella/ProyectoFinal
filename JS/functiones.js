@@ -13,17 +13,28 @@ if(hide!=null){
 
 const changeColor=document.getElementById("donaciones");
 if(changeColor!=null){
+    
+    const numero=500;
     for (let i = 0; i < changeColor.childNodes.length; i++) {
         changeColor.childNodes[i].addEventListener('mouseout',function(){
-            changeColor.childNodes[i].style.backgroundColor="blue";
+        
+            changeColor.childNodes[i].style.backgroundColor="white";
+        
+         
         });
         changeColor.childNodes[i].addEventListener('mouseover',function(){
-            changeColor.childNodes[i].style.backgroundColor="pink";
+            changeColor.childNodes[i].style.backgroundColor="#3D92F6";
         });
+     
+
+
       }
 }
 
+
+
 const btnContinuar=document.getElementById("BTN-BTNContinuar");
+if(btnContinuar!=null){
 const btnCerrar=document.getElementById("btn-cerrar-modal");
 const modal=document.getElementById("modal");
 btnContinuar.addEventListener("click",()=>{
@@ -49,7 +60,7 @@ precioD.forEach(e => {
         document.getElementById("CDonada").innerHTML=e.innerText.substring(0,2);
         console.log(e.innerText);
       console.log(document.getElementById("CDonada"));
-
+ 
        
     })
 })
@@ -80,4 +91,52 @@ btnCerrar.addEventListener("click",()=>{
 
 
     
-  
+
+paypal.Buttons({
+  // Order is created on the server and the order id is returned
+  createOrder() {
+    return fetch("/my-server/create-paypal-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // use the "body" param to optionally pass additional order information
+      // like product skus and quantities
+      body: JSON.stringify({
+        cart: [
+          {
+            sku: "YOUR_PRODUCT_STOCK_KEEPING_UNIT",
+            quantity: "YOUR_PRODUCT_QUANTITY",
+          },
+        ],
+      }),
+    })
+    .then((response) => response.json())
+    .then((order) => order.id);
+  },
+  // Finalize the transaction on the server after payer approval
+  onApprove(data) {
+    return fetch("/my-server/capture-paypal-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        orderID: data.orderID
+      })
+    })
+    .then((response) => response.json())
+    .then((orderData) => {
+      // Successful capture! For dev/demo purposes:
+      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+      const transaction = orderData.purchase_units[0].payments.captures[0];
+      alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+      // When ready to go live, remove the alert and show a success message within this page. For example:
+      // const element = document.getElementById('paypal-button-container');
+      // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+      // Or go to another URL:  window.location.href = 'thank_you.html';
+    });
+  }
+}).render('#paypal-button-container');
+
+}

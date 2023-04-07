@@ -11,7 +11,8 @@
             <input type="text" id="precioDI"></input>
         </div>
 </div>
-<p>SELECIONA LA CAUSA</p>
+
+<p id="titulo_causa">SELECIONA LA CAUSA</p>
 <select name="titleD" id="titleD">
   <option value="Senegal">Senegal</option>
   <option value="Venezuela" >venezuela</option>
@@ -19,21 +20,26 @@
 </select>
 <br>
 <br>
+
 <input  id="BTN-BTNContinuar" TYPE="submit" NAME="Continuar" VALUE="Continuar">
 
 <br>
 <dialog id="modal">
-<form method="dialog" >
+<form method="dialog"  id="formModal">
+
     <label><?php echo $_SESSION["user"] ?></label>
     <br>
-    <label>Tu correo<input type="text" value="<?php echo $_SESSION["email"] ?>"></label>
+    <label>Tu correo<p ><?php echo $_SESSION["email"]?></p></label>
     <br>
-    <label>Cantidad</label>
-    <p id="CDonada"></p>
-    <label>Destinado a :</label>
-    <p id="CCausa"></p>
-    <button type="submit">Enviar</button>
+    <label>Cantidad <p id="CDonada"></p>euros</label>
+    
+    <label>Destinado a : <p id="CCausa"></p></label>
+    
+
+    <!-- paypal -->
+    <div id="paypal-button-container"></div>
     <button id="btn-cerrar-modal" type="submit">Cerrar</button>
+    
 </form>
 </dialog>
 

@@ -167,8 +167,9 @@ label, input {
     background-color: #FAF41A;
     border: #232323 2px solid;
  } 
+
  #donaciones >div{
-    background-color: #f1f1f1;
+    background-color: white;
     margin: 10px;
     padding: 20px;
     font-size: 30px;
@@ -182,8 +183,32 @@ label, input {
  }
  #modal{
     max-width: 50ch;
- }
 
+ }
+ #formModal label{
+    border: 1px solid;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+#formModal{
+    background-color: #c1c1c1;
+}
+#btn-cerrar-modal{
+margin-left: 35%;
+}
+#BTN-BTNContinuar{
+    background-color: red;
+    color: white;
+    margin-left: 35%;
+}
+#titulo_causa{
+    margin-left: 35%;
+}
+#titleD{
+    margin-left: 35%;  
+}
 @media only screen and (min-width:920px) and (max-width: 1920px){
     #txtInfo{
         background-color: white;
@@ -194,7 +219,7 @@ label, input {
     
     }
     #imgInfo{
-        height: 270px;
+        height: 200px;
         width: 450px;
         margin-top: 5%;
         margin-bottom: 5%;
@@ -208,7 +233,7 @@ label, input {
     }
     #imgCarruselInicio{
         width:500px;
-        height: 540px;
+        height: 450px;
     }
     #donaciones {
         display: flex;
@@ -218,8 +243,9 @@ label, input {
      } 
      #modal{
      margin-left: 35%;
-     margin-top: 10%;
+     margin-top: 1%;
      }
+  
   }
   @media only screen and (min-width:100px) and (max-width: 919px)  {
   

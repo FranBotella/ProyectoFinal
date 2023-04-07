@@ -23,10 +23,11 @@ $mail = new PHPMailer(true);
         * SMTP username y password Poned los vuestros. La contraseña es la que nos generó GMAIL
         */
         // $mail->Username = 'grupoongvlc011@gmail.com';
-                     
+                   
+             
         // $mail->Password = 'cxfv rmxm lrqm cxxv';    
-        $mail->Username = 'forogamershelp@gmail.com';             
-        $mail->Password = 'mglk frwc fgws ydng'; 
+        $mail->Username = 'cuerdagoma1@gmail.com';             
+        $mail->Password = 'dzyk fpkp mrns peuz'; 
         /*
         * Encriptación a usar ssl o tls, dependiendo cual usemos hay que utilizar uno u otro puerto
         */            
@@ -46,10 +47,9 @@ $mail = new PHPMailer(true);
         // $getpassword=$usuarioEmail-> getPassword($emailGet);
         // $username = $usuarioEmail->getUserByMail($emailGet);
        
-    
 
         //Remitente
-        $mail->setFrom('grupoongvlc011@gmail.com', 'grupoONGVLC');
+        $mail->setFrom('cuerdagoma1@gmail.com', 'grupoONGVLC');
         //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
         $mail->addAddress($emailGet);     //Add a recipient
         //$mail->addAddress('ejemplo@example.com'); 
@@ -62,7 +62,7 @@ $mail = new PHPMailer(true);
         //Archivos adjuntos
         //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
         //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
+     
         //Contenido
         //Si enviamos HTML
         $mail->isHTML(true);    
@@ -74,6 +74,7 @@ $mail = new PHPMailer(true);
         //Contenido alternativo en texto simple
         $mail->AltBody = "Hello , we received an account recovery request on ForoGamers for: <br>" .$emailGet. "<br><br>This is code: ". $code;
         //Enviar correo
+        
         $mail->send();
         echo 'The email has been succesfully sent!';
         echo "Please check your email and to write the code below ";
@@ -85,6 +86,7 @@ $mail = new PHPMailer(true);
        
         
     } catch (Exception $e) {
+        
         echo $emailCodigo;
         echo $code;
         echo "Error -> Email not sent!";

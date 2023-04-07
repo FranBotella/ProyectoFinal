@@ -69,7 +69,7 @@ class Controller {
 
     public function donaciones() {
         
-        
+        $_SESSION['clienteid']="AYAaEkvtH81FaW9FUYQQSlLW5dAxocxzQmnHuucHeLpToWup6oRQkh_ieo47E8fuJP71UPf3PNzefA_x";
            
       
         $menu=$this->cargaMenu();
