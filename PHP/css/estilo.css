@@ -227,6 +227,32 @@ margin-left: 35%;
     margin-left: 35%;  
     font-size: xx-large;
 }
+.blog{
+    height: 260px;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+    background-color: aqua;
+    border: 2px solid black;
+    overflow: hidden;
+  width: 100%;
+}
+
+.imagenesEve{
+    width: 80px;
+    height: 80px;
+    margin-left: 45%;
+}
+.blog2{
+    height: 800px;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+    background-color: aqua;
+    border: 2px solid black;
+    overflow: visible;
+  width: 100%;
+}
 @media only screen and (min-width:920px) and (max-width: 1920px){
     #txtInfo{
         background-color: white;

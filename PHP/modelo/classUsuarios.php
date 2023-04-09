@@ -152,6 +152,76 @@ public function checkPassword($user, $password)
             }
             return $emailBuscado;
         }
+        public function getIdPost($id){
+            $consulta="SELECT * FROM post WHERE id=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $id=$result['id'];
+                
+            }
+            return $id;
+        }
+
+        public function getIdPostValidar($id){
+            $consulta="SELECT * FROM post WHERE id=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->execute();
+            $verdad=false;
+            foreach($resultado as $result){
+                $id=$result['id'];
+                $verdad=true;
+            }
+            return $verdad;
+        }
+
+
+
+
+
+        public function getTitulo($id){
+            $consulta="SELECT * FROM post WHERE id=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $titulo=$result['titulo'];
+                
+            }
+            return $titulo;
+        }
+        public function getImagen($id){
+            $consulta="SELECT * FROM post WHERE id=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $imagen=$result['imagen'];
+                
+            }
+            return $imagen;
+        }
+        public function getContenido($id){
+            $consulta="SELECT * FROM post WHERE id=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $contenido=$result['contenido'];
+                
+            }
+            return $contenido;
+        }
+
+        public function contadorPost(){
+            $consulta="SELECT * FROM post";
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->execute();
+            $numero=$resultado->rowCount();
+            return $numero;
+        }
     
 }
 

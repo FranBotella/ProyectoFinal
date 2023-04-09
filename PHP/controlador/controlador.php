@@ -75,6 +75,31 @@ class Controller {
         $menu=$this->cargaMenu();
         require __DIR__ . '/../vista/donaciones.php';
     }
+    public function eventos(){
+        try {
+            $post = new Usuarios();
+
+            $nivel= $post->getUser($_SESSION["user"]);
+            $postContador = $post ->contadorPost();
+           
+        } catch (PDOException $e) {
+            error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+            // save errors
+            $errorsGuide['NoGuide'] = "Ha habido un error <br>";
+        }
+
+
+
+
+        $menu=$this->cargaMenu();
+        require __DIR__ . '/../vista/eventos.php';
+    }
+
+public function insertarP(){
+ 
+    $menu=$this->cargaMenu();
+    require __DIR__ . '/../vista/eventos.php';   
+}
 
 
 public function enviarCodigo(){

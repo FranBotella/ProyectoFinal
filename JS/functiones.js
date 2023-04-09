@@ -152,4 +152,42 @@ paypal.Buttons({
   }
 }).render('#paypal-button-container');
 
+
+
+
 }
+
+
+const elementosBlog=document.querySelectorAll(".tituloblog");
+console.log(document.getElementsByClassName("blog"));
+console.log(elementosBlog);
+
+
+
+elementosBlog.forEach(e => {
+
+  e.addEventListener('click', () => {
+
+   insertar= e.parentNode.outerHTML;
+    console.log(e.parentNode);
+ 
+    document.getElementById("borrar").remove();
+
+  insertar+=`<footer>
+  <div  class=" pie ">
+      <div  >
+        <div class="prueba">
+        <img id="socialMedia"  src="./img/facebook.png" ></img>
+        <img  id="socialMedia"  src="./img/instgram3.png" ></img>
+        </div>
+      </div>
+    </div>
+    </footer>`;
+    document.getElementById("contenido").innerHTML=insertar;
+   elementoCambiar= document.getElementById(e.parentNode.getAttribute("id"));
+   console.log(elementoCambiar);
+   elementoCambiar.setAttribute('class','blog2');
+
+     
+  })
+})

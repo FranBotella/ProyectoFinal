@@ -30,3 +30,22 @@ ALTER TABLE `usuarios`
   MODIFY `id` int(1) NOT NULL AUTO_INCREMENT;
 
 
+
+
+  CREATE TABLE `post` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(20) NOT NULL,
+  `imagen` varchar(72) NOT NULL,
+  `contenido` varchar(5000) NOT NULL
+ 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `post`
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT;
+
+
