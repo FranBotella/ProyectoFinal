@@ -1,8 +1,8 @@
 <?php ob_start() ?>
 
 <?php $contenido = ob_get_clean() ?>
-<?php if( $nivel==2){?>
-<form id="formuInsertar" ACTION="index.php?ctl=insertarPost" METHOD="post" NAME="formInsertar">
+<?php if( $nivel==1){?>
+<form id="formuInsertar" ACTION="index.php?ctl=insertarP" METHOD="post" NAME="formInsertar">
 <input type="submit" class="buttonForm" name="insertar" value="insertar" />
 </form>
 <?php }?>

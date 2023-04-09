@@ -19,7 +19,19 @@ public function registrarse($user,$pass,$email){
         return $result; 
 }
 
+public function insertarP($titulo,$imagen,$contenido){
+  
     
+    
+    $consulta = " INSERT INTO post (titulo, imagen, contenido) VALUES (:titulo, :imagen, :contenido)";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':titulo', $titulo);
+        $result->bindParam(':imagen', $imagen);
+        $result->bindParam(':contenido', $contenido);
+        $result->execute();
+      
+        return $result; 
+} 
       
 public function consultarUsuario($user) {
     $consulta = "SELECT * FROM usuarios where nombre=:user";

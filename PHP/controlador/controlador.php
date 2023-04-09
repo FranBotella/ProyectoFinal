@@ -79,7 +79,7 @@ class Controller {
         try {
             $post = new Usuarios();
 
-            $nivel= $post->getUser($_SESSION["user"]);
+            $nivel= $post->consultarUsuario($_SESSION["user"]);
             $postContador = $post ->contadorPost();
            
         } catch (PDOException $e) {
@@ -96,9 +96,33 @@ class Controller {
     }
 
 public function insertarP(){
- 
+    $nameFile = "";
+    $dir = "../../img";
+    $max_file_size = "51200000";
+    $extensions = array(
+        "jpg",
+        "png",
+        "gif"
+    );
+    if (isset($_POST['bPost'])) {
+        $titulo = recoge('titulo');
+        $contenido = recoge('contenido');
+        $imagen="prueba";
+        try {
+                        
+            $l = new Usuarios();
+            $l->insertarP( $titulo,$imagen , $contenido  );
+            
+            header("location:index.php?ctl=eventos");
+        } catch (Exception $e) {
+            
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+            header("location:index.php?ctl=eventos");
+        } 
+    }
+   
     $menu=$this->cargaMenu();
-    require __DIR__ . '/../vista/eventos.php';   
+    require __DIR__ . '/../vista/insertarP.php';   
 }
 
 

@@ -33,7 +33,7 @@ $map = array(
     'donaciones'=>array('controller'=>'Controller','action'=>'donaciones','nivel_usuario'=>1),
     'eventos'=>array('controller'=>'Controller','action'=>'eventos','nivel_usuario'=>1),
     'salir' => array('controller' =>'Controller', 'action' =>'salir', 'nivel_usuario'=>1),
-    'insertarP' => array('controller' =>'Controller', 'action' =>'insertarP', 'nivel_usuario'=>2)
+    'insertarP' => array('controller' =>'Controller', 'action' =>'insertarP', 'nivel_usuario'=>1)
               
     
     
