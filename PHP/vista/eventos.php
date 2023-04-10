@@ -14,22 +14,27 @@
 for ($i=0; $i <=$postContador ; $i++) { 
     try {
         $post2 = new Usuarios();
+      
         $postValidar = $post2->  getIdPostValidar($i);
-        if($postValidar==true){
+        while($postValidar==0){
+            $i++ ;
+            $postValidar = $post2->  getIdPostValidar($i);
+          }
+        if($postValidar==1){
             $postTitulo = $post2-> getTitulo($i);
             $postId = $post2->getIdPost($i);
         $postContenido = $post2-> getContenido($i);
         $postImagen = $post2-> getImagen($i);
         echo "<div id=$postId class=blog>";
-        echo "<a class=tituloblog >juan alberto </a>";
-        echo "<img class=imagenesEve src=./img/prueba.jpg></img>";
+        echo "<a class=tituloblog >$postTitulo </a>";
+        echo "<img class=imagenesEve src=./img/root/$postImagen></img>";
         echo "<p>$postContenido</p>";
         echo "</div>";
         }
        
     } catch (PDOException $e) {
         error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
-       
+     
         $errorsGuide['NoGuide'] = "Ha habido un error <br>";
     }
 

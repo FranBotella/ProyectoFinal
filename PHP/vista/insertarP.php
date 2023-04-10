@@ -15,8 +15,6 @@
                 <label>subir imagen :</label><br>
                 <input type="file" name="imagen" id="imagen"/>
                 <br>
-                <input type="submit" class="buttonForm optionButton" name="submitImage" value="Acept"/>
-                <input type="button" id="Cancel" class="buttonForm optionButton" name="Cancel" value="Cancel" onClick="insertarP.php"/>
                 <br>
                 <input  id="BTN-BTNregistro" TYPE="submit" NAME="bPost" VALUE="Postear"><br>
             </div>
@@ -39,7 +37,7 @@
  
 </html>
 <?php
-    if (isset($_REQUEST['submitImage'])) {
+    if (isset($_POST['bPost'])) {
         if (($_FILES['imagen']['error'] != 0)) {
             switch ($_FILES['imagen']['error']) {
                 case 1:
@@ -77,15 +75,17 @@
             }
 
             if (empty($errors)) {
-                //change img profile in this page
-                $nameFile = "image.png";
-                if (is_file("./img/" . $_SESSION['user'] . "/" . $nameFile)) {
-                    unlink("./img/" . $_SESSION['user'] . "/image.png");
-                }
-
-                move_uploaded_file($directorioTemp, './img/' . $_SESSION['user'] . '/' . $nameFile);
+          
+              
+              
+                move_uploaded_file($directorioTemp, './img/' . 'root' . '/' . $_FILES['imagen']['name']);
+                
                 header("Refresh:0");
             }
+
+            
+          
+
         }
      
       

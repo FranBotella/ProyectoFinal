@@ -107,7 +107,7 @@ public function insertarP(){
     if (isset($_POST['bPost'])) {
         $titulo = recoge('titulo');
         $contenido = recoge('contenido');
-        $imagen="prueba";
+        $imagen=$_FILES['imagen']['name'];
         try {
                         
             $l = new Usuarios();
