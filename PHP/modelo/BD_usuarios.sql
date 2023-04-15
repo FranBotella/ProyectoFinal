@@ -36,7 +36,9 @@ ALTER TABLE `usuarios`
   `id` int(11) NOT NULL,
   `titulo` varchar(20) NOT NULL,
   `imagen` varchar(72) NOT NULL,
-  `contenido` varchar(5000) NOT NULL
+  `contenido` varchar(5000) NOT NULL,
+  `fechainicio` varchar(20) NOT NULL,
+  `fechafin` varchar(20) NOT NULL
  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

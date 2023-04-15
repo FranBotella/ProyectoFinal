@@ -11,7 +11,16 @@
             <p>titulo</p>
 			<p>* <input  TYPE="text" NAME="titulo" VALUE="" PLACEHOLDER="titulo"> <br></p>
             <p>contenido</p>
-			<p>* <textarea  name="contenido" rows="20" cols="200"></textarea><br></p>
+            <p>* <textarea  name="contenido" rows="20" cols="200"></textarea><br></p>
+         <p>Fecha inicio</p>
+                <input id="datepicker" name="fechain" VALUE="" type="text"></input>   
+                <br>
+            <label>Fecha Fin</label>
+            <br>
+            <input id="datepicker2" name="fechafin" VALUE="" type="text"></input>   
+            <br>
+           
+			
                 <label>subir imagen :</label><br>
                 <input type="file" name="imagen" id="imagen"/>
                 <br>

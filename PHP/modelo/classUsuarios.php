@@ -19,15 +19,17 @@ public function registrarse($user,$pass,$email){
         return $result; 
 }
 
-public function insertarP($titulo,$imagen,$contenido){
+public function insertarP($titulo,$imagen,$contenido,$fechaini,$fechafin){
   
     
     
-    $consulta = " INSERT INTO post (titulo, imagen, contenido) VALUES (:titulo, :imagen, :contenido)";
+    $consulta = " INSERT INTO post (titulo, imagen, contenido,fechainicio,fechafin) VALUES (:titulo, :imagen, :contenido,:fechaini,:fechafin)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':titulo', $titulo);
         $result->bindParam(':imagen', $imagen);
         $result->bindParam(':contenido', $contenido);
+        $result->bindParam(':fechaini', $fechaini);
+        $result->bindParam(':fechafin', $fechafin);
         $result->execute();
       
         return $result; 
@@ -227,11 +229,28 @@ public function checkPassword($user, $password)
             return $contenido;
         }
 
+
+        public function getFechaFin($id){
+            $consulta="SELECT * FROM post WHERE id=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $fechafin=$result['fechafin'];
+                
+            }
+            return $fechafin;
+        }
+
+
         public function contadorPost(){
-            $consulta="SELECT * FROM post";
+            $consulta="SELECT MAX(id) FROM post";
             $resultado=$this->conexion->prepare($consulta);
             $resultado->execute();
-            $numero=$resultado->rowCount();
+            foreach($resultado as $result){
+                $numero=$result['MAX(id)'];
+                
+            }
             return $numero;
         }
     

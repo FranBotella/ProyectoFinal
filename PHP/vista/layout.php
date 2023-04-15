@@ -8,7 +8,9 @@
 <link rel="stylesheet" type="text/css" href="<?php echo 'css/'.Config::$mvc_vis_css ?>" />
 <link rel="stylesheet" href="css/normalizar.css">
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+
 <!-- paypol -->
 <script src="https://www.paypal.com/sdk/js?client-id=<?php echo $_SESSION['clienteid'] ?>&currency=USD"></script>
  
@@ -56,5 +58,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../JS/functiones.js"></script>
+<script src="../JS/jquery.js"></script>
+<script src="../JS/jquery-ui.min.js"></script>
+<script >
+    
+        $("#datepicker").datepicker();
+   
+</script>
+<script >
+    
+        $("#datepicker2").datepicker();
+   
+</script>
 </body>
 </html>

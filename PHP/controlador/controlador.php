@@ -95,6 +95,29 @@ class Controller {
         require __DIR__ . '/../vista/eventos.php';
     }
 
+
+    public function tienda(){
+        try {
+            $post = new Usuarios();
+
+            $nivel= $post->consultarUsuario($_SESSION["user"]);
+         
+           
+        } catch (PDOException $e) {
+            error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+            // save errors
+            $errorsGuide['NoGuide'] = "Ha habido un error <br>";
+        }
+
+
+
+
+        $menu=$this->cargaMenu();
+        require __DIR__ . '/../vista/tienda.php';
+    }
+
+
+
 public function insertarP(){
     $nameFile = "";
     $dir = "../../img";
@@ -108,10 +131,13 @@ public function insertarP(){
         $titulo = recoge('titulo');
         $contenido = recoge('contenido');
         $imagen=$_FILES['imagen']['name'];
+        $fechaini=recoge('fechain');
+        $fechafin=recoge('fechafin');
+        echo $fechaini;
         try {
                         
             $l = new Usuarios();
-            $l->insertarP( $titulo,$imagen , $contenido  );
+            $l->insertarP( $titulo,$imagen , $contenido,$fechaini,$fechafin  );
             
             header("location:index.php?ctl=eventos");
         } catch (Exception $e) {

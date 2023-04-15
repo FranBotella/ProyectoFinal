@@ -20,7 +20,21 @@ for ($i=0; $i <=$postContador ; $i++) {
             $i++ ;
             $postValidar = $post2->  getIdPostValidar($i);
           }
+
+          $dia=strval(date('d'));
+          $mes=strval(date('m'));
+          $anyo=strval(date('Y'));
+          
         if($postValidar==1){
+            $postFechafin = $post2-> getFechaFin($i);
+          $sacarM=strval(substr($postFechafin,0,2));
+          $sacarD=strval(substr($postFechafin,3,2));
+          $sacarY=strval(substr($postFechafin,6,4));
+        
+
+          if($sacarY<=$anyo){
+            if($sacarM<=$mes){
+                if($sacarD>$dia){
             $postTitulo = $post2-> getTitulo($i);
             $postId = $post2->getIdPost($i);
         $postContenido = $post2-> getContenido($i);
@@ -31,6 +45,10 @@ for ($i=0; $i <=$postContador ; $i++) {
         echo "<p>$postContenido</p>";
         echo "</div>";
         }
+    }
+}
+
+    }
        
     } catch (PDOException $e) {
         error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
