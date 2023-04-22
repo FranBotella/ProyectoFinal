@@ -156,9 +156,9 @@ paypal.Buttons({
 
 
 }
-
-
 const elementosBlog=document.querySelectorAll(".tituloblog");
+if(elementosBlog!=null){
+
 console.log(document.getElementsByClassName("blog"));
 console.log(elementosBlog);
 
@@ -191,3 +191,103 @@ elementosBlog.forEach(e => {
      
   })
 })
+}
+
+
+
+
+const generoTienda=document.querySelectorAll(".genres");
+console.log(generoTienda);
+
+  generoTienda.forEach(nombregeneros => {
+     nombregeneros.addEventListener('click',()=>{
+     var  genero2=nombregeneros.innerHTML;
+ 
+      console.log(genero2);
+
+
+      // $.ajax({
+      //   data:{'genero':genero2},
+      //   url:'../vista/tienda.php',
+      //   type:'POST',
+       
+      // }
+      
+//       $.post('index.php?ctl=tienda',{genero:genero2
+       
+        
+        
+       
+//       },function(data){
+//         if(data!=null){
+//           alert("se envio cositas "+genero2);
+//         }
+//       }
+    
+  
+// );
+
+var padre= document.getElementById("formulario");
+var elemento=document.createElement("input");
+elemento.setAttribute("type","hidden");
+elemento.setAttribute("name","valorSesion");
+elemento.setAttribute("value",genero2);
+padre.appendChild(elemento);
+padre.submit();
+document.getElementById("borrar").remove();
+
+})
+  });
+
+
+
+  const CantidadCarrito=document.querySelectorAll(".cantidadCarrito");
+
+  console.log(CantidadCarrito);
+   var cantidad=0;
+  if(CantidadCarrito!=null){
+    const PrecioCarrito=document.querySelectorAll(".precioCarrito");
+   var padre2= document.getElementById("carritoFORM");
+    CantidadCarrito.forEach(cantidades => {
+    
+      
+    cantidad=cantidad+(parseInt(cantidades.value)*parseInt(cantidades.previousElementSibling.previousElementSibling.previousElementSibling.innerText));
+    console.log(cantidad);
+  cantidades.addEventListener('click',()=>{
+    cantidad=0;
+    CantidadCarrito.forEach(cantidades1 =>{
+      console.log(cantidades1);
+     
+      cantidad=cantidad+(parseInt(cantidades1.value)*parseInt(cantidades1.previousElementSibling.previousElementSibling.previousElementSibling.innerText));
+    })
+    document.getElementById("CTOTAL").innerText=cantidad;
+   
+})
+document.getElementById("CTOTAL").innerText=cantidad;
+    // console.log(cantidades.previousElementSibling.previousElementSibling.previousElementSibling.innerText);
+    
+    })
+   
+
+  
+}
+const QuitarProducto=document.querySelectorAll(".BCarrito");
+
+const insertarProductoAEliminar=document.getElementById("bCarrito2");
+var padre3= document.getElementById("carritoFORM2");
+
+QuitarProducto.forEach(quitar => {
+ 
+quitar.addEventListener('click', () => {
+  
+  console.log(quitar.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.value);
+  insertarProductoAEliminar.value=quitar.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.value;
+  padre3.submit();
+
+
+  
+
+
+  // window.location.href ='index.php?ctl=carrito';
+})
+  })

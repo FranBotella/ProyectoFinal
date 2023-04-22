@@ -33,6 +33,8 @@ $map = array(
     'donaciones'=>array('controller'=>'Controller','action'=>'donaciones','nivel_usuario'=>1),
     'eventos'=>array('controller'=>'Controller','action'=>'eventos','nivel_usuario'=>1),
     'tienda'=>array('controller'=>'Controller','action'=>'tienda','nivel_usuario'=>1),
+    'carrito'=>array('controller'=>'Controller','action'=>'carrito','nivel_usuario'=>1),
+    'borrarElementoCarrito'=>array('controller'=>'Controller','action'=>'borrarElementoCarrito','nivel_usuario'=>1),
     'salir' => array('controller' =>'Controller', 'action' =>'salir', 'nivel_usuario'=>1),
     'insertarP' => array('controller' =>'Controller', 'action' =>'insertarP', 'nivel_usuario'=>1)
               

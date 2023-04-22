@@ -90,6 +90,22 @@ public function getLevel($nameUser){
    }
    return $numero;
 }
+
+public function getIDUser($nameUser){
+    $consulta="SELECT * FROM `usuarios`where nombre=?;";
+    $stmt=$this->conexion->prepare($consulta);
+    $stmt->bindParam(1,$nameUser);
+    $stmt->execute();
+    $resultado=$stmt;
+    foreach($resultado as $result){
+       $numero=$result['id'];
+    
+   }
+   return $numero;
+}
+
+
+
 public function getUser($user)
         {
             $consulta = "SELECT * FROM usuarios WHERE nombre=:user";
@@ -252,6 +268,218 @@ public function checkPassword($user, $password)
                 
             }
             return $numero;
+        }
+
+    
+
+
+        public function getIdProducto($id,$genero){
+            $consulta="SELECT * FROM productos WHERE id=? and genero=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->bindParam(2, $genero);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $id=$result['id'];
+                
+            }
+            return $id;
+        }
+
+        public function getIdProductoValidar($id,$genero){
+            $consulta="SELECT * FROM productos WHERE id=? and genero=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->bindParam(2, $genero);
+            $resultado->execute();
+            $verdad=false;
+            foreach($resultado as $result){
+                $id=$result['id'];
+                $verdad=true;
+            }
+            return $verdad;
+        }
+
+
+
+
+
+        public function getTituloProducto($id,$genero){
+            $consulta="SELECT * FROM productos WHERE id=? and genero=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->bindParam(2, $genero);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $titulo=$result['titulo'];
+                
+            }
+            return $titulo;
+        }
+        public function getImagenProducto($id,$genero){
+            $consulta="SELECT * FROM productos WHERE id=? and genero=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->bindParam(2, $genero);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $imagen=$result['imagen'];
+                
+            }
+            return $imagen;
+        }
+        public function getContenidoProducto($id,$genero){
+            $consulta="SELECT * FROM productos WHERE id=? and genero=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->bindParam(2, $genero);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $contenido=$result['contenido'];
+                
+            }
+            return $contenido;
+        }
+        public function getprecioProducto($id,$genero){
+            $consulta="SELECT * FROM productos WHERE id=? and genero=?"  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $id);
+            $resultado->bindParam(2, $genero);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $contenido=$result['precio'];
+                
+            }
+            return $contenido;
+        }
+
+
+       
+
+        public function contadorProductos($genero){
+            $consulta="SELECT COUNT(genero) FROM productos WHERE  genero=?";
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $genero);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $numero=$result['COUNT(genero)'];
+                
+            }
+            return $numero;
+        }
+
+
+
+
+
+        public function insertarCarrito($idProducto,$idUsuario,$tituloProducto,$fechaCompra,$estadoPedido,$precio,$cantidad){
+  
+    
+    
+            $consulta = " INSERT INTO carrito (idProducto, idUsuario, tituloProducto,fechaCompra,estadoPedido,precio,cantidad) VALUES (:idProducto, :idUsuario, :tituloProducto,:fechaCompra,:estadoPedido,:precio,:cantidad)";
+                $result = $this->conexion->prepare($consulta);
+                $result->bindParam(':idProducto', $idProducto);
+                $result->bindParam(':idUsuario', $idUsuario);
+                $result->bindParam(':tituloProducto', $tituloProducto);
+                $result->bindParam(':fechaCompra', $fechaCompra);
+                $result->bindParam(':estadoPedido', $estadoPedido);
+                $result->bindParam(':precio', $precio);
+                $result->bindParam(':cantidad', $cantidad);
+      
+                $result->execute();
+              
+                return $result; 
+        } 
+
+
+
+
+
+
+        public function BorrarElementoCarrito($tituloProducto){
+            
+    
+    
+            $consulta = " DELETE FROM carrito  where  tituloProducto=?";
+                $result = $this->conexion->prepare($consulta);
+                $result->bindParam(1, $tituloProducto);
+               
+      
+                $result->execute();
+              
+                return $result; 
+        } 
+
+
+
+
+
+
+
+
+        public function getTituloProductoCarrito($idUsu,$pendiente){
+            $consulta="SELECT tituloProducto FROM carrito WHERE idUsuario=? and estadoPedido=? "  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $idUsu);
+            $resultado->bindParam(2, $pendiente);
+            $resultado->execute();
+            $array=$resultado->fetchAll();
+          
+            return $array;
+        }
+
+        public function getPrecioProductoCarrito($idUsu,$pendiente){
+            $consulta="SELECT precio FROM carrito WHERE idUsuario=? and estadoPedido=? "  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $idUsu);
+            $resultado->bindParam(2, $pendiente);
+            $resultado->execute();
+            $array=$resultado->fetchAll();
+          
+            return $array;
+        }
+
+
+        public function getCantidadProductoCarrito($idUsu,$pendiente){
+            $consulta="SELECT cantidad FROM carrito WHERE idUsuario=? and estadoPedido=? "  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $idUsu);
+            $resultado->bindParam(2, $pendiente);
+            $resultado->execute();
+            $array=$resultado->fetchAll();
+          
+            return $array;
+        }
+
+
+
+        public function getCarrito($idUsu,$pendiente){
+            $consulta="SELECT * FROM carrito WHERE idUsuario=? and estadoPedido=? "  ;
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $idUsu);
+            $resultado->bindParam(2, $pendiente);
+            $resultado->execute();
+            $array=$resultado->fetchAll();
+          
+            return $array;
+        }
+
+
+
+        public function actualizaCarrito( $precio,$cantidad,$estadoCambiado,$estado,$idUsu)
+        {
+           
+          $consulta="UPDATE `carrito` SET `precio` = ?, `cantidad` = ?,`estadoPedido`=? WHERE  estadoPedido=? and idUsuario=?";
+          $resultado = $this->conexion->prepare($consulta);
+        
+            $resultado->bindParam(1, $precio);
+        
+            $resultado->bindParam(2, $cantidad);
+            $resultado->bindParam(3, $estadoCambiado);
+           
+            $resultado->bindParam(4, $estado);
+            $resultado->bindParam(5, $idUsu);
+            $resultado->execute();
         }
     
 }

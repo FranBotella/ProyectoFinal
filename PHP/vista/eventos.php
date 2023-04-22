@@ -9,7 +9,7 @@
 <div id="borrar">
 <?php
 
-
+$tiempo=0;
 
 for ($i=0; $i <=$postContador ; $i++) { 
     try {
@@ -19,6 +19,10 @@ for ($i=0; $i <=$postContador ; $i++) {
         while($postValidar==0){
             $i++ ;
             $postValidar = $post2->  getIdPostValidar($i);
+            $tiempo++;
+            if($tiempo==500){
+                break;
+            }
           }
 
           $dia=strval(date('d'));

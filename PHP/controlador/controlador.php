@@ -97,11 +97,25 @@ class Controller {
 
 
     public function tienda(){
+          $_SESSION['carrito']=array();
         try {
             $post = new Usuarios();
-
+            if(isset($_POST['valorSesion'])){
+                echo $_POST['valorSesion'];
+               
+                $productosContador = $post ->contadorProductos($_POST['valorSesion']);
+                echo $productosContador;
+             }
+           
             $nivel= $post->consultarUsuario($_SESSION["user"]);
-         
+        //   echo  $_POST['genero'];
+        //     if(isset($_POST['genero'])){
+        //     $prueba=$_POST['genero'];
+        //    echo $_POST['genero'];
+          
+        //     }
+           
+            
            
         } catch (PDOException $e) {
             error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
@@ -115,6 +129,140 @@ class Controller {
         $menu=$this->cargaMenu();
         require __DIR__ . '/../vista/tienda.php';
     }
+
+
+
+
+
+
+
+    
+public function borrarElementoCarrito(){
+    try {
+        $post = new Usuarios();
+    $carritoElementoBorrado= $post->BorrarElementoCarrito($_POST['bCarrito']);
+      header("Location: ".$_SERVER['HTTP_REFERER']."");
+    } catch (PDOException $e) {
+        error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+        // save errors
+        $errorsGuide['NoGuide'] = "Ha habido un error <br>";
+    }
+    // header("Location: ".$_SERVER['HTTP_REFERER']."");
+}
+
+
+
+
+    public function carrito(){
+       
+ 
+       
+            $prueba=  recoge('idProducto');
+     
+            echo $prueba;
+    
+            echo "<br>";
+            try {
+                $post = new Usuarios();
+                    $nivel= $post->consultarUsuario($_SESSION["user"]);
+                    $idUsu= $post->getIDUser($_SESSION["user"]);
+                    if(isset($_POST['bProducto'])){
+                    
+                       
+                  
+                        $fechaActual = date("d-m-Y");
+                        $estado="pendiente";
+                   
+                       $carrito= $post->insertarCarrito(recoge('idProducto'),$idUsu,recoge('tituloProducto'), $fechaActual,$estado,recoge('precioProducto'),recoge('cantidadP'));
+                    
+                    }
+                  
+                    if(isset($_POST['bCarrito'])){
+                    
+                        echo $_POST['bCarrito'] ;  
+                        // if($_POST['bCarrito']=="Confirmar"){
+                        $estado1="pendiente";
+                        $estado="confirmar";
+                     
+                       $carritoActualizado= $post->actualizaCarrito(recoge('precioProductoCarrito'),recoge('cantidadPCarrito'), $estado, $estado1, $idUsu);
+                    //     }
+                    //     else{
+                    //         echo "meme";
+                            // $carritoElementoBorrado= $post->BorrarElementoCarrito($_POST['bCarrito']);  
+                        // }
+                    }
+
+               
+                    
+               
+                    // $carritoElementoBorrado= $post->BorrarElementoCarrito(recoge('tituloProducto'));
+                    
+                    
+                   
+
+
+
+                } catch (PDOException $e) {
+                    error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+                    // save errors
+                    $errorsGuide['NoGuide'] = "Ha habido un error <br>";
+                }
+        
+             
+          
+        
+
+  
+            //volver atras
+            // header("Location: ".$_SERVER['HTTP_REFERER']."");
+        
+       
+     
+          
+    
+
+    $menu=$this->cargaMenu();
+    require __DIR__ . '/../vista/carrito.php';
+}
+
+public function insertarProducto(){
+    $nameFile = "";
+    $dir = "../../img";
+    $max_file_size = "51200000";
+    $extensions = array(
+        "jpg",
+        "png",
+        "gif"
+    );
+    if (isset($_POST['bPost'])) {
+        $titulo = recoge('titulo');
+        $contenido = recoge('contenido');
+        $imagen=$_FILES['imagen']['name'];
+        $fechaini=recoge('fechain');
+        $fechafin=recoge('fechafin');
+        echo $fechaini;
+        try {
+                        
+            $l = new Usuarios();
+            $l->insertarP( $titulo,$imagen , $contenido,$fechaini,$fechafin  );
+            
+            header("location:index.php?ctl=eventos");
+        } catch (Exception $e) {
+            
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+            header("location:index.php?ctl=eventos");
+        } 
+    }
+   
+    $menu=$this->cargaMenu();
+    require __DIR__ . '/../vista/insertarProducto.php';   
+}
+
+
+
+
+
+
 
 
 
