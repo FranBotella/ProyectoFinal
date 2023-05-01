@@ -1,10 +1,16 @@
 <?php ob_start() ?>
 
 <?php $contenido = ob_get_clean() ?>
+<!-- botones de administrador para insertar y eliminar blogs en la base de datos -->
 <?php if( $nivel==1){?>
+    <div id="botonesAdminEventos">
 <form id="formuInsertar" ACTION="index.php?ctl=insertarP" METHOD="post" NAME="formInsertar">
 <input type="submit" class="buttonForm" name="insertar" value="insertar" />
 </form>
+<form id="formuInsertar" ACTION="index.php?ctl=eliminarP" METHOD="post" NAME="formEliminar">
+<input type="submit" class="buttonForm" name="bEliminar" value="eliminar" />
+</form>
+</div>
 <?php }?>
 <div id="borrar">
 <?php
@@ -30,6 +36,7 @@ for ($i=0; $i <=$postContador ; $i++) {
           $anyo=strval(date('Y'));
           
         if($postValidar==1){
+            // las comporbaciones de fechas es para verificar que si ese vento se ha caducado o no en funcion de la fecha actual 
             $postFechafin = $post2-> getFechaFin($i);
           $sacarM=strval(substr($postFechafin,0,2));
           $sacarD=strval(substr($postFechafin,3,2));
@@ -45,6 +52,7 @@ for ($i=0; $i <=$postContador ; $i++) {
         $postImagen = $post2-> getImagen($i);
         echo "<div id=$postId class=blog>";
         echo "<a class=tituloblog >$postTitulo </a>";
+        
         echo "<img class=imagenesEve src=./img/root/$postImagen></img>";
         echo "<p>$postContenido</p>";
         echo "</div>";
@@ -69,9 +77,30 @@ for ($i=0; $i <=$postContador ; $i++) {
 <div  class=" pie ">
 		<div  >
 			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			<div id="textoFooter">
+			<p>Contáctanos</p>
+	<p>Asociación GUP
+
+C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
+
+</p>
+<p>
+
+Teléfono 616420909
+
+</p>
+<p>
+
+asociaciongup@hotmail.es
+
+
+
+</p>
+<a  href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+</div>
 			</div>
+		
 		</div>
 	</div>
 	</footer>

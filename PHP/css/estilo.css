@@ -5,7 +5,8 @@
 }
 /* BARRA MENU */
 .menu{
-	background-color:   #FAF41A;
+    background-color:rgb(201,93,183) ;
+
     box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.767); /*Sombreado*/
     
 
@@ -19,33 +20,41 @@
 	color: black;
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     text-decoration: none;
-    font-family: 'Anton';
+    font-family: 'Barlow',bold;
     font-size:medium;
  
     
 }
  #imgTXT{
-    background-color: #c1c1c1;
+    background-color: #F0F0ED;
     text-align: center;
   width: 100%;
+
  /* height: 100%; */
 }
 
 #imgInfo{
-    height: 350px;
-    width: 350px;
+    height: 500px;
+    width: 500px;
     margin-top: 5%;
     margin-bottom: 5%;
 
 }
-
+#textoFooter{
+    text-align: center;
+}
 #txtInfo{
     background-color: white;
     margin: 2%;
-    font-family: 'Noto Serif' , serif;
+    font-family: 'Barlow', sans-serif;
   font-size:11px;
 overflow: hidden;
+text-align:left;
+padding: 2%;
 
+}
+#D{
+    font-family: 'Barlow', sans-serif;
 }
 #formuRegistro{
     background-color: #c1c1c1;
@@ -76,8 +85,7 @@ overflow: hidden;
 	color: rgba(200, 119, 119, 1);
 }
 #body{
-    background-color:#c21ce2 ;
-
+    background-color:rgb(125,20,107) ;
 
 }
 #logo{
@@ -98,8 +106,8 @@ overflow: hidden;
     height: 500px;
 }
 #socialMedia{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
    margin-top: 5%;
  
 }
@@ -131,7 +139,7 @@ overflow: hidden;
     height: 100%;
 }
 #demo2{
-    height: 50%;
+    height: 60%;
 }
 footer{
     /* background-position: center bottom; */
@@ -158,6 +166,7 @@ span{
     border: black 2px solid;
     font-size:x-large;
     height: 800px;
+    font-family: 'Barlow', sans-serif;
 }
 label, input {
     margin-top: 10px;
@@ -175,7 +184,7 @@ label, input {
  #donaciones {
     display: flex;
     flex-direction: column;
-    background-color: #FAF41A;
+    background-color:rgb(201,93,183) ;
     border: #232323 2px solid;
  } 
 
@@ -219,6 +228,7 @@ margin-left: 35%;
 #titulo_causa{
     margin-left: 35%;
     font-size: x-large;
+    color: white;
 }
 #divCausa{
     /* height: 210px; */
@@ -228,14 +238,16 @@ margin-left: 35%;
     font-size: xx-large;
 }
 .blog{
-    height: 260px;
+    height: 200px;
    display: flex;
    flex-direction: column;
    text-align: center;
-    background-color: aqua;
+    background-color: white;
     border: 2px solid black;
     overflow: hidden;
-  width: 100%;
+  width: 60%;
+  justify-content: center;
+  margin-left: 20%;
 }
 
 .imagenesEve{
@@ -253,32 +265,129 @@ margin-left: 35%;
     overflow: visible;
   width: 100%;
 }
-#tabla_tienda{
-    border: 2px solid black;
+
+.tabla_tienda{
+    
+
+
+   color: black;
+
+}
+tbody{
+    background-color: #F0F0ED;
+}
+.tabla_tienda tr{
+    border: 1px solid black;
+    text-align: center;
+
+}
+.tabla_tienda th img{
+margin-left: 80%;
+
+}
+.tabla_tienda th .tituloProductoTienda{
+    margin-left: 50%;
+    }
+.tabla_tienda   {
+display: flex;
+
+    }
+
+
+#botonesAdminEventos{
+    display: flex;
+    justify-content: center;
+}
+#borrar{
+    height: 760px;
+    font-family: 'Barlow', sans-serif;
+
+}
+
+#botonesAdminTienda{
+    display: flex;
+    justify-content: center;
+}
+#categorias{
+    display: flex;
+    justify-content: center;  
+    border: 2px solid white;
+    background-color: lightsalmon;
+    font-family: 'Barlow', bold;
+    width: 80%;
+  margin-left: 12%;
+}
+#categorias a{
+    padding: 10px;
+    color: black;
+}
+.Añadir{
+    background-color: red;
+    color: white;
+}
+table{
+   display: flex;
+   justify-content: center; 
+}
+table input{
     text-align: center;
 }
-#tabla_tienda tr{
-    border: 2px solid black;
+#carritoFORM{
+text-align: center;
+
+width: 50%;
+margin-left:40% ;
+
+}
+#carritoFORM *{
+ 
+    border: 1px solid black;
+
+    
+    }
+    #carritoForm div {
+      background-color: #F0F0ED;
+    }
+    #carritoForm div * {
+        background-color: white;
+      }
+    #CTOTAL{
+        color: black;
+        background-color: #F0F0ED;
+    }
+#carritoFORM input{
+    text-align: center;
+}
+#formularios{
+   display: flex; 
+   height: 800px;
+   font-family: 'Barlow', sans-serif;
+}
+#carritoFORM{
+    height: 800px;
+}
+#bCarrito1{
+background-color: red;
 }
 @media only screen and (min-width:920px) and (max-width: 1920px){
     #txtInfo{
         background-color: white;
         margin: 2%;
         font-family: 'Noto Serif' , serif;
-      font-size:18px;
+      font-size:20px;
     
     
     }
     #imgInfo{
-        height: 300px;
-        width: 450px;
+        height: 580px;
+        width: 1100px;
         margin-top: 5%;
         margin-bottom: 5%;
     
     }
     #socialMedia{
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
        margin-top: 1%;
       
     }
@@ -291,13 +400,17 @@ margin-left: 35%;
         height: 600px;
     }
     #demo2{
-        height: 60%;
+        /* height: 70%; */
+        width: 50%;
+        margin-left: 23%;
+        height: 70%;
     }
     #donaciones {
         display: flex;
         flex-direction:row;
-        background-color: #FAF41A;
+        background-color:rgb(201,93,183) ;
         border: #232323 2px solid;
+        justify-content: center;
      } 
      #modal{
      margin-left: 35%;
@@ -305,10 +418,11 @@ margin-left: 35%;
      }
      #perfilForm{
 
-        background-color: #c1c1c1;
+        background-color: #F0F0ED;
         border: black 2px solid;
         font-size:xx-large;
         height: 800px;
+
     }
     .box img {
         width: 300px;
@@ -323,15 +437,53 @@ margin-left: 35%;
         color: black;
         /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
         text-decoration: none;
-        font-family: 'Anton';
+        font-family: 'Barlow',bold;
         font-size:xx-large;
      
         
     }
+    .blog img{
+   margin-left: 48%;
+    }
+    #categorias{
+        display: flex;
+        justify-content: center;  
+        border: 2px solid white;
+        background-color: lightsalmon;
+        
+        width: 38%;
+      margin-left: 35%;
+    }
+    #carritoFORM{
+        text-align: center;
+        
+        width: 20%;
+        margin-left:40% ;
+        
+        }
+        .blog{
+            height: 150px;
+           display: flex;
+           flex-direction: column;
+           text-align: center;
+            background-color: white;
+            border: 2px solid black;
+            overflow: hidden;
+          width: 30%;
+          justify-content: center;
+          margin-left: 35%;
+        }
+  
   
   }
-  @media only screen and (min-width:100px) and (max-width: 919px)  {
-  
+  @media only screen and (min-width:700px) and (max-width: 919px)  {
+    /* #imgInfo{
+        height: 550px;
+        width: 1100px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    
+    } */
   }
   @media only screen and (min-width: 401px) and (max-width: 500px) {
 

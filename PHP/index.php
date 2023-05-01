@@ -1,5 +1,5 @@
 <?php
-// Tania Romero - DWS Semipresencial
+
 
 require_once __DIR__ . '/modelo/config.php';
 require_once __DIR__ . '/modelo/modelo.php';
@@ -28,6 +28,7 @@ $map = array(
     'registro' => array('controller' =>'Controller', 'action' =>'registro', 'nivel_usuario'=>0),
     'enviarCodigo'=>array('controller'=>'Controller','action'=>'enviarCodigo','nivel_usuario'=>0),
     'recibirCodigo'=>array('controller'=>'Controller','action'=>'recibirCodigo','nivel_usuario'=>0),
+    'recuperarContrasenya'=>array('controller'=>'Controller','action'=>'recuperarContrasenya','nivel_usuario'=>0),
     'error' => array('controller' =>'Controller', 'action' =>'error', 'nivel_usuario'=>0),
     'perfil'=>array('controller'=>'Controller','action'=>'perfil','nivel_usuario'=>1),
     'donaciones'=>array('controller'=>'Controller','action'=>'donaciones','nivel_usuario'=>1),
@@ -35,8 +36,13 @@ $map = array(
     'tienda'=>array('controller'=>'Controller','action'=>'tienda','nivel_usuario'=>1),
     'carrito'=>array('controller'=>'Controller','action'=>'carrito','nivel_usuario'=>1),
     'borrarElementoCarrito'=>array('controller'=>'Controller','action'=>'borrarElementoCarrito','nivel_usuario'=>1),
+    'insertarElementoCarrito'=>array('controller'=>'Controller','action'=>'insertarElementoCarrito','nivel_usuario'=>1),
     'salir' => array('controller' =>'Controller', 'action' =>'salir', 'nivel_usuario'=>1),
-    'insertarP' => array('controller' =>'Controller', 'action' =>'insertarP', 'nivel_usuario'=>1)
+    'insertarP' => array('controller' =>'Controller', 'action' =>'insertarP', 'nivel_usuario'=>1),
+    'eliminarP' => array('controller' =>'Controller', 'action' =>'eliminarP', 'nivel_usuario'=>1),
+    'insertarProducto' => array('controller' =>'Controller', 'action' =>'insertarProducto', 'nivel_usuario'=>1),
+    'eliminarProducto' => array('controller' =>'Controller', 'action' =>'eliminarProducto', 'nivel_usuario'=>1),
+    'editarPrecioProducto' => array('controller' =>'Controller', 'action' =>'editarPrecioProducto', 'nivel_usuario'=>1)
               
     
     

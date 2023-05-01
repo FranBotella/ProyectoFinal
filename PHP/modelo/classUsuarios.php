@@ -34,6 +34,22 @@ public function insertarP($titulo,$imagen,$contenido,$fechaini,$fechafin){
       
         return $result; 
 } 
+
+
+
+public function eliminarP($titulo){
+  
+    
+    
+    $consulta = " DELETE FROM post where titulo=?";
+        $result = $this->conexion->prepare($consulta);
+     
+        $result->bindParam(1, $titulo);
+
+        $result->execute();
+      
+        return $result; 
+} 
       
 public function consultarUsuario($user) {
     $consulta = "SELECT * FROM usuarios where nombre=:user";
@@ -395,16 +411,66 @@ public function checkPassword($user, $password)
 
 
 
+        public function insertarProducto($genero,$titulo,$imagen,$contenido,$precio){
+  
+    
+    
+            $consulta = " INSERT INTO productos (genero, titulo,imagen,contenido,precio) VALUES (:genero, :titulo, :imagen,:contenido,:precio)";
+                $result = $this->conexion->prepare($consulta);
+                $result->bindParam(':genero', $genero);
+                $result->bindParam(':titulo', $titulo);
+                $result->bindParam(':imagen', $imagen);
+                $result->bindParam(':contenido', $contenido);
+                $result->bindParam(':precio', $precio);
+                $result->execute();
+              
+                return $result; 
+        } 
 
-        public function BorrarElementoCarrito($tituloProducto){
+
+        public function eliminarProducto($genero,$titulo){
+  
+    
+    
+            $consulta = " DELETE FROM productos  where genero=? and titulo=?";
+                $result = $this->conexion->prepare($consulta);
+                $result->bindParam(1, $genero);
+                $result->bindParam(2, $titulo);
+      
+                $result->execute();
+              
+                return $result; 
+        } 
+
+
+        public function editarPrecioProducto( $precio,$genero,$titulo)
+        {
+           
+          $consulta="UPDATE `productos` SET `precio` = ? WHERE  genero=? and titulo=?";
+          $resultado = $this->conexion->prepare($consulta);
+        
+            $resultado->bindParam(1, $precio);
+        
+            $resultado->bindParam(2, $genero);
+            $resultado->bindParam(3, $titulo);
+           
+            $resultado->execute();
+        }
+
+
+
+
+
+
+        public function BorrarElementoCarrito($tituloProducto,$estado,$idUsu){
             
     
     
-            $consulta = " DELETE FROM carrito  where  tituloProducto=?";
+            $consulta = " DELETE FROM carrito  where  tituloProducto=? and estadoPedido=? and idUsuario=?";
                 $result = $this->conexion->prepare($consulta);
-                $result->bindParam(1, $tituloProducto);
-               
-      
+                $result->bindParam(1,$tituloProducto);
+                $result->bindParam(2,$estado);
+                $result->bindParam(3,$idUsu);
                 $result->execute();
               
                 return $result; 
@@ -479,6 +545,32 @@ public function checkPassword($user, $password)
            
             $resultado->bindParam(4, $estado);
             $resultado->bindParam(5, $idUsu);
+            $resultado->execute();
+        }
+
+
+        public function getContrasenya($correo){
+            $consulta="SELECT * FROM usuarios WHERE  correo=?";
+            $resultado=$this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $correo);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $contrasenya=$result['contraseñaEncriptada'];
+                
+            }
+            return $contrasenya;
+        }
+
+
+        public function actualizaContrasenya($emailRecuperar, $contrasenyaNueva)
+        {
+           
+          $consulta="UPDATE `usuarios` SET `contraseñaEncriptada` = ? WHERE correo = ?";
+          $resultado = $this->conexion->prepare($consulta);
+        
+            $resultado->bindParam(1, $contrasenyaNueva);
+        
+            $resultado->bindParam(2, $emailRecuperar);
             $resultado->execute();
         }
     

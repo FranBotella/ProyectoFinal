@@ -1,11 +1,7 @@
 <?php ob_start() ?>
 	
-	<!-- <div class="container text-center p-4">
-		<div class="col-md-12" id="cabecera">
-			<h1 class="h1Inicio">Iniciar</h1>
-		</div>
-	</div> -->
-	
+
+	<!-- sacar mensajes de error si te has equivocado -->
 	<div class="container text-center py-2">
 		<div class="col-md-12">
 			<?php if(isset($params['mensaje'])) :?>
@@ -18,23 +14,26 @@
 			<?php } ?>
 		</div>
 	</div>
-	
+	<!-- formulario -->
 	<div class="container text-center p-1">
 		<form id="formuRegistro" ACTION="index.php?ctl=iniciarSesion" METHOD="post" NAME="formIniciar">
 		<br>	
 		<p>Usuario</p>
-		<p>* <input TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="usuario"> <br></p>
+		<p>* <input  TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="usuario" tabindex="1" > <br></p>
 		<p>Contraseña</p>
-		<i>Minimo 5 caracteres</i>	
-		<p>* <input id="password2" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
-		<input type="button" id="ojo2" value="Mostrar/ocultar contraseña"></input>
+		<i>Mínimo 5 caracteres</i>	
+		<p>* <input  id="password2" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña" tabindex="2" ><br></p>
+		<input type="button" role="button" id="ojo2" value="Mostrar/ocultar contraseña"></input>
 			<div id="BTNregistro">
 				<div class="botones">
 					<div >
 					<p>¿No tienes cuenta?</p>
-					<p><a href="index.php?ctl=registro">Registrarse</a></p>
+					<p><a role="link" href="index.php?ctl=registro" tabindex="3">Registrarse</a></p>
 					</div>
-					<input  id="BTN-BTNregistro" TYPE="submit" NAME="bIniciarSesion" VALUE="Iniciar Sesión"><br>
+					<div>
+					<p><a  role="link" href="index.php?ctl=recuperarContrasenya" tabindex="4">Recuperar Contrasenya</a></p>
+					</div>
+					<input   id="BTN-BTNregistro" TYPE="submit" NAME="bIniciarSesion" VALUE="Iniciar Sesión" tabindex="5" role="button"><br>
 				
 				</div>
 			</div>
@@ -46,9 +45,30 @@
 <div  class=" pie ">
 		<div  >
 			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			<div id="textoFooter">
+			<p>Contáctanos</p>
+	<p tabindex="6">Asociación GUP
+
+C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
+
+</p>
+<p tabindex="7">
+
+Teléfono 616420909
+
+</p>
+<p>
+
+asociaciongup@hotmail.es
+
+
+
+</p>
+<a  tabindex="8" role="link" aria-label="enlace a su pagina de facebook" href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a tabindex="9" role="link" aria-label="enlace a su pagina de instagram" href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+</div>
 			</div>
+		
 		</div>
 	</div>
 	</footer>

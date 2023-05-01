@@ -1,11 +1,7 @@
 <?php ob_start() ?>
 	
-	<!-- <div class="container text-center p-4">
-		<div class="col-md-12" id="cabecera">
-			<h1 class="h1Inicio">REGISTRARSE</h1>
-		</div>
-	</div> -->
-	
+
+	<!-- sacar mensajes de error -->
 	<div class="container text-center py-2">
 		<div class="col-md-12">
 			<?php if(isset($params['mensaje'])) :?>
@@ -18,53 +14,29 @@
 			<?php } ?>
 		</div>
 	</div>
-	<!-- <div> -->
-	<!-- <form  ACTION="index.php?ctl=enviarCodigo" METHOD="post" NAME="formcodigo"> -->
-
-	<!-- <p>EmailCodigo</p>
-			<p>* <input TYPE="text" NAME="emailCodigo" VALUE="
-			<?php 
-			// echo $params['email']
-			 ?>
-			" PLACEHOLDER="email"><br></p> -->
-
-	<!-- <input  class="col-sm-6" TYPE="submit" NAME="benviarCodigo" VALUE="ENVIAR"><br>
-			</form>
-	</div>
-
-
-	<form   METHOD="post" NAME="formcodigo"> -->
-		
-		<!-- <p>Codigo</p>
-				<p>* <input TYPE="text" NAME="Codigo" VALUE="<?php
-				//  echo $params['email']
-				  ?>" PLACEHOLDER="codigo"><br></p>
 	
-		<input  class="col-sm-6" TYPE="submit" NAME="bverificar" VALUE="VERIFICAR"><br>
-				</form>
-		</div> -->
-		
+		<!-- formulario -->
 	
 	<div class="container text-center p-1">
 		<form id="formuRegistro" ACTION="index.php?ctl=registro" METHOD="post" NAME="formRegistro">
 			<br>
 			<p>Usuario</p>
-			<p>* <input  TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="Usuario"> <br></p>
+			<p>* <input tabindex="1" TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="Usuario" aria-label="introducir usuario"> <br></p>
 			<p>Contraseña</p>
 			<i>Minimo 5 caracteres</i>
-			<p>* <input id="password" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña"><br></p>
+			<p>* <input tabindex="2" id="password" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña" aria-label="introducir contraseña"><br></p>
 		<input type="button" id="ojo2" value="Mostrar/ocultar contraseña"></input>
 			<p>Email</p>
-			<p>* <input TYPE="text" NAME="email" VALUE="<?php echo $params['email'] ?>" PLACEHOLDER="email"><br></p>
+			<p>* <input tabindex="3" TYPE="text" NAME="email" VALUE="<?php echo $params['email'] ?>" PLACEHOLDER="email" aria-label="introducir email"><br></p>
 			<div id="BTNregistro">
 				<div class="botones">
 					<div >
 					<p>¿Ya tienes cuenta?</p>
 					
-					<p><a href="index.php?ctl=iniciarSesion">IniciarSesion</a></p>
+					<p><a role="link" tabindex="4" href="index.php?ctl=iniciarSesion">IniciarSesion</a></p>
 					</div>
 				
-				<input id="BTN-BTNregistro"  TYPE="submit" NAME="bRegistro" VALUE="Registrarse"><br>
+				<input tabindex="5" role="button" id="BTN-BTNregistro"  TYPE="submit" NAME="bRegistro" VALUE="Registrarse"><br>
 				</div>
 			</div>
 		</form>
@@ -73,9 +45,30 @@
 <div  class=" pie ">
 		<div  >
 			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			<div id="textoFooter">
+			<p >Contáctanos</p>
+	<p tabindex="6">Asociación GUP
+
+C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
+
+</p>
+<p tabindex="7">
+
+Teléfono 616420909
+
+</p>
+<p tabindex="8">
+
+asociaciongup@hotmail.es
+
+
+
+</p>
+<a  tabindex="9" role="link" aria-label="enlace a su pagina de facebook" href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a tabindex="10" role="link" aria-label="enlace a su pagina de instagram" href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+</div>
 			</div>
+		
 		</div>
 	</div>
 	</footer>

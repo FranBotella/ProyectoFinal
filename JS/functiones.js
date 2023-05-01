@@ -1,3 +1,6 @@
+
+
+// ocultar contraseña o mostrar en iniciar sesion
 const hide = document.getElementById("ojo");
 if(hide!=null){
     hide.addEventListener('click', function(){
@@ -10,11 +13,11 @@ if(hide!=null){
            
        });
 }
-
+// ocultar contraseña o mostrar en registrar sesion
 const hide2 = document.getElementById("ojo2");
 if(hide2!=null){
     hide2.addEventListener('click', function(){
-        mostrar=document.getElementById("password2");
+        mostrar=document.getElementById("password");
                if(mostrar.type == "password"){
                    mostrar.type = "text";
                }else{
@@ -23,7 +26,7 @@ if(hide2!=null){
            
        });
 }
-
+// cambiar color al pasar raton sobre los precios en donaciones
 const changeColor=document.getElementById("donaciones");
 if(changeColor!=null){
     
@@ -36,7 +39,7 @@ if(changeColor!=null){
          
         });
         changeColor.childNodes[i].addEventListener('mouseover',function(){
-            changeColor.childNodes[i].style.backgroundColor="#3D92F6";
+            changeColor.childNodes[i].style.backgroundColor="lightsalmon";
         });
      
 
@@ -44,7 +47,7 @@ if(changeColor!=null){
       }
 }
 
-
+// abrir dialogo al aceptar que causa y precio donar
 
 const btnContinuar=document.getElementById("BTN-BTNContinuar");
 if(btnContinuar!=null){
@@ -104,7 +107,7 @@ btnCerrar.addEventListener("click",()=>{
 
 
     
-
+// botones paypal
 paypal.Buttons({
   // Order is created on the server and the order id is returned
   createOrder() {
@@ -156,6 +159,7 @@ paypal.Buttons({
 
 
 }
+// al clickar en un blog se expande y ocupa toda la pagina
 const elementosBlog=document.querySelectorAll(".tituloblog");
 if(elementosBlog!=null){
 
@@ -195,7 +199,7 @@ elementosBlog.forEach(e => {
 
 
 
-
+// seleccionas un genero en tienda y se borra lo que hubiera y muestra los que has seleccionado
 const generoTienda=document.querySelectorAll(".genres");
 console.log(generoTienda);
 
@@ -203,35 +207,17 @@ console.log(generoTienda);
      nombregeneros.addEventListener('click',()=>{
      var  genero2=nombregeneros.innerHTML;
  
-      console.log(genero2);
-
-
-      // $.ajax({
-      //   data:{'genero':genero2},
-      //   url:'../vista/tienda.php',
-      //   type:'POST',
-       
-      // }
       
-//       $.post('index.php?ctl=tienda',{genero:genero2
-       
-        
-        
-       
-//       },function(data){
-//         if(data!=null){
-//           alert("se envio cositas "+genero2);
-//         }
-//       }
-    
-  
-// );
+
+
+ 
 
 var padre= document.getElementById("formulario");
-var elemento=document.createElement("input");
-elemento.setAttribute("type","hidden");
+var elemento=document.createElement("INPUT");
+elemento.setAttribute("type","text");
 elemento.setAttribute("name","valorSesion");
 elemento.setAttribute("value",genero2);
+
 padre.appendChild(elemento);
 padre.submit();
 document.getElementById("borrar").remove();
@@ -240,7 +226,7 @@ document.getElementById("borrar").remove();
   });
 
 
-
+// calcular precio total del carrito
   const CantidadCarrito=document.querySelectorAll(".cantidadCarrito");
 
   console.log(CantidadCarrito);
@@ -260,10 +246,10 @@ document.getElementById("borrar").remove();
      
       cantidad=cantidad+(parseInt(cantidades1.value)*parseInt(cantidades1.previousElementSibling.previousElementSibling.previousElementSibling.innerText));
     })
-    document.getElementById("CTOTAL").innerText=cantidad;
+    document.getElementById("CTOTAL").innerText="PrecioTotal:"+cantidad+"euros";
    
 })
-document.getElementById("CTOTAL").innerText=cantidad;
+document.getElementById("CTOTAL").innerText="PrecioTotal: "+cantidad+" euros";
     // console.log(cantidades.previousElementSibling.previousElementSibling.previousElementSibling.innerText);
     
     })
@@ -274,20 +260,40 @@ document.getElementById("CTOTAL").innerText=cantidad;
 const QuitarProducto=document.querySelectorAll(".BCarrito");
 
 const insertarProductoAEliminar=document.getElementById("bCarrito2");
-var padre3= document.getElementById("carritoFORM2");
+const insertarProductoAEliminar2=document.getElementById("elementoseleccionado");
+var padre3= document.querySelector("#carritoFORM2");
+console.log(document.getElementById("bCarrito2"));
+// quitar un producto d un carrito
 
 QuitarProducto.forEach(quitar => {
- 
+
 quitar.addEventListener('click', () => {
-  
+quitar.style.backgroundColor='red';
+
   console.log(quitar.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.value);
-  insertarProductoAEliminar.value=quitar.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.value;
-  padre3.submit();
+  insertarProductoAEliminar2.value=quitar.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.value;
 
+  
+
+  if(insertarProductoAEliminar.value!="borrar"){
+    console.log(padre3);
+   console.log(insertarProductoAEliminar.value);
+//  padre3.submit();
+ 
+
+  //  var a = setInterval(function(){ padre3.submit(); clearInterval(a);}, 3000);
+
+
+
+
+
+  }
 
   
 
 
-  // window.location.href ='index.php?ctl=carrito';
 })
   })
+
+
+

@@ -1,7 +1,7 @@
 <?php ob_start() ?>
 
 <?php $contenido = ob_get_clean() ?>
-
+<!-- seleccionas por generos y se despliega los obejtos que se han guardado en la base de datos -->
 <form  id="formulario" method="POST" action="index.php?ctl=tienda">
 <div class="categorias" id="categorias"> 
                 <a  class="genres" id="Ropa">Ropa</a>
@@ -13,11 +13,24 @@
                 </div>
     
                 </form>
-  
+  <br>
     <div id="borrar">
 
 <?php
-
+// botones administrador para insertar porductos,eliminarlos y cambiar precio a productos
+ if( $nivel==1){
+echo "<div id='botonesAdminTienda'>";
+echo "<form id='formuInsertar' ACTION='index.php?ctl=insertarProducto' METHOD='post' NAME='formInsertar'>";
+echo "<input type='submit' class='buttonForm' name='insertar' value='insertar' />";
+echo "</form>";
+echo "<form id='formuEliminar' ACTION='index.php?ctl=eliminarProducto' METHOD='post' NAME='formEliminar'>";
+echo "<input type='submit' class='buttonForm' name='eliminar' value='eliminar' />";
+echo "</form>";
+echo "<form id='formuEditar' ACTION='index.php?ctl=editarPrecioProducto' METHOD='post' NAME='formEditar'>";
+echo "<input type='submit' class='buttonForm' name='eliminar' value='editarPrecio' />";
+echo "</form>";
+echo "</div>";
+ }
  if(isset($_POST['valorSesion'])){
     
 $generoEscogido=$_POST['valorSesion'];
@@ -43,13 +56,14 @@ for ($i=0; $i <=$productosContador ; $i++) {
             $productoContenido = $post2-> getContenidoProducto($i,$generoEscogido);
         $productoImagen = $post2-> getImagenProducto($i,$generoEscogido);
         $precioProducto = $post2->  getprecioProducto($i,$generoEscogido); 
-        echo "<form  ACTION='index.php?ctl=carrito' METHOD='post' >";
+        echo "<br>";
+        echo "<form class='tiendaForm' ACTION='index.php?ctl=insertarElementoCarrito' METHOD='post' >";
         echo " <table id=$productoId class=tabla_tienda>";
         echo "<tr>";
         echo "<td><input type='hidden' name='idProducto' value='$productoId' ></input></td>";
         echo "</tr>";
         echo " <tr>";
-        echo " <th><input type='text' name='tituloProducto' value='$postProducto' readonly></input></th> ";
+        echo " <th><input type='text' name='tituloProducto' class='tituloProductoTienda' value='$postProducto' readonly></th> ";
         echo " </tr>";
        echo " <tr>";
        echo " <th><img class=imagenesEve src=./img/root/$productoImagen></img></th>";
@@ -66,7 +80,7 @@ for ($i=0; $i <=$productosContador ; $i++) {
        echo "<th><input type='number' name='cantidadP' ></input></th>";
        echo "</tr>";
        echo "<tr>";
-       echo "<th><input   TYPE='submit' NAME='bProducto' VALUE='Añadir'></th>";
+       echo "<th><input   TYPE='submit' NAME='bProducto' class='Añadir' VALUE='Añadir'></th>";
        echo " </table>";
        echo "</form>";
         }
@@ -91,12 +105,32 @@ for ($i=0; $i <=$productosContador ; $i++) {
 <div  class=" pie ">
 		<div  >
 			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			<div id="textoFooter">
+			<p>Contáctanos</p>
+	<p>Asociación GUP
+
+C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
+
+</p>
+<p>
+
+Teléfono 616420909
+
+</p>
+<p>
+
+asociaciongup@hotmail.es
+
+
+
+</p>
+<a  href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+</div>
 			</div>
+		
 		</div>
 	</div>
 	</footer>
-
 <?php $contenido = ob_get_clean() ?>
 <?php include 'layout.php' ?>

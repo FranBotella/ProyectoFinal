@@ -21,34 +21,7 @@
                     <input type="text" value="<?php echo $emailGet?>" name="Email" id="Email" class="slope"></input><br>
                 </div>
                
-                <?php
-                    try {
-                        $userLevel = $user->getLevel($_SESSION["user"]);
-                        if ($userLevel == 2) {
-                        //If the user is an admin (lvl 2), this code applies to perfil.php and they will be able to block users
-                ?>
-                <label class="bloquear">Block user :</label>
-                <div class="user-box">
-                    <input type="text" class="blockUser" name="blockUser"> </input><br>
-                </div>
-                <label class="bloquear">New password :</label>
-                <div class="user-box">
-                    <input type="text" class="blockText" name="blockText"> </input><br>
-                </div>
-                <input type="submit" class="buttonForm" name="submitBlock" value="Block" />
-                <br>
-                <?php
-                        }
-                        if (isset($_REQUEST['submitBlock'])) {
-                            $admin = new Administrador();
-                            $bloquearUsuaurio = $admin->modifyPassword($_REQUEST["blockText"], $_REQUEST["blockUser"]);
-                        }
-                    } catch (PDOException $e) {
-                        error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../   logBD.txt");
-                        // Save errors of user
-                        $errorsGuide['NoGuide'] = "Error <br>";
-                    }
-                ?>
+              
                 <label>Change image of profile :</label><br>
                 <input type="file" name="imagen" id="imagen"/>
                 <br>
@@ -77,9 +50,30 @@
 <div  class=" pie ">
 		<div  >
 			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			<div id="textoFooter">
+			<p>Contáctanos</p>
+	<p>Asociación GUP
+
+C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
+
+</p>
+<p>
+
+Teléfono 616420909
+
+</p>
+<p>
+
+asociaciongup@hotmail.es
+
+
+
+</p>
+<a  href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+</div>
 			</div>
+		
 		</div>
 	</div>
 	</footer>

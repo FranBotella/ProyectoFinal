@@ -426,4 +426,11 @@ function crypt_blowfish($password) {
     
     return $pass;
     }
+
+    function validarCorreo($correo){
+        if(filter_var($correo, FILTER_VALIDATE_EMAIL))
+            return true;
+            return false;
+    }
+
     ?>

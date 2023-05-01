@@ -6,65 +6,67 @@
 
 <div id="D">
 
-<div id="demo2" class="carousel slide " data-bs-ride="carousel">
+<div id="demo2" class="carousel slide " data-bs-ride="carousel" tabindex="1">
 
 <!-- Indicators/dots -->
 <div class="carousel-indicators">
-  <button type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
-  <button type="button" data-bs-target="#demo2" data-bs-slide-to="1"></button>
-  <button type="button" data-bs-target="#demo2" data-bs-slide-to="2"></button>
+  <button aria-label="boton primera imagen" role="button" type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
+  <button aria-label="boton segunda imagen" role="button" type="button" data-bs-target="#demo2" data-bs-slide-to="1"></button>
+  <button aria-label="boton tercera imagen" role="button" type="button" data-bs-target="#demo2" data-bs-slide-to="2"></button>
 </div>
 
 <!-- The slideshow/carousel -->
 <div class="carousel-inner">
   <div class="carousel-item active">
-    <img id="imgCarruselDonaciones" src="./img/prueba.jpg" alt="Los Angeles" class="d-block w-100">
+    <img id="imgCarruselDonaciones" src="./img/root/098.jpg" alt="niñosSenegal1" class="d-block w-100">
   </div>
   <div class="carousel-item">
-    <img id="imgCarruselDonaciones" src="./img/prueba2.jpg" alt="Chicago" class="d-block w-100">
+    <img id="imgCarruselDonaciones" src="./img/root/108.jpg" alt="niñosSenegal2" class="d-block w-100">
   </div>
   <div class="carousel-item">
-    <img id="imgCarruselDonaciones" src="./img/prueba3.jpg" alt="New York" class="d-block w-100">
+    <img id="imgCarruselDonaciones" src="./img/root/400.jpg" alt="niñosSenegal3" class="d-block w-100">
   </div>
   <div class="carousel-item">
-    <img id="imgCarruselDonaciones" src="./img/prueba4.jpg" alt="New York" class="d-block w-100">
+    <img id="imgCarruselDonaciones" src="./img/root/DSC08508.jpg" alt="niñosSenegal4" class="d-block w-100">
   </div>
 </div>
 
 <!-- Left and right controls/icons -->
-<button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
+<button aria-label="boton izquierda pasar imagen" role="button" class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
   <span class="carousel-control-prev-icon"></span>
 </button>
-<button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+<button aria-label="boton derecho pasar imagen" role="button" class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
   <span class="carousel-control-next-icon"></span>
 </button>
 </div>
+<!-- 
+solo funcionara el bootn de continuar se se ha seleccionado cuanto se va a donar y a que causa 
+sino no se despliega el dialogo para confirmar el pay pal  -->
 
-
-
-<p>Cuanto quiero aportar:</p>
+<br>
 <div id="donaciones" >
-    <div id="donar">25 euros</div>
-    <div id="donar">30 euros</div>
-    <div id="donar">50 euros</p></div>
+    <div id="donar" tabindex="2" aria-label="25 euros">25 euros</div>
+    <div id="donar" tabindex="3"  aria-label="30 euros">30 euros</div>
+    <div id="donar" tabindex="4"   aria-label="50 euros">50 euros</p></div>
     <div >Otra cantidad
-            <input type="text" id="precioDI"></input>
+            <input tabindex="5" type="number" id="precioDI" aria-label="introdducir cantidad"></input>
         </div>
 </div>
 <div id="divCausa">
-<p id="titulo_causa">SELECIONA LA CAUSA</p>
+<p id="titulo_causa" tabindex="6">SELECIONA LA CAUSA</p>
 <select name="titleD" id="titleD">
-  <option value="Senegal">Senegal</option>
-  <option value="Venezuela" >venezuela</option>
-  <option value="Rusia">Rusia</option>
+  <option role="option" value="Comedor Social">Comedor Social San José de Benimaclet</option>
+  <option  role="option" value="Albert Ballerini" >"Albert Ballerini"(Senegal)</option>
+  <option role="option" value="Asociacion" >Asociacion</option>
 </select>
 <br>
 <br>
 
-<input  id="BTN-BTNContinuar" TYPE="submit" NAME="Continuar" VALUE="Continuar">
+<input tabindex="7" id="BTN-BTNContinuar" TYPE="submit" NAME="Continuar" VALUE="Continuar">
 </div>
 <br>
 </div>
+<!-- ventana dialogo -->
 <dialog id="modal">
 <form method="dialog"  id="formModal">
 
@@ -79,7 +81,7 @@
 
     <!-- paypal -->
     <div id="paypal-button-container"></div>
-    <button id="btn-cerrar-modal" type="submit">Cerrar</button>
+    <button role="button" id="btn-cerrar-modal" type="submit">Cerrar</button>
     
 </form>
 </dialog>
@@ -88,9 +90,30 @@
 <div  class=" pie ">
 		<div  >
 			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
+			<div id="textoFooter">
+			<p>Contáctanos</p>
+	<p tabindex="8">Asociación GUP
+
+C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
+
+</p>
+<p tabindex="9">
+
+Teléfono 616420909
+
+</p>
+<p tabindex="10">
+
+asociaciongup@hotmail.es
+
+
+
+</p>
+<a tabindex="11" role="link" aria-label="enlace a su pagina de facebook" href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a tabindex="12" role="link" aria-label="enlace a su pagina de instagram" href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+</div>
 			</div>
+		
 		</div>
 	</div>
 	</footer>

@@ -7,9 +7,13 @@ class Controller {
     public function cargaMenu (){
         if ($_SESSION['nivel_usuario'] == 0) {
             return 'menuInvitado.php';
-        } else if ($_SESSION['nivel_usuario'] == 1) {
+        } else if ($_SESSION['nivel_usuario'] == 1 && $_SESSION["carritolleno"]!="lleno") {
             return 'menuUser.php';
-        } else if ($_SESSION['nivel_usuario'] == 2) {
+        }
+        else if ($_SESSION['nivel_usuario'] == 1 && $_SESSION["carritolleno"]=="lleno") {
+            return 'menuUserCarro.php';
+        }
+        else if ($_SESSION['nivel_usuario'] == 2) {
             return 'menuAdmin.php';
         }
 
@@ -28,7 +32,7 @@ class Controller {
             'fecha' => date('d-m-Y')
         );        
         $menu = 'menuInvitado.php';
-        if ($_SESSION['nivel_usuario'] >0) {
+        if ($_SESSION['nivel_usuario'] >=0) {
             header("location:index.php?ctl=inicio");
         }
       
@@ -53,7 +57,7 @@ class Controller {
 
 
     public function informacion() {
-        
+
         
         $params = array(
             'descripcion'=> 'Pequeña descripcion',
@@ -97,23 +101,19 @@ class Controller {
 
 
     public function tienda(){
-          $_SESSION['carrito']=array();
+         
         try {
             $post = new Usuarios();
+            $nivel= $post->consultarUsuario($_SESSION["user"]);
             if(isset($_POST['valorSesion'])){
-                echo $_POST['valorSesion'];
+                
                
                 $productosContador = $post ->contadorProductos($_POST['valorSesion']);
-                echo $productosContador;
+                
              }
            
             $nivel= $post->consultarUsuario($_SESSION["user"]);
-        //   echo  $_POST['genero'];
-        //     if(isset($_POST['genero'])){
-        //     $prueba=$_POST['genero'];
-        //    echo $_POST['genero'];
-          
-        //     }
+
            
             
            
@@ -137,11 +137,35 @@ class Controller {
 
 
     
-public function borrarElementoCarrito(){
+
+
+
+public function insertarElementoCarrito(){
     try {
         $post = new Usuarios();
-    $carritoElementoBorrado= $post->BorrarElementoCarrito($_POST['bCarrito']);
-      header("Location: ".$_SERVER['HTTP_REFERER']."");
+        $nivel= $post->consultarUsuario($_SESSION["user"]);
+        $idUsu= $post->getIDUser($_SESSION["user"]);
+        if(isset($_POST['bProducto'])){
+        
+           
+      
+            $fechaActual = date("d-m-Y");
+            $estado="pendiente";
+       
+           $carrito= $post->insertarCarrito(recoge('idProducto'),$idUsu,recoge('tituloProducto'), $fechaActual,$estado,recoge('precioProducto'),recoge('cantidadP'));
+// el campo carrito lleno es para cambiar la imagen de carrito de vacio a lleno cuando se inserta productos
+           $_SESSION["carritolleno"]="lleno";
+if($_SESSION["numeroCarrito"]>0){
+    // el ir sumando es para cuando vayamos a quitar productoas y no haya cambiar la imagen a carrito vacio cuando sea 0
+$_SESSION["numeroCarrito"]=$_SESSION["numeroCarrito"]+1;
+header("Location: ".$_SERVER['HTTP_REFERER'].""); 
+}
+      else{
+        
+        $_SESSION["numeroCarrito"]=1;
+header("Location: ".$_SERVER['HTTP_REFERER']."");
+      }
+        }
     } catch (PDOException $e) {
         error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
         // save errors
@@ -149,9 +173,6 @@ public function borrarElementoCarrito(){
     }
     // header("Location: ".$_SERVER['HTTP_REFERER']."");
 }
-
-
-
 
     public function carrito(){
        
@@ -166,36 +187,39 @@ public function borrarElementoCarrito(){
                 $post = new Usuarios();
                     $nivel= $post->consultarUsuario($_SESSION["user"]);
                     $idUsu= $post->getIDUser($_SESSION["user"]);
-                    if(isset($_POST['bProducto'])){
-                    
-                       
-                  
-                        $fechaActual = date("d-m-Y");
-                        $estado="pendiente";
                    
-                       $carrito= $post->insertarCarrito(recoge('idProducto'),$idUsu,recoge('tituloProducto'), $fechaActual,$estado,recoge('precioProducto'),recoge('cantidadP'));
                     
-                    }
+                    //  echo   $_SESSION["numeroCarrito"];
+                  
                   
                     if(isset($_POST['bCarrito'])){
                     
-                        echo $_POST['bCarrito'] ;  
+                        // echo $_POST['bCarrito'] ;  
                         // if($_POST['bCarrito']=="Confirmar"){
+                          
+                          
+                            if(recoge('elementoseleccionado')==""){
                         $estado1="pendiente";
                         $estado="confirmar";
                      
                        $carritoActualizado= $post->actualizaCarrito(recoge('precioProductoCarrito'),recoge('cantidadPCarrito'), $estado, $estado1, $idUsu);
-                    //     }
-                    //     else{
-                    //         echo "meme";
-                            // $carritoElementoBorrado= $post->BorrarElementoCarrito($_POST['bCarrito']);  
-                        // }
+                       $_SESSION["carritolleno"]="vacio";
+                            }
+                       else{
+                        $_SESSION["numeroCarrito"]= $_SESSION["numeroCarrito"]-1;
+                        if($_SESSION["numeroCarrito"]==0){
+                        $_SESSION["carritolleno"]="vacio";
+                        }
+                        $estado="pendiente";
+                        $carritoElementoBorrado= $post->BorrarElementoCarrito(recoge('elementoseleccionado'),$estado,$idUsu);
+                       }
+                
                     }
 
                
                     
                
-                    // $carritoElementoBorrado= $post->BorrarElementoCarrito(recoge('tituloProducto'));
+                  
                     
                     
                    
@@ -213,8 +237,7 @@ public function borrarElementoCarrito(){
         
 
   
-            //volver atras
-            // header("Location: ".$_SERVER['HTTP_REFERER']."");
+    
         
        
      
@@ -234,23 +257,22 @@ public function insertarProducto(){
         "png",
         "gif"
     );
-    if (isset($_POST['bPost'])) {
+    if (isset($_POST['bAñadir'])) {
         $titulo = recoge('titulo');
         $contenido = recoge('contenido');
         $imagen=$_FILES['imagen']['name'];
-        $fechaini=recoge('fechain');
-        $fechafin=recoge('fechafin');
-        echo $fechaini;
+       $precio=recoge('precio');
+       $genero=recoge('generos');
         try {
                         
             $l = new Usuarios();
-            $l->insertarP( $titulo,$imagen , $contenido,$fechaini,$fechafin  );
+            $l->insertarProducto($genero,$titulo,$imagen,$contenido,$precio);
             
-            header("location:index.php?ctl=eventos");
+            header("location:index.php?ctl=insertarProducto");
         } catch (Exception $e) {
             
             error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
-            header("location:index.php?ctl=eventos");
+            header("location:index.php?ctl=insertarProducto");
         } 
     }
    
@@ -258,6 +280,83 @@ public function insertarProducto(){
     require __DIR__ . '/../vista/insertarProducto.php';   
 }
 
+
+
+
+public function eliminarProducto(){
+   
+    if (isset($_POST['bEliminar'])) {
+        $titulo = recoge('titulo');
+        
+       $genero=recoge('generos');
+        try {
+                        
+            $l = new Usuarios();
+            $l->eliminarProducto($genero,$titulo);
+            
+            header("location:index.php?ctl=eliminarProducto");
+        } catch (Exception $e) {
+            
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+            header("location:index.php?ctl=eliminarProducto");
+        } 
+    }
+   
+    $menu=$this->cargaMenu();
+    require __DIR__ . '/../vista/eliminarProducto.php';   
+}
+
+
+
+public function eliminarP(){
+   
+    if (isset($_POST['bEliminar'])) {
+        $titulo = recoge('titulo');
+        
+       
+        try {
+                        
+            $l = new Usuarios();
+            $l->eliminarP($titulo);
+            
+            header("location:index.php?ctl=eliminarP");
+        } catch (Exception $e) {
+            
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+            header("location:index.php?ctl=eliminarP");
+        } 
+    }
+   
+    $menu=$this->cargaMenu();
+    require __DIR__ . '/../vista/eliminarP.php';   
+}
+
+
+
+
+
+public function editarPrecioProducto(){
+   
+    if (isset($_POST['bEditar'])) {
+        $titulo = recoge('titulo');
+        $precio=recoge('precio');
+       $genero=recoge('generos');
+        try {
+                        
+            $l = new Usuarios();
+            $l->editarPrecioProducto($precio,$genero,$titulo);
+            
+            header("location:index.php?ctl=editarPrecioProducto");
+        } catch (Exception $e) {
+            
+            error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+            header("location:index.php?ctl=editarPrecioProducto");
+        } 
+    }
+   
+    $menu=$this->cargaMenu();
+    require __DIR__ . '/../vista/editarPrecioProducto.php';   
+}
 
 
 
@@ -332,6 +431,46 @@ public function recibirCodigo(){
 require __DIR__ . '/../correos/recibe.php';
 }
 
+public function recuperarContrasenya(){
+    $contrasenya="";
+     
+    if (isset($_POST['brecuperarContrasenya'])) {
+        $correo = recoge('email');
+                try {
+                        
+                    $l = new Usuarios();
+                 $contrasenya= $l->getContrasenya($correo);
+                 
+                  
+                } catch (Exception $e) {
+                   
+                    // error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+                    // header("location:index.php?ctl=inicio");
+                } 
+            }
+            if (isset($_POST['bNuevaContrasenya'])) {
+                $contraseñaNueva = recoge('contraseñaNueva');
+                $correo2 = recoge('email2');
+                
+                try {
+                        
+                    $g = new Usuarios();
+                 $nuevaContrasenya=$g->actualizaContrasenya($correo2,$contraseñaNueva);
+                 
+                    header("location:index.php?ctl=inicio");
+                } catch (Exception $e) {
+                    // $l->deshacer();
+                    // error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+                    // header("location:index.php?ctl=inicio");
+                } 
+            
+            }
+
+require __DIR__ . '/../vista/recuperarContrasenya.php';
+}
+
+
+
 public function perfil(){
  
         try {
@@ -378,7 +517,7 @@ public function perfil(){
                 $user = recoge('user');
                 $pass = recoge('pass');
                 $email = recoge('email');
-                $emailCodigo = recoge('email'); 
+                $emailCodigo = validarCorreo('email'); 
                 cTexto($user, "user", $errores);
             
                 cPass($pass, "pass", $errores);
@@ -486,7 +625,8 @@ public function perfil(){
                         //     session_start();
                         // $_SESSION['nombreUsuario'] = $nombreUsuario ;
                         $_SESSION['email']=$m->getEmail($nombreUsuario);
-                        $_SESSION['user']= $nombreUsuario;             
+                        $_SESSION['user']= $nombreUsuario;    
+                        $_SESSION["carritolleno"]="vacio";         
                         header('Location: index.php?ctl=inicio');
                    }
                  
