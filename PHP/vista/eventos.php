@@ -13,6 +13,7 @@
 </div>
 <?php }?>
 <div id="borrar">
+
 <?php
 
 $tiempo=0;
@@ -50,12 +51,14 @@ for ($i=0; $i <=$postContador ; $i++) {
             $postId = $post2->getIdPost($i);
         $postContenido = $post2-> getContenido($i);
         $postImagen = $post2-> getImagen($i);
+       
         echo "<div id=$postId class=blog>";
         echo "<a class=tituloblog >$postTitulo </a>";
         
         echo "<img class=imagenesEve src=./img/root/$postImagen></img>";
         echo "<p>$postContenido</p>";
         echo "</div>";
+       
         }
     }
 }
@@ -72,6 +75,7 @@ for ($i=0; $i <=$postContador ; $i++) {
 }
 
 ?>
+
 </div>
 <footer>
 <div  class=" pie ">

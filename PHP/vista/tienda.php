@@ -36,14 +36,16 @@ echo "</div>";
 $generoEscogido=$_POST['valorSesion'];
 $tiempo=0;
 for ($i=0; $i <=$productosContador ; $i++) { 
+    $tiempo=0;
     try {
         $post2 = new Usuarios();
        
         $postValidar = $post2->  getIdProductoValidar($i,$generoEscogido);
         while($postValidar==0){
-            $i++ ;
+            $i++;
             $postValidar = $post2->  getIdProductoValidar($i,$generoEscogido);
             $tiempo++;
+           
             if($tiempo==500){
             break;
             }

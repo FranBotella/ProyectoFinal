@@ -1,6 +1,7 @@
 <?php ob_start() ?>
 
 <?php $contenido = ob_get_clean() ?>
+<div id="formularioCT">
 <?php
 $estado="pendiente";
 try {
@@ -26,7 +27,7 @@ echo "<div id='formularios'>";
       $CantidadPC1=  $arrayC["cantidad"];
 
        
-      echo "<div>";
+      echo "<div id='itemcarrito'>";
    
         echo " <input type='text' name='tituloProductoCarrito' value='$TituloPC1' readonly></input> ";
      
@@ -76,6 +77,8 @@ echo "</div>";
 
 
 ?>
+</div>
+
 <footer>
 <div  class=" pie ">
 		<div  >
