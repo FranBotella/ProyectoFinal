@@ -4,11 +4,11 @@
 <!-- seleccionas por generos y se despliega los obejtos que se han guardado en la base de datos -->
 <form  id="formulario" method="POST" action="index.php?ctl=tienda">
 <div class="categorias" id="categorias"> 
-                <a  class="genres" id="Ropa">Ropa</a>
-                <a  class="genres" id="Bolsos">Bolsos</a>
-                <a  class="genres" id="Estuches">Estuches</a>
-                <a   class="genres" id="Artesania">Artesania</a>
-                <a class="genres" id="Visuteria">Visuteria</a>
+                <a role="link" class="genres" id="Ropa" tabindex="1" aria-label="Categoria Ropa" >Ropa</a>
+                <a role="link" class="genres" id="Bolsos" tabindex="2" aria-label="Categoria Bolsos"  >Bolsos</a>
+                <a  role="link" class="genres" id="Estuches" tabindex="3" aria-label="Categoria Estuches"  >Estuches</a>
+                <a  role="link"  class="genres" id="Artesania" tabindex="4" aria-label="Categoria Artesania" >Artesania</a>
+                <a role="link" class="genres" id="Visuteria" tabindex="5" aria-label="Categoria Visuteria"  >Visuteria</a>
                 
                 </div>
     
@@ -106,26 +106,26 @@ for ($i=0; $i <=$productosContador ; $i++) {
 		<div  >
 			<div class="prueba">
 			<div id="textoFooter">
-			<p>Contáctanos</p>
-	<p>Asociación GUP
+			<p  >Contáctanos</p>
+	<p tabindex="6">Asociación GUP
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
-<p>
+<p tabindex="7">
 
 Teléfono 616420909
 
 </p>
-<p>
+<p tabindex="8">
 
 asociaciongup@hotmail.es
 
 
 
 </p>
-<a  href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
-		<a href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+<a tabindex="9" role="link" aria-label="Enlace a facebook"   href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a tabindex="10" role="link" aria-label="Enalce a Instagram"  href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
 </div>
 			</div>
 		

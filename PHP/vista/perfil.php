@@ -14,11 +14,11 @@
                 
                 <label>User :</label>
                 <div class="name-user">
-                    <label><?php echo $userGet ?></label><br>
+                    <label  tabindex="1"><?php echo $userGet ?></label><br>
                 </div>
                 <label>Email :</label>
                 <div class="user-box">
-                    <input type="text" value="<?php echo $emailGet?>" name="Email" id="Email" class="slope"></input><br>
+                    <input  tabindex="2" type="text" value="<?php echo $emailGet?>" name="Email" id="Email" class="slope"></input><br>
                 </div>
                
               
@@ -29,7 +29,7 @@
                 <input type="button" id="Cancel" class="buttonForm optionButton" name="Cancel" value="Cancel" onClick="perfil.php"/>
                 <br>
             </div>
-            <input type="submit" class="buttonForm" name="SignOff" value="Log out" />
+            <input aria-label="cerrar sesion" role="button"  tabindex="3" type="submit" class="buttonForm" name="SignOff" value="Log out" />
             <br>
             <?php
                 if (isset($_REQUEST["SignOff"])) {
@@ -52,25 +52,25 @@
 			<div class="prueba">
 			<div id="textoFooter">
 			<p>Contáctanos</p>
-	<p>Asociación GUP
+	<p  tabindex="4">Asociación GUP
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
-<p>
+<p  tabindex="5">
 
 Teléfono 616420909
 
 </p>
-<p>
+<p  tabindex="6">
 
 asociaciongup@hotmail.es
 
 
 
 </p>
-<a  href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
-		<a href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+<a aria-label="enlace a facebook" role="link"  tabindex="7" href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a aria-label="enlace a instagram" role="link"  tabindex="8" href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
 </div>
 			</div>
 		
