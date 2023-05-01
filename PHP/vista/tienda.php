@@ -14,11 +14,7 @@
     
                 </form>
   <br>
-    <div id="borrar">
-
-<?php
-// botones administrador para insertar porductos,eliminarlos y cambiar precio a productos
- if( $nivel==1){
+  <?php  if( $nivel==1){
 echo "<div id='botonesAdminTienda'>";
 echo "<form id='formuInsertar' ACTION='index.php?ctl=insertarProducto' METHOD='post' NAME='formInsertar'>";
 echo "<input type='submit' class='buttonForm' name='insertar' value='insertar' />";
@@ -30,13 +26,20 @@ echo "<form id='formuEditar' ACTION='index.php?ctl=editarPrecioProducto' METHOD=
 echo "<input type='submit' class='buttonForm' name='eliminar' value='editarPrecio' />";
 echo "</form>";
 echo "</div>";
- }
+ } ?>
+    <div id="borrar">
+   
+<?php
+// botones administrador para insertar porductos,eliminarlos y cambiar precio a productos
+
  if(isset($_POST['valorSesion'])){
     
 $generoEscogido=$_POST['valorSesion'];
 $tiempo=0;
-for ($i=0; $i <=$productosContador ; $i++) { 
+
+for ($i=0; $i<=$productosContador ; $i++) { 
     $tiempo=0;
+
     try {
         $post2 = new Usuarios();
        
@@ -51,15 +54,17 @@ for ($i=0; $i <=$productosContador ; $i++) {
             }
           }
 
-          
-        if($postValidar==1){
+        
+        if($postValidar>0){
             $postProducto = $post2-> getTituloProducto($i,$generoEscogido);
             $productoId = $post2->getIdProducto($i,$generoEscogido);
             $productoContenido = $post2-> getContenidoProducto($i,$generoEscogido);
         $productoImagen = $post2-> getImagenProducto($i,$generoEscogido);
         $precioProducto = $post2->  getprecioProducto($i,$generoEscogido); 
+
         echo "<br>";
         echo "<form class='tiendaForm' ACTION='index.php?ctl=insertarElementoCarrito' METHOD='post' >";
+      
         echo " <table id=$productoId class=tabla_tienda>";
         echo "<tr>";
         echo "<td><input type='hidden' name='idProducto' value='$productoId' ></input></td>";
@@ -67,6 +72,7 @@ for ($i=0; $i <=$productosContador ; $i++) {
         echo " <tr>";
         echo " <th><input type='text' name='tituloProducto' class='tituloProductoTienda' value='$postProducto' readonly></th> ";
         echo " </tr>";
+       
        echo " <tr>";
        echo " <th><img class=imagenesEve src=./img/root/$productoImagen></img></th>";
        echo "</tr>";
@@ -85,10 +91,12 @@ for ($i=0; $i <=$productosContador ; $i++) {
        echo "<th><input   TYPE='submit' NAME='bProducto' class='Añadir' VALUE='Añadir'></th>";
        echo " </table>";
        echo "</form>";
+       echo "<br>";
+
         }
     
 
-
+      
     
        
     } catch (PDOException $e) {
@@ -101,8 +109,8 @@ for ($i=0; $i <=$productosContador ; $i++) {
 
 }
 ?>
-</div>
 
+</div>
 <footer>
 <div  class=" pie ">
 		<div  >

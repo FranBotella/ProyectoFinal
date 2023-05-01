@@ -373,12 +373,12 @@ public function checkPassword($user, $password)
        
 
         public function contadorProductos($genero){
-            $consulta="SELECT COUNT(genero) FROM productos WHERE  genero=?";
+            $consulta="SELECT MAX(id) FROM productos WHERE  genero=?";
             $resultado=$this->conexion->prepare($consulta);
             $resultado->bindParam(1, $genero);
             $resultado->execute();
             foreach($resultado as $result){
-                $numero=$result['COUNT(genero)'];
+                $numero=$result['MAX(id)'];
                 
             }
             return $numero;

@@ -302,7 +302,10 @@ display: flex;
 #borrar{
     height: 760px;
     font-family: 'Barlow', sans-serif;
-    overflow:auto;
+   overflow:auto;
+}
+.tiendaForm{
+  
 }
 
 #botonesAdminTienda{
