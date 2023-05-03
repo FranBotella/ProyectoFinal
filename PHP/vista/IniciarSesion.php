@@ -23,7 +23,7 @@
 		<p>Contraseña</p>
 		<i>Mínimo 5 caracteres</i>	
 		<p>* <input  id="password2" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña" tabindex="2" ><br></p>
-		<input type="button" role="button" id="ojo2" value="Mostrar/ocultar contraseña"></input>
+		<input type="button" role="button" id="ojo" value="Mostrar/ocultar contraseña"></input>
 			<div id="BTNregistro">
 				<div class="botones">
 					<div >

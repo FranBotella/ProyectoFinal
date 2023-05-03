@@ -30,6 +30,8 @@ $map = array(
     'recibirCodigo'=>array('controller'=>'Controller','action'=>'recibirCodigo','nivel_usuario'=>0),
     'recuperarContrasenya'=>array('controller'=>'Controller','action'=>'recuperarContrasenya','nivel_usuario'=>0),
     'error' => array('controller' =>'Controller', 'action' =>'error', 'nivel_usuario'=>0),
+    'suscribirse'=>array('controller'=>'Controller','action'=>'suscribirse','nivel_usuario'=>1),
+    'enviarSuscripcion'=>array('controller'=>'Controller','action'=>'enviarSuscripcion','nivel_usuario'=>1),
     'perfil'=>array('controller'=>'Controller','action'=>'perfil','nivel_usuario'=>1),
     'donaciones'=>array('controller'=>'Controller','action'=>'donaciones','nivel_usuario'=>1),
     'eventos'=>array('controller'=>'Controller','action'=>'eventos','nivel_usuario'=>1),

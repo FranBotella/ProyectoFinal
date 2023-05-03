@@ -15,7 +15,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
 <!-- paypol -->
 <script src="https://www.paypal.com/sdk/js?client-id=<?php echo $_SESSION['clienteid'] ?>&currency=USD"></script>
- 
 
 </head>
 
@@ -46,16 +45,7 @@
 		
 	</div>
 
-<!-- <footer>
-<div  class=" pie ">
-		<div  >
-			<div class="prueba">
-			<img id="socialMedia"  src="./img/facebook.png" ></img>
-			<img  id="socialMedia"  src="./img/instgram3.png" ></img>
-			</div>
-		</div>
-	</div>
-	</footer> -->
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -100,20 +100,58 @@ class Controller {
     }
 
 
+
+
+    public function suscribirse(){
+        try {
+            $post = new Usuarios();
+
+            $nivel= $post->consultarUsuario($_SESSION["user"]);
+            
+           
+        } catch (PDOException $e) {
+            error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+            // save errors
+            $errorsGuide['NoGuide'] = "Ha habido un error <br>";
+        }
+        require __DIR__ . '/../correos/Suscripcion.php';
+    }
+     
+        public function enviarSuscripcion(){
+            
+
+
+
+
+
+       
+        require __DIR__ . '/../correos/enviarSuscripcion.php';
+    }
+
+
+
+
+
     public function tienda(){
          
         try {
             $post = new Usuarios();
             $nivel= $post->consultarUsuario($_SESSION["user"]);
             if(isset($_POST['valorSesion'])){
-                
-               
+                $limite=2;
+               $_SESSION['categoria']=$_POST['valorSesion'];
+               $_SESSION['limite']=$limite;
                 $productosContador = $post ->contadorProductos($_POST['valorSesion']);
                 
              }
            
-            $nivel= $post->consultarUsuario($_SESSION["user"]);
-
+           if(isset($_POST['bSiguiente'])){
+            $_SESSION['limite']+=2;
+            echo $_SESSION['limite'];
+           }
+           if(isset($_POST['bAtras'])){
+            $_SESSION['limite']-=2;
+           }
            
             
            

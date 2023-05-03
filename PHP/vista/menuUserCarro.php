@@ -34,6 +34,9 @@
 				<li class="nav-item" >
 					<a href="index.php?ctl=perfil" class="nav-link" >PERFIL</a>
 				</li>
+				<li class="nav-item" >
+					<a href="index.php?ctl=suscribirse" class="nav-link" >SUSCRIBIRSE</a>
+				</li>
 			</ul>
 			
 		</div>

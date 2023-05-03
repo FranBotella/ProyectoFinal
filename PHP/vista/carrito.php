@@ -27,7 +27,7 @@ echo "<div id='formularios'>";
       $CantidadPC1=  $arrayC["cantidad"];
 
        
-      echo "<div id='itemcarrito'>";
+      echo "<div class='itemcarrito'>";
    
         echo " <input type='text' name='tituloProductoCarrito' value='$TituloPC1' readonly></input> ";
      

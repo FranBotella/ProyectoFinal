@@ -4,7 +4,7 @@
 const hide = document.getElementById("ojo");
 if(hide!=null){
     hide.addEventListener('click', function(){
-        mostrar=document.getElementById("password");
+        mostrar=document.getElementById("password2");
                if(mostrar.type == "password"){
                    mostrar.type = "text";
                }else{
@@ -200,7 +200,9 @@ elementosBlog.forEach(e => {
 
 
 // seleccionas un genero en tienda y se borra lo que hubiera y muestra los que has seleccionado
+
 const generoTienda=document.querySelectorAll(".genres");
+if(generoTienda!=null){
 console.log(generoTienda);
 
   generoTienda.forEach(nombregeneros => {
@@ -212,7 +214,7 @@ console.log(generoTienda);
 
  
 
-var padre= document.getElementById("formulario");
+var padre= document.getElementById("formularioTienda");
 var elemento=document.createElement("INPUT");
 elemento.setAttribute("type","text");
 elemento.setAttribute("name","valorSesion");
@@ -224,7 +226,7 @@ document.getElementById("borrar").remove();
 
 })
   });
-
+}
 
 // calcular precio total del carrito
   const CantidadCarrito=document.querySelectorAll(".cantidadCarrito");
@@ -294,6 +296,14 @@ quitar.style.backgroundColor='red';
 
 })
   })
+
+const menu=document.getElementsByClassName("menu navbar").item(0);
+console.log(menu);
+const padre=document.body;
+console.log(padre);
+padre.prepend(menu);
+padre.style.backgroundColor="rgb(125,20,107)";
+
 
 
 
