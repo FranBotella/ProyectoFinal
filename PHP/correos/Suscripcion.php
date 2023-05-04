@@ -4,7 +4,9 @@
     $statusMsg  = !empty( $_SESSION [ 'msg' ])? $_SESSION [ 'msg' ]: '' ; 
     unset ( $_SESSION [ 'mensaje' ]); 
     echo  $statusMsg ; 
+   
 ?>
+
 <html>
     <head></head>
     <body>

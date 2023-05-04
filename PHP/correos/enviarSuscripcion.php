@@ -3,11 +3,13 @@ if(isset( $_POST [ 'submit' ])){
             $fname  =  $_POST [ 'fname' ]; 
             $lname  =  $_POST [ 'nombre' ]; 
             $email  =  $_POST [ 'correo_electrónico' ]; 
+         
             if(!empty( $email ) && ! filter_var ( $email ,  FILTER_VALIDATE_EMAIL ) ===  false ){ 
                 // Credenciales API de MailChimp 
-                $apiKey  =  '4853f3a6f63edfb0502f544d849084c6-us21' ; 
+                $apiKey  =  'fa4955109e1973779466dd4a9c74b89d-us21' ; 
                 $listaID  = '5436226c85' ; 
-                
+               
+               
                 // URL de la API de MailChimp 
                 $memberID  =  md5 ( strtolower ( $email )); 
                 $dataCenter  =  substr ( $apiKey , strpos ( $apiKey , '-' )+ 1 ); 
@@ -32,24 +34,33 @@ if(isset( $_POST [ 'submit' ])){
                 $resultado  = curl_exec ( $ch ); 
                 $httpCode  =  curl_getinfo ( $ch ,  CURLINFO_HTTP_CODE ); 
                 curl_close ( $ch ); 
-                
+            
                 // almacena el mensaje de estado basado en el código de respuesta 
                 if ( $httpCode  ==  200 ) { 
-                    $_SESSION [ 'msg' ] =  '<p style="color: #34A853">Se ha suscrito correctamente a CodexWorld.</p> ' ; 
+                 
+                    $_SESSION [ 'msg' ] =  '<p style="color: #34A853">Se ha suscrito correctamente a GUP.</p> ' ; 
+                    header("location:index.php?ctl=informacion");
                 } else { 
+                 
                     switch ( $httpCode ) { 
                         case  214 : 
                             $msg  =  'Ya estás suscrito.'; 
+                          
                         //     romper; 
-                        // predeterminado: 
+                        break;
+                        // predeterminado:
+                        case 401 : 
                             $msg  =  'Ocurrió algún problema, intente nuevamente.' ; 
                             // romper; 
+                            break;
                     } 
-                    $_SESSION [ 'mensaje' ] =  '<p style="color: #EA4335">' . $msg . '</p>' ; 
+                    $_SESSION [ 'msg' ] =  '<p style="color: #EA4335">' . $msg . '</p>' ; 
+                    header("location:index.php?ctl=suscribirse");
                 } 
             }else{ 
                 $_SESSION [ 'msg' ] =  '<p style="color: #EA4335">Ingrese una dirección de correo electrónico válida.</p>' ; 
+                header("location:index.php?ctl=suscribirse");
             } 
         }
-        header("location:index.php?ctl=suscribirse");
+       
         ?>
