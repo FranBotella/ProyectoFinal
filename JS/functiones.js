@@ -2,7 +2,7 @@
 var hide = document.getElementById("ojo");
 if (hide != null) {
     hide.addEventListener('click', function () {
-        mostrar = document.getElementById("password2");
+        var mostrar = document.getElementById("password2");
         if (mostrar.type == "password") {
             mostrar.type = "text";
         }
@@ -40,13 +40,19 @@ if (changeColor != null) {
         _loop_1(i);
     }
 }
+var botonCookies = document.getElementById("botonCookies");
+if (botonCookies != null) {
+    window.onload = function automaticoV() {
+        document.getElementById("botonCookies").click();
+    };
+}
 // abrir dialogo al aceptar que causa y precio donar
 var btnContinuar = document.getElementById("BTN-BTNContinuar");
 if (btnContinuar != null) {
     var btnCerrar = document.getElementById("btn-cerrar-modal");
     var modal_1 = document.getElementById("modal");
     btnContinuar.addEventListener("click", function () {
-        console.log(document.getElementById("CCausa").innerHTML);
+        // console.log(document.getElementById("CCausa").innerHTML);
         if (document.getElementById("CDonada").innerHTML != "" || document.getElementById("precioDI").value != "") {
             if (document.getElementById("CCausa").innerHTML != "") {
                 modal_1.showModal();

@@ -17,26 +17,26 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		  <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
 				<li class="nav-item" >
-					<a href="index.php?ctl=informacion" class="nav-link" >INFORMACION</a>
+					<a href="index.php?ctl=informacion" class="nav-link" ><img  id="carrito" src="./img/informacion.png"></img>INFORMACION</a>
 				</li>
 				<li class="nav-item"  >
-					<a href="index.php?ctl=donaciones" class="nav-link" >DONACIONES</a>
+					<a href="index.php?ctl=donaciones" class="nav-link" ><img  id="carrito" src="./img/donar.png"></img>DONAR</a>
 				</li>
 				<li class="nav-item" >
-					<a href="index.php?ctl=eventos" class="nav-link" >EVENTOS</a>
+					<a href="index.php?ctl=eventos" class="nav-link" ><img  id="carrito" src="./img/eventos.png"></img>EVENTOS</a>
 				</li>
 			
 				<li class="nav-item" >
-					<a href="index.php?ctl=tienda"class="nav-link" >TIENDA</a>
+					<a href="index.php?ctl=tienda"class="nav-link" ><img  id="carrito" src="./img/bolsas.png"></img>TIENDA</a>
 				</li>
 				<li class="nav-item" >
-					<a href="index.php?ctl=carrito" class="nav-link" ><img  id="carrito" src="./img/carrito.png"></img></a>
+					<a href="index.php?ctl=carrito" class="nav-link" ><img  id="carrito" src="./img/carrito.png"></img>CARRITO</a>
 				</li>	
 				<li class="nav-item" >
-					<a href="index.php?ctl=perfil" class="nav-link" >PERFIL</a>
+					<a href="index.php?ctl=perfil" class="nav-link" ><img  id="carrito" src="./img/perfil.png"></img>PERFIL</a>
 				</li>
 				<li class="nav-item" >
-					<a href="index.php?ctl=suscribirse" class="nav-link" >SUSCRIBIRSE</a>
+					<a href="index.php?ctl=suscribirse" class="nav-link" ><img  id="carrito" src="./img/newsletter.png"></img>SUSCRIBIRSE</a>
 				</li>
 			</ul>
 			

@@ -54,7 +54,14 @@ class Controller {
         require __DIR__ . '/../vista/Inicio.php';
     }
 
+    public function politicas_de_privacidad() {
 
+        
+            
+      
+        $menu=$this->cargaMenu();
+        require __DIR__ . '/../vista/politicas_de_privacidad.php';
+    }
 
     public function informacion() {
 
@@ -664,7 +671,8 @@ public function perfil(){
                         // $_SESSION['nombreUsuario'] = $nombreUsuario ;
                         $_SESSION['email']=$m->getEmail($nombreUsuario);
                         $_SESSION['user']= $nombreUsuario;    
-                        $_SESSION["carritolleno"]="vacio";         
+                        $_SESSION["carritolleno"]="vacio";
+                                 
                         header('Location: index.php?ctl=inicio');
                    }
                  

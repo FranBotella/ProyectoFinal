@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
 <!-- paypol -->
-<script src="https://www.paypal.com/sdk/js?client-id=<?php echo $_SESSION['clienteid'] ?>&currency=USD"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AWmGgGx3hG3Yt8e5Pzgz-eyGgBkNw7xXqj1kGrBl15LWjB7h32HcnSymcE7pces7x0_w4M2C90GT1aq3&currency=USD"></script>
 
 </head>
 

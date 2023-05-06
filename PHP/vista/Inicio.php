@@ -11,6 +11,7 @@ carrusel -->
     <button type="button" aria-label="boton para primera imagen" role="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
     <button type="button" aria-label="boton para segunda imagen" role="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
     <button type="button" aria-label="boton para tercer imagen" role="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    <button type="button" aria-label="boton para cuarta imagen" role="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
   </div>
 
   <!-- The slideshow/carousel -->
@@ -38,6 +39,32 @@ carrusel -->
   </button>
 </div>
 
+
+
+<button  type="button" hidden id="botonCookies"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Politica de cookies
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+       
+       
+      </div>
+      <div class="modal-body">
+      <p>Esta página web usa cookies
+Las cookies de este sitio web se usan para personalizar el contenido y los anuncios, ofrecer funciones de redes sociales y analizar el tráfico. Además, compartimos información sobre el uso que haga del sitio web con nuestros partners de redes sociales, publicidad y análisis web, quienes pueden combinarla con otra información que les haya proporcionado o que hayan recopilado a partir del uso que haya hecho de sus servicios</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
 <div  class=" pie ">

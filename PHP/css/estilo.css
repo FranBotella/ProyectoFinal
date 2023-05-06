@@ -25,6 +25,14 @@
   margin-right: 25%;
 }
 
+#politica_privi {
+  color: white;
+  text-align: justify;
+}
+#politica_privi h2, #politica_privi h1 {
+  text-align: center;
+}
+
 #imgTXT {
   background-color: #F0F0ED;
   text-align: center;
@@ -209,6 +217,12 @@ label, input {
   width: 100%;
 }
 
+#botonCookies {
+  margin-left: 41%;
+  background-color: white;
+  color: black;
+}
+
 #modal::backdrop {
   background-color: rgba(0, 0, 0, 0.55);
 }
@@ -275,7 +289,7 @@ label, input {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: aqua;
+  background-color: lightsalmon;
   border: 2px solid black;
   overflow: visible;
   width: 100%;

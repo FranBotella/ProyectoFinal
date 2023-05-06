@@ -57,7 +57,8 @@ asociaciongup@hotmail.es
 </p>
 <a  href="https://www.facebook.com/asociaciongup/?locale=es_ES" tabindex="6" role="link" aria-label="enlace a su pagina de facebook"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
 		<a href="https://www.instagram.com/asociaciongup/?hl=es" tabindex="7" role="link" aria-label="enlace a su pagina de instagram">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
-</div>
+<a href="index.php?ctl=politicas_de_privacidad" tabindex="8" role="link">POLITICAS DE PRIVACIDAD</a>
+	</div>
 			</div>
 		
 		</div>

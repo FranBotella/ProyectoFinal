@@ -78,7 +78,7 @@ for ($i=0; $i<= $productosContador ; $i++) {
         echo " </tr>";
        
        echo " <tr>";
-       echo " <th><img class=imagenesEve src=./img/root/$productoImagen></img></th>";
+       echo " <th><img class=imagenesEve src=./img/root/tienda/$productoImagen></img></th>";
        echo "</tr>";
        echo " <tr>";
        echo "<th>$productoContenido</th>";
@@ -163,7 +163,8 @@ asociaciongup@hotmail.es
 </p>
 <a tabindex="9" role="link" aria-label="Enlace a facebook"   href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
 		<a tabindex="10" role="link" aria-label="Enlace a Instagram"  href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
-</div>
+        <a href="index.php?ctl=politicas_de_privacidad" tabindex="11" role="link">POLITICAS DE PRIVACIDAD</a>
+    </div>
 			</div>
 		
 		</div>

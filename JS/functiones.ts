@@ -5,7 +5,7 @@ const hide = document.getElementById("ojo");
 if(hide!=null){
 
     hide.addEventListener('click', function(){
-        mostrar=document.getElementById("password2");
+      const  mostrar=document.getElementById("password2");
                if(mostrar.type == "password"){
                    mostrar.type = "text";
                }else{
@@ -47,7 +47,13 @@ if(changeColor!=null){
 
       }
 }
-
+const botonCookies= document.getElementById("botonCookies");
+if(botonCookies!=null){
+window.onload=function automaticoV(){
+  document.getElementById("botonCookies").click();
+ 
+}
+}
 // abrir dialogo al aceptar que causa y precio donar
 
 const btnContinuar=document.getElementById("BTN-BTNContinuar");
@@ -55,7 +61,7 @@ if(btnContinuar!=null){
 const btnCerrar=document.getElementById("btn-cerrar-modal");
 const modal=document.getElementById("modal");
 btnContinuar.addEventListener("click",()=>{
-    console.log(document.getElementById("CCausa").innerHTML);
+    // console.log(document.getElementById("CCausa").innerHTML);
     if( document.getElementById("CDonada").innerHTML!="" || document.getElementById("precioDI").value !="" ){
         if(document.getElementById("CCausa").innerHTML!=""){
                 modal.showModal();
@@ -107,8 +113,11 @@ btnCerrar.addEventListener("click",()=>{
 
 
 
+
+
     
 // botones paypal
+
 paypal.Buttons({
   // Order is created on the server and the order id is returned
   createOrder() {

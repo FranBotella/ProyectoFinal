@@ -81,28 +81,29 @@ for ($i=0; $i <=$postContador ; $i++) {
 <div  class=" pie ">
 		<div  >
 			<div class="prueba">
-			<div id="textoFooter">
+			<div id="textoFooter"  >
 			<p>Contáctanos</p>
-	<p>Asociación GUP
+	<p tabindex="1">Asociación GUP
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
-<p>
+<p tabindex="2">
 
 Teléfono 616420909
 
 </p>
-<p>
+<p tabindex="3">
 
 asociaciongup@hotmail.es
 
 
 
 </p>
-<a  href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
-		<a href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
-</div>
+<a  href="https://www.facebook.com/asociaciongup/?locale=es_ES" tabindex="4" role="link"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
+		<a href="https://www.instagram.com/asociaciongup/?hl=es" tabindex="5" role="link">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+        <a href="index.php?ctl=politicas_de_privacidad" tabindex="6" role="link">POLITICAS DE PRIVACIDAD</a>
+    </div>
 			</div>
 		
 		</div>

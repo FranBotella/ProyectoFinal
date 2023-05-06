@@ -26,9 +26,7 @@
   <div class="carousel-item">
     <img id="imgCarruselDonaciones" src="./img/root/400.jpg" alt="niñosSenegal3" class="d-block w-100">
   </div>
-  <div class="carousel-item">
-    <img id="imgCarruselDonaciones" src="./img/root/DSC08508.jpg" alt="niñosSenegal4" class="d-block w-100">
-  </div>
+
 </div>
 
 <!-- Left and right controls/icons -->
@@ -80,7 +78,9 @@ sino no se despliega el dialogo para confirmar el pay pal  -->
     
 
     <!-- paypal -->
-    <div id="paypal-button-container"></div>
+    <div id="paypal-button-container">
+      
+    </div>
     <button role="button" id="btn-cerrar-modal" type="submit">Cerrar</button>
     
 </form>
@@ -111,7 +111,8 @@ asociaciongup@hotmail.es
 </p>
 <a tabindex="11" role="link" aria-label="enlace a su pagina de facebook" href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
 		<a tabindex="12" role="link" aria-label="enlace a su pagina de instagram" href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
-</div>
+    <a href="index.php?ctl=politicas_de_privacidad" tabindex="13" role="link">POLITICAS DE PRIVACIDAD</a>
+  </div>
 			</div>
 		
 		</div>
