@@ -2,7 +2,7 @@
 
 <?php $contenido = ob_get_clean() ?>
 <!-- botones de administrador para insertar y eliminar blogs en la base de datos -->
-<?php if( $nivel==1){?>
+<?php if( $nivel==2){?>
     <div id="botonesAdminEventos">
 <form id="formuInsertar" ACTION="index.php?ctl=insertarP" METHOD="post" NAME="formInsertar">
 <input type="submit" class="buttonForm" name="insertar" value="insertar" />

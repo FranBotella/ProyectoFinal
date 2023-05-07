@@ -16,6 +16,11 @@
                 <div class="name-user">
                     <label  tabindex="1"><?php echo $userGet ?></label><br>
                 </div>
+                <?php
+              
+                 if( $_SESSION["mensaje"]!="bien"){
+                    echo "<p>Correo ya existe o no es valido</p>";
+                } ?>
                 <label>Email :</label>
                 <div class="user-box">
                     <input  tabindex="2" type="text" value="<?php echo $emailGet?>" name="Email" id="Email" class="slope"></input><br>
@@ -141,27 +146,37 @@ asociaciongup@hotmail.es
                 header("Refresh:0");
             }
         }
-        try {
-            //if email and name are true in the base is update
-            // $checkEmail = false;
-            
-            if (preg_match("#[\w\._]{3,}@\w{5,}\.+[\w]{2,}#i", $_REQUEST["Email"]) == 1) {
-                $usuario = new Usuario();
-
-                // if ($emailCom = $usuario->checkEmail($_REQUEST["Email"])) {
-                    $update = $usuario->actualizainfo( $_REQUEST["Email"]);
-                // } else {
-                    // $checkEmail = true;
-                // }
-            }  
-        } catch (PDOException $e) {
-            error_log($e->getMessage() . "##Code: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
-            // save errors
-            $errorsGuide['NoGuide'] = "Error <br>";
-        }
-      
+     
+       
     }
 
+     if(isset($_REQUEST["submitImage"])){
+        
+    try {
+       
+            
+        if (preg_match("#[\w\._]{3,}@\w{5,}\.+[\w]{2,}#i", $_POST["Email"]) == 1) {
+            $usuario = new Usuarios();
+           
+            if ( $usuario->checkEmail($_POST["Email"])) {
+               
+                $_SESSION["mensaje"]="mal";
+                echo "entro";
+                echo $_SESSION["mensaje"];
+                header("location:index.php?ctl=perfil");
+            } else{
+            
+                $_SESSION["mensaje"]="bien";
+                $update = $usuario->actualizainfo( $_POST["Email"],$_SESSION["user"]);
+                header("location:index.php?ctl=informacion");
+            }
+        }  
+    } catch (PDOException $e) {
+        error_log($e->getMessage() . "##Code: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+        // save errors
+        $errorsGuide['NoGuide'] = "Error <br>";
+    }  
+}
 
 ?>
 

@@ -174,6 +174,7 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
  * @param array $errores
  * @param integer $min
  * @param integer $max
+ * @param string $correo
  * @return bool
  */
 
@@ -197,6 +198,18 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
      $errores[$campo] = "Error en el campo $campo";
      return false;
  }
+
+ function cCorreo(string $correo, array &$errores): bool
+ {
+     
+     if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+         return true;
+     }
+     $errores["email"] = "Error en el campo email";
+     return false;
+ }
+
+
 
  function tokenG($leng=10){
     $cadena="ABCDEFGHIJKLMNOPQRSTUWXYZabcdefghijklmnopqrstuwxyz0123456789";

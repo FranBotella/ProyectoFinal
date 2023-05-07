@@ -459,9 +459,10 @@ public function recibirCodigo(){
      
             if($_SESSION['codigo']==$codeIn){
                 try {
-                        
+                  
+                    $passwordBD = crypt_blowfish($_SESSION['pass']); 
                     $l = new Usuarios();
-                    $l->registrarse($_SESSION['user'], $_SESSION['pass'], $_SESSION['email']);
+                    $l->registrarse($_SESSION['user'], $passwordBD, $_SESSION['email']);
                     mkdir(__DIR__ ."/../img/".$_SESSION['user'], 0777);
                 copy(__DIR__ ."/../img/image.png", __DIR__ ."/../img/".$_SESSION['user']."/image.png");
                     header("location:index.php?ctl=inicio");
@@ -517,7 +518,7 @@ require __DIR__ . '/../vista/recuperarContrasenya.php';
 
 
 public function perfil(){
- 
+    
         try {
             $user = new Usuarios();
 
@@ -558,28 +559,51 @@ public function perfil(){
                 
                 );
             $errores=array();
+            $error;
             if (isset($_POST['bRegistro'])) {
                 $user = recoge('user');
                 $pass = recoge('pass');
+                $emailCompro=recoge('email');
+                try {
+                    $usuario = new Usuarios();
+                    
+                if ($emailCompro!="" ) {
+                   
                 $email = recoge('email');
                 $emailCodigo = validarCorreo('email'); 
-                cTexto($user, "user", $errores);
+                    
+                   
+                    
+             
+                }
+                else{
+                   $email="";
+                  
+                }
             
-                cPass($pass, "pass", $errores);
-                $_SESSION['email']=$email;
-                $_SESSION['user']=$user;
-                $_SESSION['pass']=$pass;
-                
+            } catch (PDOException $e) {
+                error_log($e->getMessage() . "##Code: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+                // save errors
+                $errorsGuide['NoGuide'] = "Error <br>";
+            }  
+            cTexto($user, "user", $errores);
+            
+            cPass($pass, "pass", $errores);
+            cCorreo($email,$errores);
                 if (empty($errores)){
                     // Si no ha habido problema creo modelo y hago inserció     
                     try {
                         
                     // $m = new Usuarios();
                     // if ($m->registrarse($user, $pass, $email)) {
-                   
+                       
+                        $_SESSION['email']=$email;
+                        $_SESSION['user']=$user;
+                        $_SESSION['pass']=$pass;
+                        $_SESSION["mensaje"]=null;
 
                         header("location:index.php?ctl=enviarCodigo");
-                     
+
                     // } else {
                         
                     //     $params = array(
@@ -649,7 +673,10 @@ public function perfil(){
             if (isset($_POST['bIniciarSesion'])) { // Nombre del boton del formulario
                 $nombreUsuario = recoge('user');
                 $contrasenya = recoge('pass');
-               
+                cTexto($nombreUsuario, "user", $errores);
+            
+            cPass($contrasenya, "pass", $errores);
+            if (empty($errores)){
                         try{      
                     $m = new Usuarios();
                 
@@ -690,6 +717,19 @@ public function perfil(){
                 error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
                 header('Location: index.php?ctl=error');
             }
+        }
+        else {
+            $params = array(
+                'user' => $nombreUsuario,
+                'pass' => $contrasenya,
+                
+                
+               
+                
+                );
+            $params['mensaje'] = 'Hay datos que no son correctos. Revisa el formulario.';
+            
+        }
         }
     
       

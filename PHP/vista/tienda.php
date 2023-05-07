@@ -15,7 +15,7 @@
                
                 </form>
   <br>
-  <?php  if( $nivel==1){?>
+  <?php  if( $nivel==2){?>
 <div id='botonesAdminTienda'>
 <form id='formuInsertar' ACTION='index.php?ctl=insertarProducto' METHOD='post' NAME='formInsertar'>
 <input type='submit' class='buttonForm' name='insertar' value='insertar' />

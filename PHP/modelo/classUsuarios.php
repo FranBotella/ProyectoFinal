@@ -69,7 +69,7 @@ public function consultarUsuario($user) {
 public function actualizainfo($email, $usuario)
         {
            
-          $consulta="UPDATE `usuarios` SET `nombre` = ?, `correo` = ? WHERE nombre = ?";
+          $consulta="UPDATE `usuarios` SET  `correo` = ? WHERE nombre = ?";
           $resultado = $this->conexion->prepare($consulta);
         
             $resultado->bindParam(1, $email);
@@ -81,7 +81,7 @@ public function actualizainfo($email, $usuario)
         public function checkEmail($email)
         {
             $consulta = "SELECT * FROM usuarios WHERE correo=?";
-            $resultado = $this->prepare($consulta);
+            $resultado = $this->conexion->prepare($consulta);
             $resultado->bindParam(1, $email);
             $resultado->execute();
 
@@ -136,7 +136,7 @@ public function getUser($user)
             return $nameUser;
         }
 
-public function checkPassword($user, $password)
+public function checkPasswordAntiguo($user, $password)
         {
             $consulta = "SELECT * FROM usuarios WHERE nombre=?";
             $resultado = $this->conexion->prepare($consulta);
@@ -385,9 +385,23 @@ public function checkPassword($user, $password)
         }
 
 
+        public function checkPassword($user, $password)
+        {
+            $consulta = "SELECT * FROM usuarios WHERE nombre=?";
+            $resultado = $this->conexion->prepare($consulta);
+            $resultado->bindParam(1, $user);
+            $resultado->execute();
+            foreach($resultado as $result){
+                $checkPass = crypt($password, $result['contraseñaEncriptada']);
+                if($checkPass === $result['contraseñaEncriptada']){
+                    return true;
+                } else{
+                    return false;
+                }
+            }
+        }
 
-
-
+      
         public function insertarCarrito($idProducto,$idUsuario,$tituloProducto,$fechaCompra,$estadoPedido,$precio,$cantidad){
   
     

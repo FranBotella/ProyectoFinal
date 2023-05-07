@@ -1232,3 +1232,9 @@ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdtfgusuarios_php.pro
 SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdtfgusuarios_php.productos' doesn't exist##Código: 42S02  0.68493200 1681654405
 SQLSTATE[HY000]: General error: 2006 MySQL server has gone away##Código: HY000  0.64859800 1681837589
 SQLSTATE[HY093]: Invalid parameter number: parameter was not defined##Código: HY093  0.35451900 1682010930
+SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens##Code: HY093  0.62557900 1683474141
+SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens##Code: HY093  0.57069900 1683474144
+SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens##Code: HY093  0.26753700 1683474157
+SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens##Code: HY093  0.29960100 1683474232
+SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens##Code: HY093  0.45825800 1683474236
+SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens##Code: HY093  0.50601400 1683474241
