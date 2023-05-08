@@ -24,31 +24,13 @@ class Controller {
 
 
 
-    public function home() {
-               
-        $params = array(
-            'mensaje' => 'Bienvenido a mercadona',
-            'mensaje2' => 'Aquí encontrarás una gran variedad de alimentos xd',
-            'fecha' => date('d-m-Y')
-        );        
-        $menu = 'menuInvitado.php';
-        if ($_SESSION['nivel_usuario'] >=0) {
-            header("location:index.php?ctl=inicio");
-        }
-      
-        require __DIR__ . '/../vista/vista.php';
-    }
+ 
 
 
     public function inicio() {
         
         
-        $params = array(
-            'descripcion'=> 'Pequeña descripcion',
-            'mensaje' => 'Bienvenido a Inicio',
-            'mensaje2' => 'Aquí encontrarás Tu inicio',
-            'fecha' => date('d-m-Y')
-        );        
+             
       
         $menu=$this->cargaMenu();
         require __DIR__ . '/../vista/Inicio.php';
@@ -66,12 +48,7 @@ class Controller {
     public function informacion() {
 
         
-        $params = array(
-            'descripcion'=> 'Pequeña descripcion',
-            'mensaje' => 'Bienvenido a Inicio',
-            'mensaje2' => 'Aquí encontrarás Tu inicio',
-            'fecha' => date('d-m-Y')
-        );        
+            
       
         $menu=$this->cargaMenu();
         require __DIR__ . '/../vista/informacion.php';
@@ -88,6 +65,7 @@ class Controller {
     }
     public function eventos(){
         try {
+            //compruebo que  nivel es el usuario
             $post = new Usuarios();
 
             $nivel= $post->consultarUsuario($_SESSION["user"]);
@@ -110,6 +88,8 @@ class Controller {
 
 
     public function suscribirse(){
+        //Si al realizar el formulario es correcto te redirige a enviarSucripcion
+      
         try {
             $post = new Usuarios();
 
@@ -121,11 +101,12 @@ class Controller {
             // save errors
             $errorsGuide['NoGuide'] = "Ha habido un error <br>";
         }
+        $menu=$this->cargaMenu();
         require __DIR__ . '/../correos/Suscripcion.php';
     }
      
         public function enviarSuscripcion(){
-            
+           //Se pone en contacto con mailchimp y añade la informacion en la campaña creada en mailchimp 
 
 
 
@@ -140,25 +121,19 @@ class Controller {
 
 
     public function tienda(){
-         
+         //al seleccionar una categoria se muestran los articulos que se guardaron en la base de datos
         try {
             $post = new Usuarios();
             $nivel= $post->consultarUsuario($_SESSION["user"]);
             if(isset($_POST['valorSesion'])){
-                $limite=2;
+               
                $_SESSION['categoria']=$_POST['valorSesion'];
-               $_SESSION['limite']=$limite;
+            
                 $productosContador = $post ->contadorProductos($_POST['valorSesion']);
                 
              }
            
-           if(isset($_POST['bSiguiente'])){
-            $_SESSION['limite']+=2;
-            echo $_SESSION['limite'];
-           }
-           if(isset($_POST['bAtras'])){
-            $_SESSION['limite']-=2;
-           }
+          
            
             
            
@@ -192,7 +167,7 @@ public function insertarElementoCarrito(){
         $idUsu= $post->getIDUser($_SESSION["user"]);
         if(isset($_POST['bProducto'])){
         
-           
+           //al insertar algo en el carrito se guarda un campo en la base de datos como pendiente y cambia su valor a confirmar cuando se acepta en el carrito
       
             $fechaActual = date("d-m-Y");
             $estado="pendiente";
@@ -201,7 +176,7 @@ public function insertarElementoCarrito(){
 // el campo carrito lleno es para cambiar la imagen de carrito de vacio a lleno cuando se inserta productos
            $_SESSION["carritolleno"]="lleno";
 if($_SESSION["numeroCarrito"]>0){
-    // el ir sumando es para cuando vayamos a quitar productoas y no haya cambiar la imagen a carrito vacio cuando sea 0
+    // el ir sumando es para cuando vayamos a quitar productos y no haya cambiar la imagen a carrito vacio cuando sea 0
 $_SESSION["numeroCarrito"]=$_SESSION["numeroCarrito"]+1;
 header("Location: ".$_SERVER['HTTP_REFERER'].""); 
 }
@@ -216,33 +191,21 @@ header("Location: ".$_SERVER['HTTP_REFERER']."");
         // save errors
         $errorsGuide['NoGuide'] = "Ha habido un error <br>";
     }
-    // header("Location: ".$_SERVER['HTTP_REFERER']."");
+   
 }
 
     public function carrito(){
        
  
        
-            $prueba=  recoge('idProducto');
-     
-            echo $prueba;
-    
-            echo "<br>";
+          
             try {
                 $post = new Usuarios();
                     $nivel= $post->consultarUsuario($_SESSION["user"]);
                     $idUsu= $post->getIDUser($_SESSION["user"]);
                    
-                    
-                    //  echo   $_SESSION["numeroCarrito"];
-                  
-                  
                     if(isset($_POST['bCarrito'])){
                     
-                        // echo $_POST['bCarrito'] ;  
-                        // if($_POST['bCarrito']=="Confirmar"){
-                          
-                          
                             if(recoge('elementoseleccionado')==""){
                         $estado1="pendiente";
                         $estado="confirmar";
@@ -261,34 +224,12 @@ header("Location: ".$_SERVER['HTTP_REFERER']."");
                 
                     }
 
-               
-                    
-               
-                  
-                    
-                    
-                   
-
-
-
                 } catch (PDOException $e) {
                     error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
                     // save errors
                     $errorsGuide['NoGuide'] = "Ha habido un error <br>";
                 }
         
-             
-          
-        
-
-  
-    
-        
-       
-     
-          
-    
-
     $menu=$this->cargaMenu();
     require __DIR__ . '/../vista/carrito.php';
 }
@@ -354,7 +295,7 @@ public function eliminarProducto(){
 
 
 public function eliminarP(){
-   
+   //Se eliminan articulos de la pagina eventos
     if (isset($_POST['bEliminar'])) {
         $titulo = recoge('titulo');
         
@@ -411,6 +352,7 @@ public function editarPrecioProducto(){
 
 
 public function insertarP(){
+    //se inserta post en la pagina de eventos
     $nameFile = "";
     $dir = "../../img";
     $max_file_size = "51200000";
@@ -446,7 +388,7 @@ public function insertarP(){
 
 public function enviarCodigo(){
    
-    
+    //al registrarse se enviar un codigo al correo que ha puesto el usuario
     
     $code = tokenG();
    $emailCodigo=$_SESSION['email'];
@@ -479,7 +421,7 @@ require __DIR__ . '/../correos/recibe.php';
 
 public function recuperarContrasenya(){
     $contrasenya="";
-     
+     //al recuperar la contraseña  se escribe tu correo si es correcto tendras que vovlerlo a escribir y  se abrira un formulario para cambiar la contraseña
     if (isset($_POST['brecuperarContrasenya'])) {
         $correo = recoge('email');
                 try {
@@ -495,7 +437,7 @@ public function recuperarContrasenya(){
                 } 
             }
             if (isset($_POST['bNuevaContrasenya'])) {
-                $contraseñaNueva = recoge('contraseñaNueva');
+                $contraseñaNueva =crypt_blowfish( recoge('contraseñaNueva'));
                 $correo2 = recoge('email2');
                 
                 try {
@@ -518,7 +460,7 @@ require __DIR__ . '/../vista/recuperarContrasenya.php';
 
 
 public function perfil(){
-    
+
         try {
             $user = new Usuarios();
 
@@ -546,7 +488,7 @@ public function perfil(){
 
     
     public function registro() {
-        // $menu = 'menuHome.php';
+  
         if ($_SESSION['nivel_usuario'] >0) {
             header("location:index.php?ctl=inicio");
         }
@@ -566,14 +508,17 @@ public function perfil(){
                 $emailCompro=recoge('email');
                 try {
                     $usuario = new Usuarios();
-                    
+                  //compruebo email recogido  
                 if ($emailCompro!="" ) {
-                   
-                $email = recoge('email');
-                $emailCodigo = validarCorreo('email'); 
-                    
-                   
-                    
+                    //compruebo si esta en la base de datos el correo
+                    if ( $usuario->checkEmail($_POST["email"])) {
+                $email="";
+                cCorreo($email,$errores);
+                    }
+                    else{
+                        $email = recoge('email');
+                        $emailCodigo = validarCorreo('email');
+                    }
              
                 }
                 else{
@@ -586,16 +531,16 @@ public function perfil(){
                 // save errors
                 $errorsGuide['NoGuide'] = "Error <br>";
             }  
+            //compruebo que son validos los correos y sino se muestra mensaje de error
             cTexto($user, "user", $errores);
             
             cPass($pass, "pass", $errores);
             cCorreo($email,$errores);
                 if (empty($errores)){
-                    // Si no ha habido problema creo modelo y hago inserció     
+                       
                     try {
                         
-                    // $m = new Usuarios();
-                    // if ($m->registrarse($user, $pass, $email)) {
+                   
                        
                         $_SESSION['email']=$email;
                         $_SESSION['user']=$user;
@@ -604,17 +549,7 @@ public function perfil(){
 
                         header("location:index.php?ctl=enviarCodigo");
 
-                    // } else {
-                        
-                    //     $params = array(
-                    //         'user' => $user,
-                    //         'pass' => $pass,
-                    //         'email' => $email,
-                            
-                    //         );
-                        
-                    //     $params['mensaje'] = 'No se ha podido insertar el usuario. Revisa el formulario.';
-                    // }
+                   
                 } catch (Exception $e) {
                     error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
                     header('Location: index.php?ctl=error');
@@ -670,7 +605,7 @@ public function perfil(){
             
             );
         $errores=array();
-            if (isset($_POST['bIniciarSesion'])) { // Nombre del boton del formulario
+            if (isset($_POST['bIniciarSesion'])) { 
                 $nombreUsuario = recoge('user');
                 $contrasenya = recoge('pass');
                 cTexto($nombreUsuario, "user", $errores);
@@ -681,25 +616,19 @@ public function perfil(){
                     $m = new Usuarios();
                 
                     if ($m->consultarUsuario($nombreUsuario)) {
-                        // Compruebo si el password es correcto
+                       
                         $level=$m->consultarUsuario($nombreUsuario);
                         $_SESSION['nivel_usuario'] = $level;
                     
-                        // foreach ($m as $row) {
-                        //     $_SESSION['idUser'] = $row['id'];
-                        //     $_SESSION['nombreUsuario'] = $row['user'] ;
-                        //     $_SESSION['nivel_usuario'] = $row['nivel'];
-                        //         }
+                      
                        
-                   
+                    // Compruebo si el password es correcto
                         if ($m->checkPassword($nombreUsuario,$contrasenya )) {
-                            // Obtenemos el resto de datos
-                        //     session_start();
-                        // $_SESSION['nombreUsuario'] = $nombreUsuario ;
+                        
                         $_SESSION['email']=$m->getEmail($nombreUsuario);
                         $_SESSION['user']= $nombreUsuario;    
                         $_SESSION["carritolleno"]="vacio";
-                                 
+                        $_SESSION["mensaje"]="bien";      
                         header('Location: index.php?ctl=inicio');
                    }
                  
@@ -709,7 +638,7 @@ public function perfil(){
                             'user' => $nombreUsuario,
                             'pass' => $contrasenya
                         );
-                        // $params['mensaje'] = 'No se ha podido iniciar sesión. Revisa el formulario.';
+                       
                         $params['mensaje'] = $contrasenya;
                     }
                

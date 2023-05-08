@@ -247,6 +247,21 @@ label, input {
   margin-left: 35%;
 }
 
+#suscribirse {
+  height: 300px;
+}
+#suscribirse p {
+  color: white;
+  text-align: center;
+}
+
+#btn-suscribirse {
+  background-color: red;
+  color: white;
+  margin-left: 5%;
+  font-size: xx-large;
+}
+
 #BTN-BTNContinuar {
   background-color: red;
   color: white;
@@ -469,7 +484,7 @@ table input {
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     text-decoration: none;
     font-family: "Barlow", bold;
-    font-size: xx-large;
+    font-size: medium;
   }
   .itemcarrito {
     background-color: lightsalmon;

@@ -205,7 +205,7 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
      if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
          return true;
      }
-     $errores["email"] = "Error en el campo email";
+     $errores["email"] = "Error en el campo email o ya esta registrado el correo";
      return false;
  }
 
@@ -431,7 +431,7 @@ function cFile(string $nombre, array &$errores, array $extensionesValidas, strin
     }
 }
 
-
+//encriptar contraseñas
 function crypt_blowfish($password) {
 
     $salt = '$2a$07$usesomesillystringforsalt$';

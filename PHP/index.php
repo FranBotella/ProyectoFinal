@@ -20,7 +20,7 @@ if (! isset($_SESSION['nivel_usuario'])) {
  * Le añadimos el nivel mínimo que tiene que tener el usuario para ejecutar la acción
  **/
 $map = array(
-    'home' => array('controller' =>'Controller', 'action' =>'home', 'nivel_usuario'=>0),
+    
     'inicio' => array('controller' =>'Controller', 'action' =>'inicio', 'nivel_usuario'=>0),
     'informacion' => array('controller'=>'Controller', 'action' =>'informacion','nivel_usuario'=>0),
     'politicas_de_privacidad' => array('controller' =>'Controller', 'action' =>'politicas_de_privacidad', 'nivel_usuario'=>0),
@@ -66,7 +66,7 @@ if (isset($_GET['ctl'])) {
              */
     }
 } else {
-    $ruta = 'home';
+    $ruta = 'inicio';
 }
 $controlador = $map[$ruta];
 /* 

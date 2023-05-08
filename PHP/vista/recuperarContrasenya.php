@@ -20,7 +20,7 @@
         <form id="formurecuperarContrasenya" ACTION="index.php?ctl=recuperarContrasenya" METHOD="post" NAME="formRecuperarContrasenya">
         <p>Vuelve a introducir el correo</p>
 			<p>* <input TYPE="text" NAME="email2" VALUE="" PLACEHOLDER="email"><br></p>
-    <p>* <input TYPE="text" NAME="contraseñaAntigua" VALUE="<?php echo $contrasenya ?>" PLACEHOLDER="contraseñaAntigua"><br></p> 
+
     <p>* <input TYPE="text" NAME="contraseñaNueva" VALUE="" PLACEHOLDER="contraseñaNueva"><br></p>
     <input id="BTN-BTNuevaContrasenya"  TYPE="submit" NAME="bNuevaContrasenya" VALUE="NuevaContrasenya"><br> 
     </form>  

@@ -17,7 +17,7 @@
                     <label  tabindex="1"><?php echo $userGet ?></label><br>
                 </div>
                 <?php
-              
+             
                  if( $_SESSION["mensaje"]!="bien"){
                     echo "<p>Correo ya existe o no es valido</p>";
                 } ?>
@@ -42,12 +42,7 @@
                     header("location:index.php?ctl=inicio");
                 }
             ?>
-            <?php
-                if (isset($_REQUEST["SignOff"])) {
-                    session_destroy();
-                    header("location:index.php?ctl=inicio");
-                }
-            ?>
+        
         </form>
     </div>
 
@@ -176,6 +171,9 @@ asociaciongup@hotmail.es
         // save errors
         $errorsGuide['NoGuide'] = "Error <br>";
     }  
+}
+else{
+    $_SESSION["mensaje"]="bien"; 
 }
 
 ?>
