@@ -19,10 +19,10 @@
 		<form id="formuRegistro" ACTION="index.php?ctl=iniciarSesion" METHOD="post" NAME="formIniciar">
 		<br>	
 		<p>Usuario</p>
-		<p>* <input  TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="usuario" tabindex="1" > <br></p>
+		<p>* <input  TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="             usuario" tabindex="1" > <br></p>
 		<p>Contraseña</p>
 		<i>Mínimo 5 caracteres</i>	
-		<p>* <input  id="password2" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="Contraseña" tabindex="2" ><br></p>
+		<p>* <input  id="password2" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="           Contraseña" tabindex="2" ><br></p>
 		<input type="button" role="button" id="ojo" value="Mostrar/ocultar contraseña"></input>
 			<div id="BTNregistro">
 				<div class="botones">
@@ -31,7 +31,7 @@
 					<p><a role="link" href="index.php?ctl=registro" tabindex="3">Registrarse</a></p>
 					</div>
 					<div>
-					<p><a  role="link" href="index.php?ctl=recuperarContrasenya" tabindex="4">Recuperar Contrasenya</a></p>
+					<p><a  role="link" href="index.php?ctl=recuperarContrasenya" tabindex="4">Recuperar Contraseña</a></p>
 					</div>
 					<input   id="BTN-BTNregistro" TYPE="submit" NAME="bIniciarSesion" VALUE="Iniciar Sesión" tabindex="5" role="button"><br>
 				

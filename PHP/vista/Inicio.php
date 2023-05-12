@@ -72,7 +72,8 @@ Las cookies de este sitio web se usan para personalizar el contenido y los anunc
 			<div class="prueba">
 			<div id="textoFooter">
 			<p>Contáctanos</p>
-	<p tabindex="2">Asociación GUP
+      <p>Asociación GUP</p>
+	<p tabindex="2">
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
@@ -91,6 +92,7 @@ asociaciongup@hotmail.es
 </p>
 <a tabindex="5" role="link" aria-label="enlace a su pagina de facebook" href="https://www.facebook.com/asociaciongup/?locale=es_ES"><img id="socialMedia"  src="./img/facebook.png" ></img></a>
 		<a tabindex="6" role="link" aria-label="enlace a su pagina de instagram" href="https://www.instagram.com/asociaciongup/?hl=es">	<img  id="socialMedia"  src="./img/instgram3.png" ></img></a>
+    <a href="index.php?ctl=politicas_de_privacidad" tabindex="7" role="link">POLITICAS DE PRIVACIDAD</a>
 </div>
 			</div>
 		

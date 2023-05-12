@@ -38,14 +38,14 @@
 </button>
 </div>
 <!-- 
-solo funcionara el bootn de continuar se se ha seleccionado cuanto se va a donar y a que causa 
+solo funcionara el boton de continuar se se ha seleccionado cuanto se va a donar y a que causa 
 sino no se despliega el dialogo para confirmar el pay pal  -->
 
 <br>
 <div id="donaciones" >
-    <div id="donar" tabindex="2" aria-label="25 euros">25 euros</div>
-    <div id="donar" tabindex="3"  aria-label="30 euros">30 euros</div>
-    <div id="donar" tabindex="4"   aria-label="50 euros">50 euros</p></div>
+    <div id="donar" tabindex="2" aria-label="25 euros">25 €</div>
+    <div id="donar" tabindex="3"  aria-label="30 euros">30 €</div>
+    <div id="donar" tabindex="4"   aria-label="50 euros">50 €</p></div>
     <div >Otra cantidad
             <input tabindex="5" type="number" id="precioDI" aria-label="introdducir cantidad"></input>
         </div>
@@ -92,14 +92,15 @@ sino no se despliega el dialogo para confirmar el pay pal  -->
 			<div class="prueba">
 			<div id="textoFooter">
 			<p>Contáctanos</p>
-	<p tabindex="8">Asociación GUP
+      <p>Asociación GUP</p>
+	<p tabindex="8">
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
 <p tabindex="9">
 
-Teléfono 616420909
+Teléfono 616-420-909
 
 </p>
 <p tabindex="10">

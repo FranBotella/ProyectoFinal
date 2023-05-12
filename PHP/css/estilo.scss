@@ -8,6 +8,29 @@ $colorTransicion:lightsalmon;
     padding: 0;
     box-sizing: border-box;
 }
+
+#contenedor_carga{
+    position: relative;
+  
+    margin-left: 50%;
+    #carga{
+        width: 100px;
+        height: 100px;
+        border:solid 5px #064555;
+        border-top: solid 5px #7cd6ec;
+        border-radius: 50%;
+        animation:loader .8s linear infinite;
+    }
+    @keyframes loader{
+        0% {
+            transform: rotate(0deg);
+        }
+        100%{
+            transform:rotate(360deg);
+        }
+    }
+   
+}
 .menu{
     background-color:$color1 ;
 
@@ -47,7 +70,7 @@ $colorTransicion:lightsalmon;
 
 #imgInfo{
     height: 500px;
-    width: 500px;
+    width: 400px;
     margin-top: 5%;
     margin-bottom: 5%;
 
@@ -119,8 +142,8 @@ padding: 2%;
     height: 50px;
 }
 #imgCarruselInicio{
-    width:500px;
-    height: 800px;
+    // width:500px;
+    height: 500px;
 }
 #imgCarruselDonaciones{
     width:300px;
@@ -153,7 +176,9 @@ padding: 2%;
 
 }
 #demo{
-    height: 100%;
+    height: 60%;
+    width: 100%;
+    
 }
 #demo2{
     height: 60%;
@@ -230,11 +255,18 @@ label, input {
 margin-left: 35%;
 }
 #suscribirse{
-    height: 300px;
-   
+    margin-top: 5%;
+    height: 550px;
+  
     p{
-        color: white;
+        color: black;
         text-align: center;
+    }
+    form{
+        background-color: white;
+        width: 20%;
+        margin-left: 40%;
+
     }
 }
 #btn-suscribirse{
@@ -264,7 +296,7 @@ margin-left: 35%;
    display: flex;
    flex-direction: column;
    text-align: center;
-    background-color: white;
+    background-color: lightsalmon;
     border: 2px solid black;
     overflow: hidden;
   width: 60%;
@@ -397,12 +429,13 @@ table{
             margin: 2%;
             font-family: 'Noto Serif' , serif;
           font-size:20px;
-        
+          width: 50%;
+          margin-left: 25%;
         
         }
         #imgInfo{
             height: 580px;
-            width: 1100px;
+            width: 900px;
             margin-top: 5%;
             margin-bottom: 5%;
         
@@ -414,12 +447,17 @@ table{
           
         }
         #imgCarruselInicio{
-            width:500px;
-            height: 800px;
+            width:200px;
+           
         }
         #imgCarruselDonaciones{
             width:300px;
             /* height: 600px; */
+        }
+        #demo{
+            height: 60%;
+            width: 50%;
+            margin-left: 23%;
         }
         #demo2{
             /* height: 70%; */
@@ -497,7 +535,7 @@ table{
                display: flex;
                flex-direction: column;
                text-align: center;
-                background-color: white;
+                background-color: lightsalmon;
                 border: 2px solid black;
                 overflow: hidden;
               width: 30%;

@@ -68,11 +68,11 @@
 <div id="body">
     <div id="suscribirse">
 <form ACTION="index.php?ctl=enviarSuscripcion" METHOD="post"  >
-    <p><label>NOMBRE :</label><input type="text" name="fname"PLACEHOLDER="nombre"></input></p>
+    <p><label>NOMBRE :</label><input type="text" name="fname"PLACEHOLDER="           nombre"></input></p>
     
-    <p><label>Apellido :</label><input type="text"name="nombre"PLACEHOLDER="apellido"></input></p>
+    <p><label>Apellido :</label><input type="text"name="nombre"PLACEHOLDER="           apellido"></input></p>
     
-    <p><label>Correo :</label><input type="text"name="correo_electrónico" PLACEHOLDER="correo"></input></p>
+    <p><label>Correo :</label><input type="text"name="correo_electrónico" PLACEHOLDER="              correo"></input></p>
     
 <p><input type="submit" id="btn-suscribirse"  name="submit" value="Suscribirse" /></p>
 </form>
@@ -84,14 +84,15 @@
 			<div class="prueba">
 			<div id="textoFooter">
 			<p>Contáctanos</p>
-	<p>Asociación GUP
+			<p>Asociación GUP</p>
+	<p>
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
 <p>
 
-Teléfono 616420909
+Teléfono 616-420-909
 
 </p>
 <p>

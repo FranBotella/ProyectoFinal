@@ -53,10 +53,12 @@ for ($i=0; $i <=$postContador ; $i++) {
         $postImagen = $post2-> getImagen($i);
        
         echo "<div id=$postId class=blog>";
+      
         echo "<a class=tituloblog >$postTitulo </a>";
         
         echo "<img class=imagenesEve src=./img/root/$postImagen></img>";
         echo "<p>$postContenido</p>";
+        
         echo "</div>";
        
         }
@@ -83,14 +85,15 @@ for ($i=0; $i <=$postContador ; $i++) {
 			<div class="prueba">
 			<div id="textoFooter"  >
 			<p>Contáctanos</p>
-	<p tabindex="1">Asociación GUP
+            <p>Asociación GUP</p>
+	<p tabindex="1">
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
 <p tabindex="2">
 
-Teléfono 616420909
+Teléfono 616-420-909
 
 </p>
 <p tabindex="3">

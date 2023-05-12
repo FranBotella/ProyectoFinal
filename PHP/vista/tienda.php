@@ -84,8 +84,9 @@ for ($i=0; $i<= $productosContador ; $i++) {
        echo "<th>$productoContenido</th>";
        echo " </tr>";
        echo " <tr>";
-       echo "<th>Precio</th>";
-       echo "<th><input type='number' name='precioProducto' value='$precioProducto' readonly></input></th>";
+       echo "<th>Precio </th>";
+       $precioProducto=$precioProducto."$";
+       echo "<th><input type='text' name='precioProducto' value='$precioProducto' readonly></input></th>";
        echo "  </tr>";
        echo "<tr>";
        echo "<th>Cantidad</th>";
@@ -130,11 +131,7 @@ for ($i=0; $i<= $productosContador ; $i++) {
 
 
 ?>
-<!-- </div>
-<form ACTION='index.php?ctl=tienda' METHOD='post' >
-<input   TYPE='submit' NAME='bSiguiente'  VALUE='SIGUIENTE'>
-<input   TYPE='submit' NAME='bAtras'  VALUE='ATRAS'>
-</form> -->
+
 
 </div>
 
@@ -144,14 +141,15 @@ for ($i=0; $i<= $productosContador ; $i++) {
 			<div class="prueba">
 			<div id="textoFooter">
 			<p  >Contáctanos</p>
-	<p tabindex="6">Asociación GUP
+            <p>Asociación GUP</p>
+	<p tabindex="6">
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
 <p tabindex="7">
 
-Teléfono 616420909
+Teléfono 616-420-909
 
 </p>
 <p tabindex="8">

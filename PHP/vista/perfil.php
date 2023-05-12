@@ -52,14 +52,15 @@
 			<div class="prueba">
 			<div id="textoFooter">
 			<p>Contáctanos</p>
-	<p  tabindex="4">Asociación GUP
+            <p>Asociación GUP</p>
+	<p  tabindex="4">
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
 <p  tabindex="5">
 
-Teléfono 616420909
+Teléfono 616-420-909
 
 </p>
 <p  tabindex="6">
@@ -149,7 +150,7 @@ asociaciongup@hotmail.es
         
     try {
        
-            
+            //comprobar que el correo no existe en la base de datos cuando lo cambias
         if (preg_match("#[\w\._]{3,}@\w{5,}\.+[\w]{2,}#i", $_POST["Email"]) == 1) {
             $usuario = new Usuarios();
            

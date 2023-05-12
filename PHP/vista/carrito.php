@@ -33,7 +33,7 @@ echo "<div id='formularios'>";
      
      echo "<br>";
        echo "<p>Precio</p>";
-      
+      $PrecioPC1=$PrecioPC1."€";
        echo "<p>$PrecioPC1</p>";
        echo "<br>";
        echo "<p>Cantidad</p>";
@@ -63,16 +63,7 @@ echo "<div id='formularios'>";
 
 
 
-//     echo "<form id='carritoFORM2' name='carritoForm2'  ACTION='index.php?ctl=borrarElementoCarrito' METHOD='post' >";
-    
 
-     
-      
-//     echo "<input   TYPE='submit' NAME='bCarrito2' id='bCarrito2' VALUE=''>";
-
- 
-   
-//     echo "</form>";
 echo "</div>";
 
 
@@ -85,14 +76,15 @@ echo "</div>";
 			<div class="prueba">
 			<div id="textoFooter">
 			<p>Contáctanos</p>
-	<p tabindex="2">Asociación GUP
+            <p>Asociación GUP</p>
+	<p tabindex="2">
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
 <p tabindex="3">
 
-Teléfono 616420909
+Teléfono 616-420-909
 
 </p>
 <p tabindex="4">

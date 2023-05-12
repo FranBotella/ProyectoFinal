@@ -1,6 +1,7 @@
 <?php ob_start() ?>
 
 <?php $contenido = ob_get_clean() ?>
+
 <div id="imgTXT">
     <img id="imgInfo" src="./img/root/055.jpg" tabindex="1"></img>
     <p id="txtInfo" tabindex="2">
@@ -38,14 +39,15 @@ Las actividades que desarrolla la asociación tienen como objetivo mejorar la si
 			<div class="prueba">
 			<div id="textoFooter">
 			<p>Contáctanos</p>
-	<p tabindex="3">Asociación GUP
+			<p>Asociación GUP</p>
+	<p tabindex="3">
 
 C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 
 </p>
 <p tabindex="4">
 
-Teléfono 616420909
+Teléfono 616-420-909
 
 </p>
 <p tabindex="5">

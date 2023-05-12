@@ -21,7 +21,10 @@
 <body>
 
 
-
+<div id="contenedor_carga">
+		<div id="carga"></div>
+		
+</div>
 
 <?php	
 	if (!isset($menu)) {
@@ -61,6 +64,16 @@
     
         $("#datepicker2").datepicker();
    
+</script>
+<script>
+	window.onload=function(){
+		var contenedor=document.getElementById('contenedor_carga');
+		contenedor.style.visibility='hidden';
+		contenedor.style.opacity='0';
+		var body=document.getElementById('contenido');
+		body.style.visibility='visible';
+		body.style.opacity='100';
+	}
 </script>
 </body>
 </html>
