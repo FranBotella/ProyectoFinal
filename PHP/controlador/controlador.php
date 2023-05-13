@@ -108,7 +108,26 @@ class Controller {
         public function enviarSuscripcion(){
            //Se pone en contacto con mailchimp y añade la informacion en la campaña creada en mailchimp 
 
-
+           if(isset( $_POST [ 'desuscribirse' ])){ 
+            if(isset( $_POST [ 'cbox1' ])){ 
+               
+                try {
+                    $post = new Usuarios();
+                    echo $_SESSION["user"];
+                   $baja="baja";
+                  $prueba=$post->darseAlta($baja,$_SESSION["user"]);
+                 
+                  header("location:index.php?ctl=inicio");
+                } catch (PDOException $e) {
+                    error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
+                    // save errors
+                    $errorsGuide['NoGuide'] = "Ha habido un error <br>";
+                }
+            }
+            else{
+                header("location:index.php?ctl=inicio");
+            }
+        }
 
 
 

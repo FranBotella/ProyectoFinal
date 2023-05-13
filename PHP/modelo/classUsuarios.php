@@ -561,7 +561,17 @@ public function checkPasswordAntiguo($user, $password)
             $resultado->bindParam(5, $idUsu);
             $resultado->execute();
         }
-
+        public function darseAlta($baja,$idusu)
+        {
+           
+          $consulta="UPDATE `usuarios` SET `baja` = ? WHERE  nombre=?";
+          $resultado = $this->conexion->prepare($consulta);
+        
+          $resultado->bindParam(1, $baja);
+            $resultado->bindParam(2, $idusu);
+          
+            $resultado->execute();
+        }
 
         public function getContrasenya($correo){
             $consulta="SELECT * FROM usuarios WHERE  correo=?";

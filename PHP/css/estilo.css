@@ -299,7 +299,7 @@ label, input {
   background-color: white;
   width: 70%;
   margin-left: 12%;
-  height: 25%;
+  height: 60%;
 }
 
 #btn-suscribirse {
@@ -473,6 +473,9 @@ table input {
 }
 
 @media (min-width: 820px) and (max-width: 2400px) {
+  #cbox1 {
+    margin-left: 37%;
+  }
   .imagenesEve {
     width: 55%;
     margin-left: 25%;

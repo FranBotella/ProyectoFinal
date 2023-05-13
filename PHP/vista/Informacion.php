@@ -8,20 +8,20 @@
 Las actividades que desarrolla la asociación tienen como objetivo mejorar la situación de personas desfavorecidas. Estas actividades se desarrollan en los siguientes ámbitos:
 <br>
  
- - Ámbito cultural:
+ <strong>- Ámbito cultural:</strong>
  <br>
  Desarrollar reuniones periódicas de diálogo consistentes en dinámicas de grupo, debates, tertulias, seminarios de opinión, etc. Se plantea la posibilidad de organizar esporádicamente foros de opinión abiertos al público. 
- Se pretende continuar con la realización esporádica de obras de teatro y otros acontecimientos de dinamización cultural y ciudadana (como conciertos, Récord Guinness, desfile de moda, etc. organizados en años anteriores) con carácter benéfico. 
+ Se pretende continuar con la realización esporádica de obras de teatro y otros acontecimientos de dinamización cultural y ciudadana <b>(como conciertos, Récord Guinness, desfile de moda, etc. organizados en años anteriores)</b> con carácter benéfico. 
  <br>
- - Ámbito de atención social:
+ <strong>- Ámbito de atención social:</strong>
  <br>
  Desarrollar tareas de voluntariado, preferentemente en el Comedor Social San José de Benimaclet, aunque podrán plantearse otros proyectos de voluntariado. Estas tareas comprenderán la atención de usuarios, gestión de recursos, acompañamiento, etc. Por otra parte, se pretende continuar con el desarrollo de actividades benéficas para la recaudación de fondos para los programas de voluntariado.   
  <br>
- - Ámbito de cooperación al desarrollo:
+ <strong>- Ámbito de cooperación al desarrollo:</strong>
  <br>
- En años anteriores se ha colaborado en el distintos proyectos de cooperación en las localidades de Burgersfort y Makopong (Sudáfrica), y en el proyecto de promoción y desarrollo sociocultural de niños de la calle en el Polígono Don Bosco en El Salvador, recaudando fondos para los mismos, sin prejuicio de que en el futuro se pueda colaborar en otros proyectos desde el punto de vista de la financiación, o con la participación activa en los mismos.
+ En años anteriores se ha colaborado en el distintos proyectos de cooperación en las localidades de Burgersfort y Makopong <b>(Sudáfrica)</b>, y en el proyecto de promoción y desarrollo sociocultural de niños de la calle en el Polígono Don Bosco en El Salvador, recaudando fondos para los mismos, sin prejuicio de que en el futuro se pueda colaborar en otros proyectos desde el punto de vista de la financiación, o con la participación activa en los mismos.
  <br>
- - Otros ámbitos:
+<strong>- Otros ámbitos:</strong>
  <br>
  De forma esporádica podrán desarrollarse actividades relacionadas con la educación, defensa del medio ambiente, conservación del patrimonio, deporte, etc.
  <br>

@@ -294,10 +294,15 @@ margin-left: 35%;
         background-color: white;
         width: 70%;
         margin-left: 12%;
-        height: 25%;
+        height: 60%;
 
     }
 }
+
+
+
+
+
 #btn-suscribirse{
     background-color: red;
     color: white;
@@ -470,6 +475,13 @@ table{
             background-color: red;
             }
     @media (min-width:820px) and (max-width: 2400px) { 
+       
+        #cbox1{
+            margin-left: 37%;
+        }
+       
+       
+       
         .tiendaForm{
         //     height: 100%;
         //      }

@@ -68,6 +68,7 @@
 <div id="body">
     <div id="suscribirse">
 <form ACTION="index.php?ctl=enviarSuscripcion" METHOD="post"  >
+	<p>Suscribirse</p>
     <p><label>NOMBRE :</label><input type="text" name="fname"PLACEHOLDER="           nombre"></input></p>
     
     <p><label>Apellido :</label><input type="text"name="nombre"PLACEHOLDER="           apellido"></input></p>
@@ -75,8 +76,13 @@
     <p><label>Correo :</label><input type="text"name="correo_electrónico" PLACEHOLDER="              correo"></input></p>
     
 <p><input type="submit" id="btn-suscribirse"  name="submit" value="Suscribirse" /></p>
+<p>Desuscribirse</p>
+    <input type="checkbox" id="cbox1" name="cbox1" value="desuscribirse"> no quiero recibir newsletter
+<p><input type="submit" id="btn-suscribirse"  name="desuscribirse" value="DesSuscribirse" /></p>
 </form>
+
 </div>
+
 </div>
 <footer>
 <div  class=" pie ">
