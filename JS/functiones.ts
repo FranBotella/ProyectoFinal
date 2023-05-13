@@ -8,8 +8,10 @@ if(hide!=null){
       const  mostrar=document.getElementById("password2");
                if(mostrar.type == "password"){
                    mostrar.type = "text";
+                   hide.src="./img/ojoAbierto.png";
                }else{
                    mostrar.type = "password";
+                   hide.src="./img/ojoCerrado.png";
                }
            
        });

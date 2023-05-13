@@ -3,16 +3,16 @@
 
 <!-- 
 carrusel -->
-
+<div id="borrar">
   <div id="demo" class="carousel slide " data-bs-ride="carousel" tabindex="1">
 
   <!-- Indicators/dots -->
-  <div class="carousel-indicators">
+  <!-- <div class="carousel-indicators">
     <button type="button" aria-label="boton para primera imagen" role="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
     <button type="button" aria-label="boton para segunda imagen" role="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
     <button type="button" aria-label="boton para tercer imagen" role="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
     <button type="button" aria-label="boton para cuarta imagen" role="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-  </div>
+  </div> -->
 
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
@@ -39,7 +39,7 @@ carrusel -->
   </button>
 </div>
 
-
+</div>
 
 <button  type="button" hidden id="botonCookies"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Politica de cookies
@@ -80,7 +80,7 @@ C/ Ntra. Sra. de la Asunción, 2.   46020 Valencia
 </p>
 <p tabindex="3">
 
-Teléfono 616420909
+Teléfono 616-420-909
 
 </p>
 <p tabindex="4">

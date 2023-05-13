@@ -142,12 +142,12 @@ padding: 2%;
     height: 50px;
 }
 #imgCarruselInicio{
-    // width:500px;
-    height: 500px;
+    //  width:900px;
+    height: 600px;
 }
 #imgCarruselDonaciones{
     width:300px;
-    /* height: 200px; */
+  height: 200px; 
 }
 #socialMedia{
     width: 45px;
@@ -176,12 +176,18 @@ padding: 2%;
 
 }
 #demo{
-    height: 60%;
+    height: 30%;
     width: 100%;
     
 }
+
+#espacio{
+    height: 40%;
+}
+
 #demo2{
-    height: 60%;
+    height: 40%;
+   
 }
 .borde {
     border: 2px solid rgba(58, 56, 56, 0.918);
@@ -251,12 +257,24 @@ label, input {
     background-color: #c1c1c1;
   
 }
+#btnPSW{
+    margin-left: 4%;
+}
+#ojo{
+    width: 50px;
+    height: 50px;
+   
+}
+#ojo2{
+    width: 50px;
+    height: 50px;
+}
 #btn-cerrar-modal{
 margin-left: 35%;
 }
 #suscribirse{
     margin-top: 5%;
-    height: 550px;
+    height: 94%;
   
     p{
         color: black;
@@ -340,13 +358,15 @@ tbody{
                  }
             }
  }
-
+#formularioCT{
+    height: 94%;
+}
  #botonesAdminEventos{
     display: flex;
     justify-content: center;
 }
 #borrar{
-    height: 760px;
+    height: 94%;
     font-family: 'Barlow', sans-serif;
    overflow:scroll;
 
@@ -418,12 +438,12 @@ table{
 
         overflow: auto;
         
-        height: 800px;
+        // height: 800px;
         }
         #bCarrito1{
             background-color: red;
             }
-    @media (min-width:920px) and (max-width: 1920px) { 
+    @media (min-width:820px) and (max-width: 1920px) { 
         #txtInfo{
             background-color: white;
             margin: 2%;
@@ -447,15 +467,15 @@ table{
           
         }
         #imgCarruselInicio{
-            width:200px;
+            // width:200px;
            
         }
         #imgCarruselDonaciones{
             width:300px;
-            /* height: 600px; */
+              height: 400px; 
         }
         #demo{
-            height: 60%;
+            height: 55%;
             width: 50%;
             margin-left: 23%;
         }
@@ -463,7 +483,7 @@ table{
             /* height: 70%; */
             width: 50%;
             margin-left: 23%;
-            height: 70%;
+            height: 60%;
         }
         #donaciones {
             display: flex;
@@ -476,6 +496,7 @@ table{
          margin-left: 35%;
          margin-top: 1%;
          }
+       
          #perfilForm{
     
             background-color: white;

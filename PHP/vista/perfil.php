@@ -1,6 +1,6 @@
 <?php ob_start() ?>
 
-
+<div id="borrar">
     <div class="div-perfil container text-center p-1">
         <form id="perfilForm" action="index.php?ctl=perfil" method="post" enctype="multipart/form-data">
             <div class="div-atr">
@@ -45,7 +45,7 @@
         
         </form>
     </div>
-
+            </div>
     <footer>
 <div  class=" pie ">
 		<div  >

@@ -79,6 +79,7 @@ for ($i=0; $i <=$postContador ; $i++) {
 ?>
 
 </div>
+
 <footer>
 <div  class=" pie ">
 		<div  >

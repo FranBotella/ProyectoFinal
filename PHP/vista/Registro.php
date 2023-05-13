@@ -24,8 +24,9 @@
 			<p>* <input tabindex="1" TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="             Usuario" aria-label="introducir usuario"> <br></p>
 			<p>Contraseña</p>
 			<i>Minimo 5 caracteres</i>
-			<p>* <input tabindex="2" id="password" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="           Contraseña" aria-label="introducir contraseña"><br></p>
-		<input type="button" id="ojo2" value="Mostrar/ocultar contraseña"></input>
+			<p id="btnPSW">* <input tabindex="2" id="password" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="           Contraseña" aria-label="introducir contraseña"><img id="ojo2" src="./img/ojoCerrado.png" alt=""><br></p>
+		<!-- <input type="button" id="ojo2" value="Mostrar/ocultar contraseña"></input> -->
+		
 			<p>Email</p>
 			<p>* <input tabindex="3" TYPE="text" NAME="email" VALUE="<?php echo $params['email'] ?>" PLACEHOLDER="               email" aria-label="introducir email"><br></p>
 			<div id="BTNregistro">

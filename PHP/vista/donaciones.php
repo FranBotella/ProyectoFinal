@@ -9,11 +9,11 @@
 <div id="demo2" class="carousel slide " data-bs-ride="carousel" tabindex="1">
 
 <!-- Indicators/dots -->
-<div class="carousel-indicators">
+<!-- <div class="carousel-indicators">
   <button aria-label="boton primera imagen" role="button" type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
   <button aria-label="boton segunda imagen" role="button" type="button" data-bs-target="#demo2" data-bs-slide-to="1"></button>
   <button aria-label="boton tercera imagen" role="button" type="button" data-bs-target="#demo2" data-bs-slide-to="2"></button>
-</div>
+</div> -->
 
 <!-- The slideshow/carousel -->
 <div class="carousel-inner">
@@ -42,6 +42,7 @@ solo funcionara el boton de continuar se se ha seleccionado cuanto se va a donar
 sino no se despliega el dialogo para confirmar el pay pal  -->
 
 <br>
+
 <div id="donaciones" >
     <div id="donar" tabindex="2" aria-label="25 euros">25 €</div>
     <div id="donar" tabindex="3"  aria-label="30 euros">30 €</div>
@@ -85,7 +86,7 @@ sino no se despliega el dialogo para confirmar el pay pal  -->
     
 </form>
 </dialog>
-
+<!-- <div id="espacio"></div> -->
 <footer>
 <div  class=" pie ">
 		<div  >

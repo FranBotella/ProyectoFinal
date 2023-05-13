@@ -146,12 +146,12 @@
 }
 
 #imgCarruselInicio {
-  height: 500px;
+  height: 600px;
 }
 
 #imgCarruselDonaciones {
   width: 300px;
-  /* height: 200px; */
+  height: 200px;
 }
 
 #socialMedia {
@@ -181,12 +181,16 @@
 }
 
 #demo {
-  height: 60%;
+  height: 30%;
   width: 100%;
 }
 
+#espacio {
+  height: 40%;
+}
+
 #demo2 {
-  height: 60%;
+  height: 40%;
 }
 
 .borde {
@@ -264,13 +268,27 @@ label, input {
   background-color: #c1c1c1;
 }
 
+#btnPSW {
+  margin-left: 4%;
+}
+
+#ojo {
+  width: 50px;
+  height: 50px;
+}
+
+#ojo2 {
+  width: 50px;
+  height: 50px;
+}
+
 #btn-cerrar-modal {
   margin-left: 35%;
 }
 
 #suscribirse {
   margin-top: 5%;
-  height: 550px;
+  height: 94%;
 }
 #suscribirse p {
   color: black;
@@ -356,13 +374,17 @@ tbody {
   margin-left: 50%;
 }
 
+#formularioCT {
+  height: 94%;
+}
+
 #botonesAdminEventos {
   display: flex;
   justify-content: center;
 }
 
 #borrar {
-  height: 760px;
+  height: 94%;
   font-family: "Barlow", sans-serif;
   overflow: scroll;
 }
@@ -436,14 +458,13 @@ table input {
 
 #formulariosT {
   overflow: auto;
-  height: 800px;
 }
 
 #bCarrito1 {
   background-color: red;
 }
 
-@media (min-width: 920px) and (max-width: 1920px) {
+@media (min-width: 820px) and (max-width: 1920px) {
   #txtInfo {
     background-color: white;
     margin: 2%;
@@ -463,15 +484,12 @@ table input {
     height: 50px;
     margin-top: 1%;
   }
-  #imgCarruselInicio {
-    width: 200px;
-  }
   #imgCarruselDonaciones {
     width: 300px;
-    /* height: 600px; */
+    height: 400px;
   }
   #demo {
-    height: 60%;
+    height: 55%;
     width: 50%;
     margin-left: 23%;
   }
@@ -479,7 +497,7 @@ table input {
     /* height: 70%; */
     width: 50%;
     margin-left: 23%;
-    height: 70%;
+    height: 60%;
   }
   #donaciones {
     display: flex;

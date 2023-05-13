@@ -22,8 +22,10 @@
 		<p>* <input  TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="             usuario" tabindex="1" > <br></p>
 		<p>Contraseña</p>
 		<i>Mínimo 5 caracteres</i>	
-		<p>* <input  id="password2" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="           Contraseña" tabindex="2" ><br></p>
-		<input type="button" role="button" id="ojo" value="Mostrar/ocultar contraseña"></input>
+		<p id="btnPSW">* <input  id="password2" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="           Contraseña" tabindex="2" ><img id="ojo" src="./img/ojoCerrado.png" alt=""><br></p>
+		<!-- <input type="button" role="button" id="ojo" value="Mostrar/ocultar contraseña"> -->
+	
+	<!-- </input> -->
 			<div id="BTNregistro">
 				<div class="botones">
 					<div >

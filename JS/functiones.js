@@ -5,9 +5,11 @@ if (hide != null) {
         var mostrar = document.getElementById("password2");
         if (mostrar.type == "password") {
             mostrar.type = "text";
+            hide.src = "./img/ojoAbierto.png";
         }
         else {
             mostrar.type = "password";
+            hide.src = "./img/ojoCerrado.png";
         }
     });
 }
@@ -18,9 +20,11 @@ if (hide2 != null) {
         mostrar = document.getElementById("password");
         if (mostrar.type == "password") {
             mostrar.type = "text";
+            hide2.src = "./img/ojoAbierto.png";
         }
         else {
             mostrar.type = "password";
+            hide2.src = "./img/ojoCerrado.png";
         }
     });
 }
