@@ -65,6 +65,7 @@ sino no se despliega el dialogo para confirmar el pay pal  -->
 </div>
 <br>
 </div>
+
 <!-- ventana dialogo -->
 <dialog id="modal">
 <form method="dialog"  id="formModal">
@@ -87,6 +88,7 @@ sino no se despliega el dialogo para confirmar el pay pal  -->
 </form>
 </dialog>
 <!-- <div id="espacio"></div> -->
+
 <footer>
 <div  class=" pie ">
 		<div  >

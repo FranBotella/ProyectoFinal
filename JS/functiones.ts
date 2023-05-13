@@ -50,11 +50,12 @@ if(changeColor!=null){
       }
 }
 const botonCookies= document.getElementById("botonCookies");
+console.log(botonCookies);
 if(botonCookies!=null){
-window.onload=function automaticoV(){
-  document.getElementById("botonCookies").click();
+window.onload=document.getElementById("botonCookies").click();
+  
  
-}
+
 }
 // abrir dialogo al aceptar que causa y precio donar
 

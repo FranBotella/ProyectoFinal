@@ -20,11 +20,9 @@ if (hide2 != null) {
         mostrar = document.getElementById("password");
         if (mostrar.type == "password") {
             mostrar.type = "text";
-            hide2.src = "./img/ojoAbierto.png";
         }
         else {
             mostrar.type = "password";
-            hide2.src = "./img/ojoCerrado.png";
         }
     });
 }
@@ -45,10 +43,9 @@ if (changeColor != null) {
     }
 }
 var botonCookies = document.getElementById("botonCookies");
+console.log(botonCookies);
 if (botonCookies != null) {
-    window.onload = function automaticoV() {
-        document.getElementById("botonCookies").click();
-    };
+    window.onload = document.getElementById("botonCookies").click();
 }
 // abrir dialogo al aceptar que causa y precio donar
 var btnContinuar = document.getElementById("BTN-BTNContinuar");
