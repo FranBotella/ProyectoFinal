@@ -333,13 +333,21 @@ label, input {
   text-align: center;
   background-color: lightsalmon;
   border: 2px solid black;
+  text-overflow: ellipsis;
   overflow: hidden;
   width: 70%;
   justify-content: center;
   margin-left: 20%;
 }
 .blog img {
-  margin-left: 40%;
+  margin-left: 20%;
+  width: 50%;
+}
+.blog p {
+  width: 930px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .blog2 {
@@ -366,8 +374,8 @@ tbody {
 }
 .tabla_tienda th img {
   margin-left: 60%;
-  width: 85%;
-  height: 150px;
+  width: 55%;
+  height: 250px;
 }
 .tabla_tienda th .tituloProductoTienda {
   margin-left: 50%;
@@ -405,6 +413,7 @@ tbody {
 #categorias a {
   padding: 10px;
   color: black;
+  font-size: larger;
 }
 
 #formModal {
@@ -428,7 +437,7 @@ table input {
   text-align: center;
   height: 1000px;
   width: 50%;
-  margin-left: 40%;
+  margin-left: 25%;
   overflow: auto;
   font-size: xx-large;
 }
@@ -468,6 +477,11 @@ table input {
   font-size: xx-large;
 }
 
+.tiendaForm textarea {
+  white-space: pre-wrap;
+  width: 60%;
+}
+
 #bCarrito1 {
   background-color: red;
 }
@@ -476,9 +490,16 @@ table input {
   #cbox1 {
     margin-left: 37%;
   }
-  .imagenesEve {
-    width: 55%;
-    margin-left: 25%;
+  .tiendaForm th img {
+    margin-left: 60%;
+    width: 250px;
+    height: 250px;
+  }
+  .tiendaForm th .tituloProductoTienda {
+    margin-left: 50%;
+  }
+  .tiendaForm th textarea {
+    white-space: pre-wrap;
   }
   #txtInfo {
     background-color: white;
@@ -574,8 +595,15 @@ table input {
     font-size: xx-large;
   }
   .blog img {
-    height: 30%;
-    width: 30%;
+    height: 400px;
+    width: 50%;
+    margin-left: 25%;
+  }
+  .blog p {
+    width: 930px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .blog2 {
     display: flex;

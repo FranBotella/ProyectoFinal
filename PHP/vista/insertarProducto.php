@@ -89,7 +89,7 @@
           
               
               
-                move_uploaded_file($directorioTemp, './img/' . 'root' . '/' . $_FILES['imagen']['name']);
+                move_uploaded_file($directorioTemp, './img/' . 'root' . '/imgTienda'.'/' . $_FILES['imagen']['name']);
                 
                 header("Refresh:0");
             }

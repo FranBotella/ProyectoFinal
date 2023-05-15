@@ -332,13 +332,21 @@ margin-left: 35%;
    text-align: center;
     background-color: lightsalmon;
     border: 2px solid black;
+    text-overflow: ellipsis;
     overflow: hidden;
   width: 70%;
   justify-content: center;
   margin-left: 20%;
  img{
-    margin-left: 40%;
+    margin-left: 20%;
+    width: 50%;
  }
+ p{
+    width: 930px;
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+  }
 }
 
 .blog2{
@@ -368,8 +376,8 @@ tbody{
         th{
              img{
                 margin-left: 60%;
-                width: 85%;
-                height:150px;
+                width: 55%;
+                height:250px;
                  }
                  .tituloProductoTienda{
                     margin-left: 50%;
@@ -404,6 +412,7 @@ tbody{
   a{
     padding: 10px;
     color: black;
+    font-size:larger;
   }
 }
 #formModal{
@@ -424,7 +433,7 @@ table{
     text-align: center;
     height: 1000px;
     width: 50%;
-    margin-left:40% ;
+    margin-left:25% ;
     overflow: auto;
     font-size: xx-large;
     *{
@@ -470,6 +479,10 @@ table{
       
         .tiendaForm{
             // height: 80%;
+            textarea{
+                white-space: pre-wrap;
+             width: 60%;
+             }
              }
         #bCarrito1{
             background-color: red;
@@ -491,6 +504,22 @@ table{
         //         font-size: xx-large;
                
         //        }
+        th{
+          
+            img{
+               margin-left: 60%;
+               width: 250px;
+               height:250px;
+                }
+                .tituloProductoTienda{
+                   margin-left: 50%;
+                }
+               
+             textarea{
+                white-space: pre-wrap;
+             
+             }
+           }
           
         }
      
@@ -499,10 +528,10 @@ table{
             //     height:90px;
             //     margin-left: 35%;
             // }
-            .imagenesEve{
-               width: 55%;
-               margin-left: 25%;
-            }
+            // .imagenesEve{
+            //    width: 55%;
+            //    margin-left: 25%;
+            // }
         #txtInfo{
             background-color: white;
             margin: 2%;
@@ -624,13 +653,21 @@ table{
                 background-color: lightsalmon;
                 border: 2px solid black;
                 overflow: hidden;
+                
               width: 50%;
               justify-content: center;
               margin-left: 27%;
             font-size: xx-large;
             img{
-                height: 30%;
-                width: 30%;
+               height: 400px;
+                width: 50%;
+                margin-left: 25%;
+              }
+              p{
+                width: 930px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
               }
             }
             .blog2{

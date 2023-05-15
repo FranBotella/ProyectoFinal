@@ -78,10 +78,11 @@ for ($i=0; $i<= $productosContador ; $i++) {
         echo " </tr>";
        
        echo " <tr>";
-       echo " <th><img class=imagenesEve src=./img/root/tienda/$productoImagen></img></th>";
+       echo " <th><img class=imagenesEve src=./img/root/imgTienda/$productoImagen></img></th>";
        echo "</tr>";
        echo " <tr>";
-       echo "<th>$productoContenido</th>";
+    //    echo "<th><p>$productoContenido</p></th>";
+    echo "  <th colspan='2'> <textarea   rows='3' cols='50'>$productoContenido</textarea></th>";
        echo " </tr>";
        echo " <tr>";
        echo "<th>Precio </th>";
@@ -93,7 +94,7 @@ for ($i=0; $i<= $productosContador ; $i++) {
        echo "<th><input type='number' name='cantidadP' ></input></th>";
        echo "</tr>";
        echo "<tr>";
-       echo "<th><input   TYPE='submit' NAME='bProducto' class='Añadir' VALUE='Añadir'></th>";
+       echo "<th colspan='2'><input   TYPE='submit' NAME='bProducto' class='Añadir' VALUE='Añadir'></th>";
        echo " </table>";
        echo "</form>";
        echo "<br>";

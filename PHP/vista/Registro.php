@@ -23,7 +23,7 @@
 			<p>Usuario</p>
 			<p>* <input tabindex="1" TYPE="text" NAME="user" VALUE="<?php echo $params['user'] ?>" PLACEHOLDER="             Usuario" aria-label="introducir usuario"> <br></p>
 			<p>Contraseña</p>
-			<i>Minimo 5 caracteres</i>
+			<i>Minimo 12 caracteres, una letra en mayúscula y un número</i>
 			<p id="btnPSW">* <input tabindex="2" id="password" TYPE="password" NAME="pass" VALUE="<?php echo $params['pass'] ?>" PLACEHOLDER="           Contraseña" aria-label="introducir contraseña"><img id="ojo2" src="./img/ojoCerrado.png" alt=""><br></p>
 		<!-- <input type="button" id="ojo2" value="Mostrar/ocultar contraseña"></input> -->
 		

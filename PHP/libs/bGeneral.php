@@ -189,11 +189,17 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
 //      return false;
 //  }
 
- function cPass(string $text, string $campo, array &$errores, int $max = 30, int $min = 5): bool
+ function cPass(string $text, string $campo, array &$errores, int $max = 30, int $min = 12): bool
  {
      
      if ((preg_match("/^[a-zA-Z0-9_]{" . $min . "," . $max . "}$/u", sinTildes($text)))) {
+       //una letra en mayuscula
+        if(preg_match("/[A-Z]/", $text)){
+            //un numero
+            if(preg_match("/[0-9]/", $text)){
          return true;
+            }
+        }
      }
      $errores[$campo] = "Error en el campo $campo";
      return false;
