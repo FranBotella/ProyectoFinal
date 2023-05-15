@@ -487,12 +487,33 @@ table{
         #bCarrito1{
             background-color: red;
             }
+            #formurecuperarContrasenya{
+                height: 97%;
+                font-size: xx-large;
+                p{
+                    color: white;
+                }
+                #BTN-BTNuevaContrasenya{
+                    background-color: red;
+                    color: white;
+                }
+               }
     @media (min-width:820px) and (max-width: 2400px) { 
        
         #cbox1{
             margin-left: 37%;
         }
-       
+       #formurecuperarContrasenya{
+        height: 97%;
+        font-size: xx-large;
+        p{
+            color: white;
+        }
+        #BTN-BTNuevaContrasenya{
+            background-color: red;
+            color: white;
+        }
+       }
        
        
         .tiendaForm{

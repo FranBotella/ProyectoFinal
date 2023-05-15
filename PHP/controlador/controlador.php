@@ -439,6 +439,13 @@ require __DIR__ . '/../correos/recibe.php';
 }
 
 public function recuperarContrasenya(){
+    $params = array(
+       
+        'pass' => '',
+       
+        
+        );
+        $errores=array();
     $contrasenya="";
      //al recuperar la contraseña  se escribe tu correo si es correcto tendras que vovlerlo a escribir y  se abrira un formulario para cambiar la contraseña
     if (isset($_POST['brecuperarContrasenya'])) {
@@ -455,10 +462,11 @@ public function recuperarContrasenya(){
                     // header("location:index.php?ctl=inicio");
                 } 
             }
+            $contraseñaNueva="";
             if (isset($_POST['bNuevaContrasenya'])) {
+                if(cPass(recoge('contraseñaNueva'), "pass", $errores)){
                 $contraseñaNueva =crypt_blowfish( recoge('contraseñaNueva'));
                 $correo2 = recoge('email2');
-                
                 try {
                         
                     $g = new Usuarios();
@@ -470,7 +478,17 @@ public function recuperarContrasenya(){
                     // error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
                     // header("location:index.php?ctl=inicio");
                 } 
-            
+                }
+                else{
+                    $params = array(
+                       
+                        'pass' => $contraseñaNueva
+                    );
+                   
+                    $params['mensaje'] = 'Hay datos que no son correctos. Revisa el formulario.';
+                }
+               
+               
             }
 
 require __DIR__ . '/../vista/recuperarContrasenya.php';
