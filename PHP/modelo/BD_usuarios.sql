@@ -22,7 +22,7 @@ CREATE TABLE `usuarios` (
  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+INSERT INTO `usuarios` ( `id`,`nombre`, `contraseñaEncriptada`, `correo`,`nivel`,`baja`) VALUES ( '1','root', '$2a$07$usesomesillystringforePArvyl1Oebc9GL0.UW1JBpmZFwBSnbG', 'root@gmail.com','2','no_baja');
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
@@ -98,3 +98,6 @@ ALTER TABLE `carrito`
   ADD FOREIGN KEY (`idProducto`) REFERENCES `productos`(`id`);
 ALTER TABLE `carrito`
   ADD FOREIGN KEY (`idUsuario`) REFERENCES `usuarios`(`id`);
+
+
+  
