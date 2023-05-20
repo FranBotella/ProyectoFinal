@@ -472,7 +472,19 @@ public function checkPasswordAntiguo($user, $password)
         }
 
 
-
+        public function subirNivelAdmin( $nivel,$nombre)
+        {
+           
+          $consulta="UPDATE `usuarios` SET `nivel` = ? WHERE  nombre=?";
+          $resultado = $this->conexion->prepare($consulta);
+        
+            $resultado->bindParam(1, $nivel);
+        
+            $resultado->bindParam(2, $nombre);
+            
+           
+            $resultado->execute();
+        }
 
 
 

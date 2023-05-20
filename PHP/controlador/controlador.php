@@ -51,7 +51,7 @@ class Controller {
             
       
         $menu=$this->cargaMenu();
-        require __DIR__ . '/../vista/informacion.php';
+        require __DIR__ . '/../vista/Informacion.php';
     }
 
 
@@ -419,6 +419,21 @@ public function recibirCodigo(){
     $codeIn = $_POST["codigoIn"];
      
             if($_SESSION['codigo']==$codeIn){
+                if($_SESSION['user']="admin"){
+                    try {
+                        $passwordBD = crypt_blowfish($_SESSION['pass']); 
+                    $l = new Usuarios();
+                    $l->registrarse($_SESSION['user'], $passwordBD, $_SESSION['email']);
+                    mkdir(__DIR__ ."/../img/".$_SESSION['user'], 0777);
+                    copy(__DIR__ ."/../img/image.png", __DIR__ ."/../img/".$_SESSION['user']."/image.png");
+                    $l->subirNivelAdmin(2,$_SESSION['user']);
+                    header("location:index.php?ctl=registro");
+                    } catch (Exception $e) {
+                        // $l->deshacer();
+                        error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
+                        header("location:index.php?ctl=registro");
+                    } 
+                }else{
                 try {
                   
                     $passwordBD = crypt_blowfish($_SESSION['pass']); 
@@ -432,7 +447,7 @@ public function recibirCodigo(){
                     error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logExceptio.txt");
                     header("location:index.php?ctl=registro");
                 } 
-             
+            }
             }
 
 require __DIR__ . '/../correos/recibe.php';
