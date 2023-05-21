@@ -45,8 +45,8 @@ for ($i=0; $i <=$postContador ; $i++) {
         
 
           if($sacarY<=$anyo){
-            if($sacarM<=$mes){
-                if($sacarD>$dia){
+            if($mes<$sacarM){
+               
             $postTitulo = $post2-> getTitulo($i);
             $postId = $post2->getIdPost($i);
         $postContenido = $post2-> getContenido($i);
@@ -61,12 +61,29 @@ for ($i=0; $i <=$postContador ; $i++) {
         
         echo "</div>";
        
-        }
+        
     }
+    if($mes==$sacarM){
+        if($sacarD>$dia ){
+            $postTitulo = $post2-> getTitulo($i);
+            $postId = $post2->getIdPost($i);
+        $postContenido = $post2-> getContenido($i);
+        $postImagen = $post2-> getImagen($i);
+       
+        echo "<div id=$postId class=blog>";
+      
+        echo "<a class=tituloblog >$postTitulo </a>";
+        
+        echo "<img class=imagenesEve src=./img/root/$postImagen></img>";
+        echo "<p>$postContenido</p>";
+        
+        echo "</div>";      
+        }
+
 }
 
     }
-       
+        }  
     } catch (PDOException $e) {
         error_log($e->getMessage() . "##Código: " . $e->getCode() . "  " . microtime() . PHP_EOL, 3, "../logBD.txt");
      
