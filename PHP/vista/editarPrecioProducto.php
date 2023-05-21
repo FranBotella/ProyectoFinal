@@ -17,6 +17,7 @@
   <option value="Bolsos" >Bolsos</option>
   <option value="Artesania">Artesania</option>
   <option value="Visuteria">Visuteria</option>
+  <option value="Estuches">Estuches</option>
 </select>
 <br>
 <p>titulo</p>
