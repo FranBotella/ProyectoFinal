@@ -1,0 +1,1 @@
+Primero crear bd con archivo crearBD.php y luego index.php. Para ver las funciones de admin hay que registrarse con el nombre de usuario admin y se tendra permisos de admin . Ciudado porque al registrarse no se pueden registrar dos usuarios con el mismo correo.
